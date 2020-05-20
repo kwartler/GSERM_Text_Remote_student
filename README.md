@@ -5,10 +5,10 @@
 ## Lesson Structure
 Each day's lesson is contained in the [lesson](www.github.com/kwartler/) folder.  Each individual lesson folder will contain the following files and folders.
  
+* slides - A copy of the presentation covered in the recording.  Some students print the slides and begin to take notes.
 * `recordedLesson` folder 
   * `data` sub folder- contains the data to be analyzed in the recorded session
   * `scripts` - the scripts that are covered in the recorded slide presentation.  Most students like to follow along running code as I explain and run it rather than merely watching themselves.
-  * slides - A copy of the presentation covered in the recording.  Some students print the slides and begin to take notes.
 * `labSession` folder 
   * `data` sub folder - contains the data we will work through together
   * `scripts` - scaffolded scripts to start our lab session
@@ -21,7 +21,7 @@ Each day's lesson is contained in the [lesson](www.github.com/kwartler/) folder.
 
 * You *can* install R, R-Studio & Git locally on your laptop but any system issues will be yours to resolve.  
 
-- If you encounter any errors during set up don't worry!  Please request technical help from Prof K and the university.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.
+- If you encounter any errors during set up don't worry!  Please request technical help from Prof K and the university.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.  **the `qdap` library does not work on mac, due to a java path issue.  Therefore, mac users are encouraged to use the univeristy provided virtual machine or rstudio.cloud**
 
 ## R Packages
 
