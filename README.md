@@ -4,8 +4,7 @@
 
 ## Lesson Structure
 Each day's lesson is contained in the [lesson](www.github.com/kwartler/) folder.  Each individual lesson folder will contain the following files and folders.
-
-* Markdown (`.rmd`) & HTML - lays out learning objectives, commentary if applicable, data files, R scripts and slides used in the *entire* lesson.  Also has a link to the recording.  
+ 
 * `recordedLesson` folder 
   * `data` sub folder- contains the data to be analyzed in the recorded session
   * `scripts` - the scripts that are covered in the recorded slide presentation.  Most students like to follow along running code as I explain and run it rather than merely watching themselves.
