@@ -1,5 +1,4 @@
-# GSERM_Text_Remote_admin
-GSERM Text Mining Course for Remote Participation
+# GSERM Text Mining Course for Remote Participation
 
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
