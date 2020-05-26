@@ -3,7 +3,7 @@
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
 ## Lesson Structure
-Each day's lesson is contained in the [lesson](www.github.com/kwartler/) folder.  Each individual lesson folder will contain the following files and folders.
+Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
  
 * slides - A copy of the presentation covered in the recording.  Provided because some students print the slides and begin to take notes.
 * `data` sub folder - contains the data we will work through together
