@@ -2,6 +2,16 @@
 
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
+## Recorded Lesson URLS
+
+|Day   | URL   |Topic   |
+|---|---|---|
+| Monday  |   |  Setup, R Basics, String Manipulation, Text Organizations |
+| Tuesday  | TBD   | Text Mining Visuals   |
+| Wednesday  | TBD   | Sentient Analysis, Unsupervised Methods   |
+| Thursday  | TBD   | Supervised Methods  |
+| Friday  | TBD   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
+
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
  
