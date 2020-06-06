@@ -3,9 +3,7 @@
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
 ## Welcome Video
-[Welcome to the class video.](https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X){:target="_blank"}
-
-<a href="https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X" target="_blank">Welcome to the class video</a>
+[Welcome to the class video.](https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X)
 
 ## Recorded Lesson URLS
 
