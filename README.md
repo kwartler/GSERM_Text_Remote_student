@@ -2,13 +2,16 @@
 
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
+## Welcome Video
+[Welcome to the class video.](https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X)
+
 ## Recorded Lesson URLS
 
 |Day   | URL   |Topic   |
 |---|---|---|
-| Monday  |   |  Setup, R Basics, String Manipulation, Text Organizations |
+| Monday  | TBD  |  Setup, R Basics, String Manipulation, Text Organizations |
 | Tuesday  | TBD   | Text Mining Visuals   |
-| Wednesday  | TBD   | Sentient Analysis, Unsupervised Methods   |
+| Wednesday  | TBD   | Sentiment Analysis, Unsupervised Methods   |
 | Thursday  | TBD   | Supervised Methods  |
 | Friday  | TBD   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
 
