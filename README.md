@@ -2,16 +2,26 @@
 
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
+## Welcome Video
+[Welcome to the class video.](https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X)
+
+## Recorded Lesson URLS
+
+|Day   | URL   |Topic   |
+|---|---|---|
+| Monday  | [vid1](https://www.youtube.com/watch?v=INR9GYTSUHw) |  Setup, R Basics, String Manipulation, Text Organizations |
+| Tuesday  | TBD   | Text Mining Visuals   |
+| Wednesday  | TBD   | Sentiment Analysis, Unsupervised Methods   |
+| Thursday  | TBD   | Supervised Methods  |
+| Friday  | TBD   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
+
 ## Lesson Structure
-Each day's lesson is contained in the [lesson](www.github.com/kwartler/) folder.  Each individual lesson folder will contain the following files and folders.
+Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
  
-* slides - A copy of the presentation covered in the recording.  Some students print the slides and begin to take notes.
-* `recordedLesson` folder 
-  * `data` sub folder- contains the data to be analyzed in the recorded session
-  * `scripts` - the scripts that are covered in the recorded slide presentation.  Most students like to follow along running code as I explain and run it rather than merely watching themselves.
-* `labSession` folder 
-  * `data` sub folder - contains the data we will work through together
-  * `scripts` - scaffolded scripts to start our lab session
+* slides - A copy of the presentation covered in the recording.  Provided because some students print the slides and begin to take notes.
+* `data` sub folder - contains the data we will work through together
+* `scripts` - scaffolded scripts to start our lab session
+* `HW` - the daily homework will be in this folder.
 
 ## Environment Setup
 * The University is providing virtual machines for participants to run R code and perform analysis.  They will be providing that information to you and supporting any technical issues.
