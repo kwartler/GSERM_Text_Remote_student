@@ -1,0 +1,129 @@
+"DistributionCenter","Location","Country","Square              Feet","Year              Opened","Description of Operation","NA","type","retailer","zip.x","cleanZip","country","zip.y","city","state","stateAbb","county","lat","lon","ZIP","COUNTYNAME","STATE","STCOUNTYFP","CLASSFP","dupeLocation"
+"T-580","6175 Greenbrier Rd, Madison, Alabama, 35756","","","1,357,500","2000","","distribution","target"," 35756","35756","US",35756,"Madison","Alabama","AL","Madison",34.643,-86.8168,35756,"Limestone County","AL",1083,"H1",FALSE
+"T-580","6175 Greenbrier Rd, Madison, Alabama, 35756","","","1,357,500","2000","","distribution","target"," 35756","35756","US",35756,"Madison","Alabama","AL","Madison",34.643,-86.8168,35756,"Madison County","AL",1089,"H1",TRUE
+"T-588","25 N 75th Ave, Phoenix, Arizona, 85043","","","1,530,700","June
+              2002","","distribution","target"," 85043","85043","US",85043,"Phoenix","Arizona","AZ","Maricopa",33.4491,-112.1972,85043,"Maricopa County","AZ",4013,"H1",FALSE
+"T-0553","14750 Miller Avenue, Fontana, California, 92336","","","1,423,000","July
+              1987","Phase 1 constructed to 672,000 SF and Phase 2 expansion completed in 1988","distribution","target"," 92336","92336","US",92336,"Fontana","California","CA","San Bernardino",34.1173,-117.4378,92336,"San Bernardino County","CA",6071,"H1",FALSE
+"T-0555","2050 East Beamer Street, Woodland, California, 957776","","","1,862,000","1988","Originally constructed to 750,000 SF; Expanded to 1.5 M sq ft. in 2000; and expanded again by 362,000 SF","distribution","target"," 957776","95776","US",95776,"Woodland","California","CA","Yolo",38.6808,-121.7411,95776,"Yolo County","CA",6113,"H1",FALSE
+"T-0593","3880 Zachary Ave, Shafter, California, 93263","","","2,100,000","Mar 
+              2003","Originally built to 1.7 Million sq ft.; Expanded by 192,000 sq ft. and by 252,000 SF in 2010
+               Swisslog Split Case Automation","distribution","target"," 93263","93263","US",93263,"Shafter","California","CA","Kern",35.497,-119.2801,93263,"Kern County","CA",6029,"H1",FALSE
+"T-3806","3105 N Mango Ave, Rialto, California, 92377","","","1,850,000","July
+              2006","Originally built to 1.5 Million SF  and expanded in 2011
+               Swisslog Split Case Automation","distribution","target"," 92377","92377","US",92377,"Rialto","California","CA","San Bernardino",34.1561,-117.4042,92377,"San Bernardino County","CA",6071,"H1",FALSE
+"T-0554","34800 United Avenue, Pueblo, Colorado, 81001","","","1,500,000","Apr 
+              1986","Originally built to 1.1 M SF and later expanded","distribution","target"," 81001","81001","US",81001,"Pueblo","Colorado","CO","Pueblo",38.2879,-104.5848,81001,"Pueblo County","CO",8101,"H1",FALSE
+"T-0556","110 West Jordan Road, Tifton, Georgia, 31794","","","1,560,000","1989","","distribution","target"," 31794","31794","US",31794,"Tifton","Georgia","GA","Tift",31.4639,-83.4999,31794,"Berrien County","GA",13019,"H1",FALSE
+"T-0556","110 West Jordan Road, Tifton, Georgia, 31794","","","1,560,000","1989","","distribution","target"," 31794","31794","US",31794,"Tifton","Georgia","GA","Tift",31.4639,-83.4999,31794,"Tift County","GA",13277,"H1",TRUE
+"T-3808","1247 Sunbury Rd, Midway, Georgia, 31320","","","1,500,000","Aug 
+              2007","","distribution","target"," 31320","31320","US",31320,"Midway","Georgia","GA","Liberty",31.8018,-81.3909,31320,"Liberty County","GA",13179,"H1",FALSE
+"T-3809","1115 Macom Dr, DeKalb, Illinois, 60115","","","1,500,000","Aug 
+              2006","","distribution","target"," 60115","60115","US",60115,"Dekalb","Illinois","IL","DeKalb",41.9008,-88.7548,60115,"DeKalb County","IL",17037,"H1",FALSE
+"T-0559","7551 W Morris, Indianapolis, Indiana, 46231","","","1,470,000","est.
+              1998","Replaced Indianapolis a 414,000 SF distribution facility that was obtained through the acquisition of L.S. Ayres & Company","distribution","target"," 46231","46231","US",46231,"Indianapolis","Indiana","IN","Marion",39.7038,-86.3029,46231,"Hendricks County","IN",18063,"H1",FALSE
+"T-0559","7551 W Morris, Indianapolis, Indiana, 46231","","","1,470,000","est.
+              1998","Replaced Indianapolis a 414,000 SF distribution facility that was obtained through the acquisition of L.S. Ayres & Company","distribution","target"," 46231","46231","US",46231,"Indianapolis","Indiana","IN","Marion",39.7038,-86.3029,46231,"Marion County","IN",18097,"H6",TRUE
+"T-0590","2200 Viking Rd, Cedar Falls, Iowa, 50613","","","1,350,000","Feb 
+              2003","Swisslog Split Case Automation","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Black Hawk County","IA",19013,"H1",FALSE
+"T-0590","2200 Viking Rd, Cedar Falls, Iowa, 50613","","","1,350,000","Feb 
+              2003","Swisslog Split Case Automation","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Bremer County","IA",19017,"H1",TRUE
+"T-0590","2200 Viking Rd, Cedar Falls, Iowa, 50613","","","1,350,000","Feb 
+              2003","Swisslog Split Case Automation","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Butler County","IA",19023,"H1",TRUE
+"T-0590","2200 Viking Rd, Cedar Falls, Iowa, 50613","","","1,350,000","Feb 
+              2003","Swisslog Split Case Automation","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Grundy County","IA",19075,"H1",TRUE
+"T-3803","1100 SW 57th St, Topeka, Kansas, 66609","","","1,350,000","June
+              2004","","distribution","target"," 66609","66609","US",66609,"Topeka","Kansas","KS","Shawnee",38.9919,-95.6681,66609,"Shawnee County","KS",20177,"H1",FALSE
+"T-0587","12735 E L Ave, Galesburg, Michigan, 49053","","","1,357,400","Mar 
+              2002","","distribution","target"," 49053","49053","US",49053,"Galesburg","Michigan","MI","Kalamazoo",42.2948,-85.4237,49053,"Kalamazoo County","MI",26077,"H1",FALSE
+"T-0551","7120 Highway 65 N. E., Fridley, Minnesota, 55432","","","1,156,000","1969","Target’s 1st distribution center was originally built to 460,000 SF and was later expanded in 2000","distribution","target"," 55432","55432","US",55432,"Minneapolis","Minnesota","MN","Anoka",45.095,-93.2396,55432,"Anoka County","MN",27003,"H1",FALSE
+"T-0551","7120 Highway 65 N. E., Fridley, Minnesota, 55432","","","1,156,000","1969","Target’s 1st distribution center was originally built to 460,000 SF and was later expanded in 2000","distribution","target"," 55432","55432","US",55432,"Minneapolis","Minnesota","MN","Anoka",45.095,-93.2396,55432,"Ramsey County","MN",27123,"H1",TRUE
+"T-0579","129 North Road, Wilton, New York, 12831","","","1,500,000","Feb
+              1998","Originally built to 1,3 Million SF and later expanded","distribution","target"," 12831","12831","US",12831,"Gansevoort","New York","NY","Saratoga",43.1803,-73.7053,12831,"Saratoga County","NY",36091,"H1",FALSE
+"T-3802","1800 State Highway 5S, Amsterdam, New York, 12010","","","1,476,500","March 
+              2005","Target purchased the 1.0 Million SF unfinished distribution center from K-Mart and later expanded it by in 2011
+               Swisslog Split Case Automation","distribution","target"," 12010","12010","US",12010,"Amsterdam","New York","NY","Montgomery",42.9387,-74.1882,12010,"Fulton County","NY",36035,"H1",FALSE
+"T-3802","1800 State Highway 5S, Amsterdam, New York, 12010","","","1,476,500","March 
+              2005","Target purchased the 1.0 Million SF unfinished distribution center from K-Mart and later expanded it by in 2011
+               Swisslog Split Case Automation","distribution","target"," 12010","12010","US",12010,"Amsterdam","New York","NY","Montgomery",42.9387,-74.1882,12010,"Montgomery County","NY",36057,"H1",TRUE
+"T-3802","1800 State Highway 5S, Amsterdam, New York, 12010","","","1,476,500","March 
+              2005","Target purchased the 1.0 Million SF unfinished distribution center from K-Mart and later expanded it by in 2011
+               Swisslog Split Case Automation","distribution","target"," 12010","12010","US",12010,"Amsterdam","New York","NY","Montgomery",42.9387,-74.1882,12010,"Saratoga County","NY",36091,"H1",TRUE
+"T-3802","1800 State Highway 5S, Amsterdam, New York, 12010","","","1,476,500","March 
+              2005","Target purchased the 1.0 Million SF unfinished distribution center from K-Mart and later expanded it by in 2011
+               Swisslog Split Case Automation","distribution","target"," 12010","12010","US",12010,"Amsterdam","New York","NY","Montgomery",42.9387,-74.1882,12010,"Schenectady County","NY",36093,"H1",TRUE
+"T-3811","1800 Stover Ct, Newton, North Carolina, 28658","","","1,670,000","June
+              2009","Swisslog Split Case Automation","distribution","target"," 28658","28658","US",28658,"Newton","North Carolina","NC","Catawba",35.6498,-81.2425,28658,"Catawba County","NC",37035,"H1",FALSE
+"T-3804","1 Walker Way, West Jefferson, Ohio, 43162","","","1,500,000","June
+              2004","Originally built to 1.35 Million SF and later expanded","distribution","target"," 43162","43162","US",43162,"West Jefferson","Ohio","OH","Madison",39.9424,-83.2853,43162,"Madison County","OH",39097,"H1",FALSE
+"T-0558","875 Beta Drive SW, Albany, Oregon, 97321","","","1,470,000","Nov 
+              1997","Originally built to 630,000 SF and later expanded in 2001","distribution","target"," 97321","97321","US",97321,"Albany","Oregon","OR","Linn",44.652,-123.1333,97321,"Benton County","OR",41003,"H1",FALSE
+"T-0558","875 Beta Drive SW, Albany, Oregon, 97321","","","1,470,000","Nov 
+              1997","Originally built to 630,000 SF and later expanded in 2001","distribution","target"," 97321","97321","US",97321,"Albany","Oregon","OR","Linn",44.652,-123.1333,97321,"Linn County","OR",41043,"H1",TRUE
+"T-0589","3001 Archer Dr, Chambersburg, Pennsylvania, 17202","","","1,350,000","Feb 
+              2003","","distribution","target"," 17202","17202","US",17202,"Chambersburg","Pennsylvania","PA","Franklin",39.9072,-77.636,17202,"Franklin County","PA",42055,"H1",FALSE
+"T-0594","22 Corporate Dr , Lugoff, South Carolina, 29078","","","1,802,000","June
+              2003","Originally built to 1.35 Million SF and later expanded in 2010","distribution","target"," 29078","29078","US",29078,"Lugoff","South Carolina","SC","Kershaw",34.2296,-80.7147,29078,"Kershaw County","SC",45055,"H1",FALSE
+"T-0594","22 Corporate Dr , Lugoff, South Carolina, 29078","","","1,802,000","June
+              2003","Originally built to 1.35 Million SF and later expanded in 2010","distribution","target"," 29078","29078","US",29078,"Lugoff","South Carolina","SC","Kershaw",34.2296,-80.7147,29078,"Richland County","SC",45079,"H1",TRUE
+"T-0578","13786 Harvey Road, Tyler, Texas, 75706","","","1,752,500","1997","Originally built to 1.63 Million SF  and later expanded","distribution","target"," 75706","75706","US",75706,"Tyler","Texas","TX","Smith",32.4441,-95.331,75706,"Smith County","TX",48423,"H1",FALSE
+"T-3801","4333 Power Way, Midlothian, Texas, 76065","","","1,350,000","June
+              2004","","distribution","target"," 76065","76065","US",76065,"Midlothian","Texas","TX","Ellis",32.4757,-96.9936,76065,"Dallas County","TX",48113,"H1",FALSE
+"T-3801","4333 Power Way, Midlothian, Texas, 76065","","","1,350,000","June
+              2004","","distribution","target"," 76065","76065","US",76065,"Midlothian","Texas","TX","Ellis",32.4757,-96.9936,76065,"Ellis County","TX",48139,"H1",TRUE
+"T-0560","345 Mount Vernon Road, Stuarts Draft, Virginia, 24477","","","1,650,000","Jan 
+              1997","","distribution","target"," 24477","24477","US",24477,"Stuarts Draft","Virginia","VA","Augusta",38.0144,-79.0298,24477,"Augusta County","VA",51015,"H1",FALSE
+"T-0557","1100 Valley Road, Oconomowoc, Wisconsin, 53066","","","1,500,000","Jul
+              1994","Originally built to 1.1 Million SF and later expanded in 2001","distribution","target"," 53066","53066","US",53066,"Oconomowoc","Wisconsin","WI","Waukesha",43.1095,-88.4862,53066,"Dodge County","WI",55027,"H1",FALSE
+"T-0557","1100 Valley Road, Oconomowoc, Wisconsin, 53066","","","1,500,000","Jul
+              1994","Originally built to 1.1 Million SF and later expanded in 2001","distribution","target"," 53066","53066","US",53066,"Oconomowoc","Wisconsin","WI","Waukesha",43.1095,-88.4862,53066,"Jefferson County","WI",55055,"H1",TRUE
+"T-0557","1100 Valley Road, Oconomowoc, Wisconsin, 53066","","","1,500,000","Jul
+              1994","Originally built to 1.1 Million SF and later expanded in 2001","distribution","target"," 53066","53066","US",53066,"Oconomowoc","Wisconsin","WI","Waukesha",43.1095,-88.4862,53066,"Washington County","WI",55131,"H1",TRUE
+"T-0557","1100 Valley Road, Oconomowoc, Wisconsin, 53066","","","1,500,000","Jul
+              1994","Originally built to 1.1 Million SF and later expanded in 2001","distribution","target"," 53066","53066","US",53066,"Oconomowoc","Wisconsin","WI","Waukesha",43.1095,-88.4862,53066,"Waukesha County","WI",55133,"H1",TRUE
+"T-3807","3110 Alder Ave , Rialto, California, 92336","","","1,530,000","July
+              2006","Positioned on a campus of 2 buildings","distribution","target"," 92336","92336","US",92336,"Fontana","California","CA","San Bernardino",34.1173,-117.4378,92336,"San Bernardino County","CA",6071,"H1",FALSE
+"T-3810","211 Little Hearst Pkwy, Savannah, Georgia, 31407","","","2,029,500","Dec
+              2006","","distribution","target"," 31407","31407","US",31407,"Port Wentworth","Georgia","GA","Chatham",32.1491,-81.1632,31407,"Chatham County","GA",13051,"H1",FALSE
+"T-3810","211 Little Hearst Pkwy, Savannah, Georgia, 31407","","","2,029,500","Dec
+              2006","","distribution","target"," 31407","31407","US",31407,"Port Wentworth","Georgia","GA","Chatham",32.1491,-81.1632,31407,"Effingham County","GA",13103,"H1",TRUE
+"T-3800","300 Manning Bridge Road, Suffolk, Virginia, 23434-8592","","","1,800,000","July
+              2003","Originally built to 1.5 Million SF and expanded by 300,000 SF in 2005","distribution","target"," 23434-8592","23434","US",23434,"Suffolk","Virginia","VA","City of Suffolk",36.7304,-76.5931,23434,"Suffolk city","VA",51800,"C7",FALSE
+"T-0600","3500 Marvin Road N.E., Lacey, Washington, 98516","","","2,000,000","Apr
+              2003","Originally built to 1.5 Million SF and later expanded by 500,000 SF","distribution","target"," 98516","98516","US",98516,"Olympia","Washington","WA","Thurston",47.1126,-122.7794,98516,"Thurston County","WA",53067,"H1",FALSE
+"T-3899","2245 W Renaissance Rd, Rialto, California, 92376","","","500,000","June
+              2014","WITRON automated Perishables/Frozen facility close to the Rialto Airport","distribution","target"," 92376","92376","US",92376,"Rialto","California","CA","San Bernardino",34.1132,-117.3771,92376,"San Bernardino County","CA",6071,"H1",FALSE
+"T-3892","3049 North US 441, Lake City, Florida, 32055","","","430,000","Aug
+              2008","1st Food DC. Equipped with ASRS  and Swisslog CaddyPick. Originally operated by Supervalu and transitioned to Target in 2011","distribution","target"," 32055","32055","US",32055,"Lake City","Florida","FL","Columbia",30.2702,-82.6254,32055,"Columbia County","FL",12023,"H1",FALSE
+"T-3880","42 Commerce Parkway, West Jefferson, Ohio, 43162","","","438,000","June
+              2014","WITRON automated Perishables/Frozen distribution center to Serves about 350 Target stores in 10 states","distribution","target"," 43162","43162","US",43162,"West Jefferson","Ohio","OH","Madison",39.9424,-83.2853,43162,"Madison County","OH",39097,"H1",FALSE
+"T-3895","2115 Technology Parkway, Cedar Falls, Iowa, 50613","","","430,000","Aug
+              2009","2nd Food DC. Equipped with ASRS  and Swisslog CaddyPick.","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Black Hawk County","IA",19013,"H1",FALSE
+"T-3895","2115 Technology Parkway, Cedar Falls, Iowa, 50613","","","430,000","Aug
+              2009","2nd Food DC. Equipped with ASRS  and Swisslog CaddyPick.","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Bremer County","IA",19017,"H1",TRUE
+"T-3895","2115 Technology Parkway, Cedar Falls, Iowa, 50613","","","430,000","Aug
+              2009","2nd Food DC. Equipped with ASRS  and Swisslog CaddyPick.","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Butler County","IA",19023,"H1",TRUE
+"T-3895","2115 Technology Parkway, Cedar Falls, Iowa, 50613","","","430,000","Aug
+              2009","2nd Food DC. Equipped with ASRS  and Swisslog CaddyPick.","distribution","target"," 50613","50613","US",50613,"Cedar Falls","Iowa","IA","Black Hawk",42.5241,-92.4497,50613,"Grundy County","IA",19075,"H1",TRUE
+"T-3897","3952 Corbin Road, Denton, Texas, 76207","","","360,000","Mar
+              2013","9-story WITRON automated refrigerated facility shipping 30 Million Cases/Year","distribution","target"," 76207","76207","US",76207,"Denton","Texas","TX","Denton",33.2285,-97.1813,76207,"Denton County","TX",48121,"H1",FALSE
+"T-9478","8940 E. Rita Park Drive, Tucson, Arizona, 85747-9108","","","975,000","Aug
+              2008","First E-commerce facility built from the ground up.","distribution","target"," 85747-9108","85747","US",85747,"Tucson","Arizona","AZ","Pima",32.0984,-110.7272,85747,"Pima County","AZ",4019,"H1",FALSE
+"T-9479","1505 South Haven, Ontario, California, 91761","","","725,000","Feb
+              2009","Originally this building was Target’s first import warehouse launched in 2001 that had a 2nd 500,000 SF building beside it  
+               Converted to an E-commerce fulfillment center in 2009","distribution","target"," 91761","91761","US",91761,"Ontario","California","CA","San Bernardino",34.0316,-117.6187,91761,"San Bernardino County","CA",6071,"H1",FALSE
+"T-9407","9501 Hudson Rd, Woodbury, Minnesota, 55125","","","325,000","est. Jan
+              1988","Originally this building was an older GM warehouse
+               A Target.direct facility in Eagan, MN was consolidated into this building in July 2002
+               Converted to E-commerce fulfillment center in 2009","distribution","target"," 55125","55125","US",55125,"Saint Paul","Minnesota","MN","Washington",44.9197,-92.9439,55125,"Ramsey County","MN",27123,"H1",FALSE
+"T-9407","9501 Hudson Rd, Woodbury, Minnesota, 55125","","","325,000","est. Jan
+              1988","Originally this building was an older GM warehouse
+               A Target.direct facility in Eagan, MN was consolidated into this building in July 2002
+               Converted to E-commerce fulfillment center in 2009","distribution","target"," 55125","55125","US",55125,"Saint Paul","Minnesota","MN","Washington",44.9197,-92.9439,55125,"Washington County","MN",27163,"H1",TRUE
+"T-3844","980 High Street, Perth Amboy, New Jersey, 08861","","","718,500","Q2
+              2018","E-commerce fulfillment center for New York City and surrounding areas.","distribution","target"," 08861","08861","US",8861,"Perth Amboy","New Jersey","NJ","Middlesex",40.5176,-74.2754,8861,"Middlesex County","NJ",34023,"H1",FALSE
+"TBD","325 S. Salem Church Road, York, Pennsylvania, 17408","","","785,400","Q3
+              2015","Operated by 3PL Genco
+               250 people
+               Facility was originally 624,800 SF and was expanded by 160,600 sq. ft. prior to go-live.","distribution","target"," 17408","17408","US",17408,"York","Pennsylvania","PA","York",39.9492,-76.8018,17408,"York County","PA",42133,"H1",FALSE
+"","225 Transfer Drive, Indianapolis, Indiana, 46214","","","190,000","est. 1992","Outsourced to 3PL Genco Distribution System, Inc","distribution","target"," 46214","46214","US",46214,"Indianapolis","Indiana","IN","Marion",39.7924,-86.2875,46214,"Marion County","IN",18097,"H6",FALSE
