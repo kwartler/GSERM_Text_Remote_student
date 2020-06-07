@@ -9,7 +9,8 @@
 
 |Day   | URL   |Topic   |
 |---|---|---|
-| Monday  | [vid1](https://www.youtube.com/watch?v=INR9GYTSUHw) |  Setup, R Basics, String Manipulation, Text Organizations |
+| Monday  | [vid1](https://www.youtube.com/watch?v=INR9GYTSUHw)
+[vid2](https://www.youtube.com/watch?v=NsaFGzyiPpY&feature=youtu.be)|  Setup, R Basics, String Manipulation, Text Organizations |
 | Tuesday  | TBD   | Text Mining Visuals   |
 | Wednesday  | TBD   | Sentiment Analysis, Unsupervised Methods   |
 | Thursday  | TBD   | Supervised Methods  |
