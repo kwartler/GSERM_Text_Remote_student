@@ -10,7 +10,7 @@
 |Day   | URL   |Topic   |
 |---|---|---|
 | Monday  | [vid1](https://www.youtube.com/watch?v=INR9GYTSUHw) [vid2](https://www.youtube.com/watch?v=NsaFGzyiPpY&feature=youtu.be) [vid3](https://youtu.be/VVV2oREz3IE)|  Setup, R Basics, String Manipulation, Text Organizations |
-| Tuesday  | [vid1](https://www.loom.com/share/cd2854b0007c4d8bb5e799a35309227b) [vid2](https://www.loom.com/share/41049b2d4a694d899972c98bb0c30989) [vid3](https://www.loom.com/share/cb67587d589946668de6867dff3e32a6)   | Text Mining Visuals   |
+| Tuesday  | [vid1](https://www.loom.com/share/cd2854b0007c4d8bb5e799a35309227b) [vid2](https://www.loom.com/share/41049b2d4a694d899972c98bb0c30989) [vid3](https://www.loom.com/share/cb67587d589946668de6867dff3e32a6) | Text Mining Visuals   |
 | Wednesday  | TBD   | Sentiment Analysis, Unsupervised Methods   |
 | Thursday  | TBD   | Supervised Methods  |
 | Friday  | TBD   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
