@@ -18,9 +18,6 @@ library(ggplot2)
 library(ggthemes)
 library(pbapply)
 
-# Get Files
-tmp <- list.files(pattern= '.json')
-
 # Multiple files as a list
 tmp <- list.files(pattern = '*.csv')
 allSongs <- pblapply(tmp, read.csv)
