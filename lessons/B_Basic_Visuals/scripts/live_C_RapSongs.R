@@ -10,7 +10,7 @@
 setwd("~/Documents/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs")
 
 # Options
-options(stringsAsFactors = F)
+options(stringsAsFactors = F, scipen = 999)
 
 # libs
 library(stringr)
@@ -18,8 +18,7 @@ library(ggplot2)
 library(ggthemes)
 library(pbapply)
 
-# Options
-options(scipen = 999)
+# Get Files
 tmp <- list.files(pattern= '.json')
 
 # Multiple files as a list
