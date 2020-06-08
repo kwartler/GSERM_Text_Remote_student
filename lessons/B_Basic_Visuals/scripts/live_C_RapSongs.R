@@ -9,6 +9,9 @@
 # Set wd
 setwd("~/Documents/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs")
 
+# Options
+options(stringsAsFactors = F)
+
 # libs
 library(stringr)
 library(ggplot2)
@@ -35,7 +38,7 @@ songLength <- round((songLength /1000)/60, 2)
 singleWords <- list()
 for(i in 1:length(allSongs)){
   print(names(allSongs)[i])
-  x <- strsplit(allSongs[[i]][,3]," ")
+  x <- strsplit(as.character(allSongs[[i]][,3])," ")
   singleWords[[i]] <- data.frame(song = names(allSongs)[i],
                                  totalWords  = length(unlist(x)))
 }
@@ -71,7 +74,7 @@ countWords <- function(docDF, termVector){
     x <- sum(str_count(x, termVector[i]))
     response[[i]] <- x 
   }
-
+  
   response <- do.call(cbind, response)
   colnames(response) <- termVector
   return(response)
@@ -84,20 +87,24 @@ countWords(allSongs[[1]],c('trippin', 'money'))
 wordCheck <- lapply(allSongs, countWords, c('trippin', 'money'))
 wordCheck <- data.frame(song = names(wordCheck),
                         do.call(rbind, wordCheck))
+wordCheck
 
 # Calculate the cumulative sum
 wordCountList <- list()
 for(i in 1:length(allSongs)){
   x <- allSongs[[i]]
   wordCount <- str_count(x$text, "\\S+") #count the space character
-  y <- data.frame(x$endTime, cumulativeWords = cumsum(wordCount),
-                  song = names(allSongs[i]))
+  y <- data.frame(x$endTime, 
+                  cumulativeWords = cumsum(wordCount),
+                  song = names(allSongs[i]),
+                  lyric = x$text)
   names(y)[1] <- 'endTime'
   wordCountList[[i]] <- y
 }
 
 # Get the timeline of a song
 songTimeline  <- do.call(rbind, wordCountList)
+head(songTimeline)
 
 # Get the last values for each song (total words but now with time)
 totalWords <- lapply(wordCountList, tail,1)
@@ -142,6 +149,7 @@ ggplot(songTimeline,  aes(x     = endTime,
 # Poached: https://stackoverflow.com/questions/40284801/how-to-calculate-the-slopes-of-different-linear-regression-lines-on-multiple-plo
 library(tidyr)
 library(purrr)
+library(dplyr)
 doModel  <- function(dat) {lm(cumulativeWords ~ endTime + 0, dat)}
 getSlope <- function(mod) {coef(mod)[2]}
 models <- songTimeline %>% 
