@@ -11,7 +11,7 @@
 |---|---|---|
 | Monday  | [vid1](https://www.youtube.com/watch?v=INR9GYTSUHw) [vid2](https://www.youtube.com/watch?v=NsaFGzyiPpY&feature=youtu.be) [vid3](https://youtu.be/VVV2oREz3IE)|  Setup, R Basics, String Manipulation, Text Organizations |
 | Tuesday  | [vid1](https://www.loom.com/share/cd2854b0007c4d8bb5e799a35309227b) [vid2](https://www.loom.com/share/41049b2d4a694d899972c98bb0c30989) [vid3](https://www.loom.com/share/cb67587d589946668de6867dff3e32a6) | Text Mining Visuals   |
-| Wednesday  | [vid1](https://www.loom.com/share/ba7b4b37174845bd9d8ab337679bf8ae) [vid2](https://www.loom.com/share/3da4a384043b4d238e667ff8ae041dda)  [vid3](https://www.loom.com/share/515e473fb1db47a889533e279fa089be) [vid4](https://www.loom.com/share/5ad4dbc235d94bc990bfdb7095b23b36)| Sentiment Analysis, Unsupervised Methods   |
+| Wednesday  | [vid1](https://www.loom.com/share/ba7b4b37174845bd9d8ab337679bf8ae) [vid2](https://www.loom.com/share/3da4a384043b4d238e667ff8ae041dda)  [vid3](https://www.loom.com/share/515e473fb1db47a889533e279fa089be) [vid4](https://www.loom.com/share/5ad4dbc235d94bc990bfdb7095b23b36) [vid5](https://www.loom.com/share/206e30d96573446596a3f7715575bfbf)| Sentiment Analysis, Unsupervised Methods   |
 | Thursday  | TBD   | Supervised Methods  |
 | Friday  | TBD   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
 
