@@ -7,7 +7,7 @@
 #'
 
 # Wd
-setwd("~/Documents/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data")
+setwd("/cloud/project/lessons/C_Sentiment_Unsupervised/data")
 
 # Libs
 library(tm)
@@ -18,7 +18,7 @@ library(qdap)
 library(radarchart)
 
 # Bring in our supporting functions
-source('~/Documents/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('/cloud/project/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Create custom stop words
 stops <- c(stopwords('english'))
@@ -102,14 +102,13 @@ nrcLex <- do.call(rbind, nrcLex)
 head(nrcLex)
 
 # Perform Inner Join
-nrcSent <- inner_join(tidyCorp,nrc, by=c('term' = 'term'))
+nrcSent <- inner_join(tidyCorp,nrcLex, by=c('term' = 'term'))
 nrcSent
 
 # Quick Analysis
 table(nrcSent$sentiment)
 emos <- data.frame(table(nrcSent$sentiment))
-emos <- emos[-c(6,7),] #drop pos/neg
+#emos <- emos[-c(6,7),] #drop columns
 chartJSRadar(scores = emos, labelSize = 10, showLegend = F)
 
 # End
-
