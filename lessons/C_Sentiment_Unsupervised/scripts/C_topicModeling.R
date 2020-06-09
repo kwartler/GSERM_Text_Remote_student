@@ -10,6 +10,10 @@
 # Wd
 setwd("~/Documents/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data")
 
+# Install Issue on cloud...
+# install.packages("httpuv", dependencies = TRUE, INSTALL_opts = '--no-lock')
+# install.packages('echarts4r')
+
 # Libs
 library(echarts4r)
 library(tm)
