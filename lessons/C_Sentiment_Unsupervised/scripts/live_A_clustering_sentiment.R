@@ -20,6 +20,8 @@ library(cluster)
 library(wordcloud)
 library(lexicon)
 library(plyr)
+library(dplyr)
+library(radarchart)
 
 # Custom Functions
 source('~/Documents/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
@@ -82,8 +84,8 @@ tidyCorp
 
 # Cut documents into the 5 sources
 # Teachable moment: "one less than the state of nature"
-seq(1,600,100) 
-length(seq(1,600,100))
+seq(0,500,100) 
+length(seq(0,500,100))
 # How do you represent 6 states of nature in a factor?  with 5 levels!
 #With cut(), 6 breaks delimit 5 levels which will require only 5 labels!
 tidyCorp <- as.data.frame(tidyCorp)
@@ -102,15 +104,12 @@ head(nrcSent)
 
 # Adjust for quick analysis
 table(nrcSent$sentiment, nrcSent$source)
-emos <- data.frame(table(nrcSent$sentiment,nrcSent$source))
+emos <- as.data.frame.matrix(table(nrcSent$sentiment,nrcSent$source))
 emos
 
-# Aggeegate by emotion to make a radarChart
-radarDF <- with(emos, tapply(Freq, list(Var1, Var2), FUN=sum))
-radarDF <- data.frame(labs  = rownames(radarDF),
-                      radarDF)
-radarDF
-chartJSRadar(scores = radarDF, 
+# Make a radarChart
+chartJSRadar(scores = emos, 
+             labs = rownames(emos),
              labelSize = 10, showLegend = F)
 
 # End
