@@ -10,7 +10,7 @@
 setwd("/cloud/project/StudentLessonPlans/E_Friday/data")
 
 # Inputs
-fileFolder <- '/cloud/project/StudentLessonPlans/E_Friday/data/clinton'
+fileFolder <- '/cloud/project/lessons/E_SyntacticParsing_DataSources/data/clinton'
 testing    <- T
 
 # Libs
@@ -111,6 +111,8 @@ for (i in 1:length(allEmails)){
   allData[[i]] <- docPOS
 }
 
+# Examine a portion
+head(allData[[1]][10:20,])
 
 # Now to subset for each document
 people       <- pblapply(allData, subset, grepl("*person", features))
