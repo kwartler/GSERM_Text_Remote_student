@@ -70,12 +70,16 @@ validation <- docVectors[-idx,]
 # Fit the model
 fit <- glm(yTarget~., training, family = 'binomial')
 
+# Predict in sample
+predTraining <- predict(fit, training, type = 'response')
+head(predTraining)
+
 # Predict on validation
-predictions <- predict(fit, validation, type = 'response')
-head(predictions)
+predValidation <- predict(fit, validation, type = 'response')
+head(predValidation)
 
 # Simple Accuracy Eval
-yHat <- ifelse(predictions >= 0.5,1,0)
+yHat <- ifelse(predValidation >= 0.5,1,0)
 (confMat <- table(yHat, validation$yTarget))
 summary(conf_mat(confMat))
 autoplot(conf_mat(confMat))
