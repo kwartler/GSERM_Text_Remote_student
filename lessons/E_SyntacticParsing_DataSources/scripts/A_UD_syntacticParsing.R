@@ -14,7 +14,7 @@ library(qdap)
 library(reshape2)
 
 # Wd
-setwd("~/Documents/GSERM_Text_Remote_student/lessons/E_SyntacticParsing_DataSources/data")
+setwd("/cloud/project/lessons/E_SyntacticParsing_DataSources/data")
 
 # Inputs
 datPth          <- 'tweets_jairbolsonaro.csv'
@@ -26,15 +26,15 @@ options(stringsAsFactors = FALSE)
 Sys.setlocale('LC_ALL','C')
 
 # Bring in the cleaning function
-source('~/Documents/GSERM_Text_Remote_student/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('/cloud/project/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Get a language model to the server
 ?udpipe_download_model
 udModel <- udpipe_download_model(language = "portuguese-gsd", 
-                                 model_dir = '~/Documents/GSERM_Text_Remote_student/lessons/E_SyntacticParsing_DataSources/data')
+                                 model_dir = '/cloud/project/lessons')
 
 # Load into the space
-udModel <- udpipe_load_model('~/Documents/GSERM_Text_Remote_student/lessons/E_SyntacticParsing_DataSources/data')
+udModel <- udpipe_load_model('/cloud/project/lessons/portuguese-gsd-ud-2.4-190531.udpipe')
 
 # Bring in data & organize
 textData <- read.csv(datPth)
@@ -63,7 +63,7 @@ text <- data.frame(doc_id = 1:nrow(textData),
 
 # Reduce for testing
 nDocs            <- ifelse(testing ==T, 2, nrow(text))
-  
+
 syntatcicParsing <- udpipe(text[1:nDocs,], object = udModel)
 head(syntatcicParsing)
 tail(syntatcicParsing)
