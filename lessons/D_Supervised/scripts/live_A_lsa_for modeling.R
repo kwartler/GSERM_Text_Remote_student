@@ -28,7 +28,7 @@ stops <- c(stopwords('SMART'), 'car', 'electronic')
 
 # Bring in some data
 carCorp <- VCorpus(DirSource("~/Documents/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data/AutoAndElectronics/rec.autos"))
-electronicCorp <- VCorpus(DirSource("~/Documents/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data/AutoAndElectronics/rec.autos"))
+electronicCorp <- VCorpus(DirSource("~/Documents/GSERM_Text_Remote_student/lessons/C_Sentiment_Unsupervised/data/AutoAndElectronics/sci.electronics"))
 
 # Clean each one
 carCorp        <- cleanCorpus(carCorp, stops)
