@@ -13,7 +13,7 @@
 | Tuesday  | [vid1](https://www.loom.com/share/cd2854b0007c4d8bb5e799a35309227b) [vid2](https://www.loom.com/share/41049b2d4a694d899972c98bb0c30989) [vid3](https://www.loom.com/share/cb67587d589946668de6867dff3e32a6) | Text Mining Visuals   |
 | Wednesday  | [vid1](https://www.loom.com/share/ba7b4b37174845bd9d8ab337679bf8ae) [vid2](https://www.loom.com/share/3da4a384043b4d238e667ff8ae041dda)  [vid3](https://www.loom.com/share/515e473fb1db47a889533e279fa089be) [vid4](https://www.loom.com/share/5ad4dbc235d94bc990bfdb7095b23b36) [vid5](https://www.loom.com/share/206e30d96573446596a3f7715575bfbf)| Sentiment Analysis, Unsupervised Methods   |
 | Thursday  | [vid1](https://www.loom.com/share/e588883cab3b4acdac7ae01b9b23abe2) [vid2](https://www.loom.com/share/73afc3f8d48c4e3795d69b4e3217faf4) [vid3](https://www.loom.com/share/19f769d41d294caba7092caa7c3e1420) [vid4- Please click "download" to watch it due to technical difficulties.](https://www.loom.com/share/519c8204db4f48a0897116569803f13a) | Supervised Methods  |
-| Friday  | TBD   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
+| Friday  | [vid1](https://www.loom.com/share/7681ddfe78fe4e58a529286d1e878211) [vid2](https://www.loom.com/share/e9ad16389d8749a8a3c7ccc28c95cecb)   | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
 
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
