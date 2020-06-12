@@ -39,6 +39,8 @@ part  <- lapply(cast2, tail, 1) %>% unlist() %>% trimws()
 actor <- lapply(cast2, head, 1) %>% unlist() %>% trimws()
 
 df <- data.frame(part, actor)
+df #still more issues!
+df  <- df[-1,]
 df
 
 # What is the URL for the movie poster?
