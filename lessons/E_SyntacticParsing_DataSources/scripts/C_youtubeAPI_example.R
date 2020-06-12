@@ -19,6 +19,7 @@ setwd("~/Documents/Harvard_DataMining_Business_Admin/lessons/K_DataSources_Repor
 
 # Youtube URL
 #https://www.youtube.com/watch?v=Q-wRhzWaCac
+#https://www.youtube.com/watch?v=kZPeD2miyF8
 youtubeCaption <- 'https://www.youtube.com/api/timedtext?v=kZPeD2miyF8&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&hl=en&ip=0.0.0.0&ipbits=0&expire=1591982347&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps&signature=4040E24E02F55BF2491656F77F01CB49BE571762.134D11A72BCD4AB37A46F7CFC454D7FC93A7EE13&key=yt8&kind=asr&lang=en&fmt=json3&xorb=2&xobt=3&xovt=3'
 
 # Go get the data
