@@ -19,7 +19,7 @@ setwd("~/Documents/Harvard_DataMining_Business_Admin/lessons/K_DataSources_Repor
 
 # Youtube URL
 #https://www.youtube.com/watch?v=Q-wRhzWaCac
-youtubeCaption <- 'https://www.youtube.com/api/timedtext?v=Q-wRhzWaCac&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&xorp=true&hl=en&ip=0.0.0.0&ipbits=0&expire=1587461894&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps%2Cxorp&signature=CBE6A1E602FB195E8FE01907300FD0E67FAD0C28.724526CDA869448B9E7FB0DFDF69382ADA1AB904&key=yt8&kind=asr&lang=en&fmt=json3&xorb=2&xobt=3&xovt=3'
+youtubeCaption <- 'https://www.youtube.com/api/timedtext?v=kZPeD2miyF8&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&hl=en&ip=0.0.0.0&ipbits=0&expire=1591982347&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps&signature=4040E24E02F55BF2491656F77F01CB49BE571762.134D11A72BCD4AB37A46F7CFC454D7FC93A7EE13&key=yt8&kind=asr&lang=en&fmt=json3&xorb=2&xobt=3&xovt=3'
 
 # Go get the data
 dat <- fromJSON(youtubeCaption)
@@ -44,7 +44,7 @@ rawTxt <- rawTxt[nchar(rawTxt) != "0"]
 head(rawTxt,10)
 
 # Get rid of extra spacing on certain words
-rawTxt <- str_squish(rawTxt)
+rawTxt <- stringr::str_squish(rawTxt)
 head(rawTxt,10)
 rawTxt <- paste(rawTxt, collapse = ' ')
 
@@ -61,7 +61,7 @@ for (i in 1:length(timedTxt)){
 }
 
 # Drop line breaks embedded within text and standalone rows
-text<-str_replace_all(allTxt, "[\n]" , "")
+text<-stringr::str_replace_all(allTxt, "[\n]" , "")
 
 # Organize
 textDF <- data.frame(startTime = dat$events$tStartMs/1000,
@@ -69,7 +69,7 @@ textDF <- data.frame(startTime = dat$events$tStartMs/1000,
                      text = text)
 
 # 
-textDF<-  textDF[nchar(textDF$text) !=0,]
+textDF<-  textDF[nchar(as.character(textDF$text)) !=0,]
 
 # Examine to make sure format is ok
 head(textDF, 10)
