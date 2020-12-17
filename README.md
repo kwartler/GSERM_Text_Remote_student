@@ -24,14 +24,10 @@ Each day's lesson is contained in the **lesson** folder.  Each individual lesson
 * `HW` - the daily homework will be in this folder.
 
 ## Environment Setup
-* The University is providing virtual machines for participants to run R code and perform analysis.  They will be providing that information to you and supporting any technical issues.
 
-* As a backup, a student *could* use  [https://rstudio.cloud](https://rstudio.cloud). 
-  * If using this method, please follow the setup instructions [here](https://github.com/kwartler/GSERM_TextMining/blob/master/Rstudio_Cloud_Instructions.docx) to set up a cloud space for programming & connecting to git.  Since you are just setting up, you will need to click "download" from the link to get the word doc directly.  After that files can be delivered through a `git pull`.
+* You *can* install R, R-Studio & Git locally on your laptop.  
 
-* You *can* install R, R-Studio & Git locally on your laptop but any system issues will be yours to resolve.  
-
-- If you encounter any errors during set up don't worry!  Please request technical help from Prof K and the university.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.  **the `qdap` library does not work on mac, due to a java path issue.  Therefore, mac users are encouraged to use the univeristy provided virtual machine or rstudio.cloud**
+- If you encounter any errors during set up don't worry!  Please request technical help from Prof K and the university.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.  **the `qdap` library does not work on mac, due to a java path issue which is not always possible to fix.  Therefore, mac users are encouraged to use rstudio.cloud or simply comment out code lines requiring these function.  This will be noted in class if needed, so no worries.**
 
 ## R Packages
 
