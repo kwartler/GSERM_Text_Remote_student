@@ -3,6 +3,8 @@
 **Each day, please perform a `git pull` to get the most up to date files and lessons.**
 
 ## Welcome Video
+
+* This class session, we will **not** have virtual machines set up so please forgive my mistake in the video.  You will have to install R, R-studio and git locally on your laptop.
 [Welcome to the class video.](https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X)
 
 ## Recorded Lesson URLS

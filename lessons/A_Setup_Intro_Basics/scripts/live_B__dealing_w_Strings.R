@@ -7,7 +7,7 @@
 #'
 
 # Set the working directory
-setwd("/cloud/project/lessons/A_Monday/data/tweets")
+setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
 
 # Libs
 library(stringi)

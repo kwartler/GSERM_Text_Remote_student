@@ -7,7 +7,7 @@
 #' 
 
 # Wd
-setwd("/cloud/project/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
 
 # library
 library(stringi)

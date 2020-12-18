@@ -10,6 +10,7 @@
 #library(qdap) #pg 45 in book has another option but crashes cloud instance
 library(spelling)
 library(hunspell)
+library(mgsub)
 
 # List available dictionaries; not great
 # https://cloud.r-project.org/web/packages/hunspell/vignettes/intro.html#hunspell_dictionaries
@@ -60,5 +61,10 @@ for( i in 1:length(allTxt)){
 }
 
 correctedTxt
+
+# Or with mgsub
+mgsub(allTxt, 
+      correctionLexicon$wrong, 
+      correctionLexicon$right)
 
 # End
