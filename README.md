@@ -9,13 +9,16 @@
 
 ## Recorded Lesson URLS
 
-|Day   | URL   |Topic   |
-|---|---|---|
-| Monday  | |  Setup, R Basics, String Manipulation, Text Organizations |
-| Tuesday  | | Text Mining Visuals   |
-| Wednesday  | | Sentiment Analysis, Unsupervised Methods   |
-| Thursday  |  | Supervised Methods  |
-| Friday  |  | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
+|Day        | URL   |Topic   |
+|-----------|-------|---|
+| Monday    | * [Presentation*: Setup R, R-Studio & git](https://github.com/kwartler/GSERM_Text_Remote_student/blob/master/lessons/A_Setup_Intro_Basics/Day1_setup.pptx?raw=true) <br>* [Vid2**](https://www.amazon.com/clouddrive/share/tuyqzJfhcRlrji3kMrKDFxrTx30FNjmMVfOhzcN4lTO)<br> * [Vid3**](https://www.amazon.com/clouddrive/share/xj3My1KxChRCxVBu5P0HPL7FQO2357AKM9SNfKTtIsB)      |  Setup, R Basics, String Manipulation, Text Organizations |
+| Tuesday   | [Vid1](https://www.loom.com/share/cd2854b0007c4d8bb5e799a35309227b?sharedAppSource=shared_library) [Vid2](https://www.loom.com/share/41049b2d4a694d899972c98bb0c30989?sharedAppSource=shared_library) [Vid3](https://www.loom.com/share/cb67587d589946668de6867dff3e32a6?sharedAppSource=shared_library)| Text Mining Visuals   |
+| Wednesday | [Vid1](https://www.loom.com/share/ba7b4b37174845bd9d8ab337679bf8ae?sharedAppSource=shared_library) [Vid2](https://www.loom.com/share/3da4a384043b4d238e667ff8ae041dda?sharedAppSource=shared_library) [vid3](https://www.loom.com/share/515e473fb1db47a889533e279fa089be?sharedAppSource=shared_library) [Vid4](https://www.loom.com/share/5ad4dbc235d94bc990bfdb7095b23b36?sharedAppSource=shared_library) [Vid5](https://www.loom.com/share/206e30d96573446596a3f7715575bfbf?sharedAppSource=shared_library)       | Sentiment Analysis, Unsupervised Methods   |
+| Thursday  |[Vid1](https://www.loom.com/share/e588883cab3b4acdac7ae01b9b23abe2?sharedAppSource=shared_library) [Vid2](https://www.loom.com/share/73afc3f8d48c4e3795d69b4e3217faf4?sharedAppSource=shared_library)  [Vid3](https://www.loom.com/share/19f769d41d294caba7092caa7c3e1420?sharedAppSource=shared_library) [Vid4](https://www.loom.com/share/d777935817ad4b7ba3880611b6e35425)    | Supervised Methods  |
+| Friday    | [Vid1](https://www.loom.com/share/7681ddfe78fe4e58a529286d1e878211?sharedAppSource=shared_library) [Vid2](https://www.loom.com/share/e9ad16389d8749a8a3c7ccc28c95cecb?sharedAppSource=shared_library) [Vid3](https://www.loom.com/share/87f954a992e54f8ea46a99fcf52800ad?sharedAppSource=shared_library)       | Ethics, Data Sources, Syntactic Parsing & Lemmatization  |
+
+*video1 has been replaced with a presentation for r, r-studio & git setup.  
+**due to an editing error, you will have to download these instead of streaming
 
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
@@ -39,7 +42,8 @@ install.packages('pacman')
 pacman::p_load(ggplot2, ggthemes, stringi, hunspell, qdap, spelling, tm, dendextend,
 wordcloud, RColorBrewer, wordcloud2, pbapply, plotrix, ggalt, tidytext, textdata, dplyr, radarchart, 
 lda, LDAvis, treemap, clue, cluster, fst, skmeans, kmed, text2vec, caret, glmnet, pROC, textcat, 
-xml2, stringr, rvest, twitteR, jsonlite, docxtractr, readxl, udpipe, reshape2, openNLP, vtreat, e1071)
+xml2, stringr, rvest, twitteR, jsonlite, docxtractr, readxl, udpipe, reshape2, openNLP, vtreat, e1071,
+lexicon, echarts4r, lsa, yardstick, textreadr, pdftools, tesseract, mgsub, mapproj, ggwordcloud)
 
 # Additionally we will need this package from a different repo
 install.packages('openNLPmodels.en', repo= 'http://datacube.wu.ac.at/')
@@ -51,6 +55,16 @@ install.packages('tm')
 install.packages(c("lda", "LDAvis", "treemap"))
 
 ```
+
+## Homework & Case Due dates
+
+|HW |Covered in Class|Due  |
+|---|----------------|-----|
+|HW1|Monday Jan4     |Jan5 |
+|HW2|Tuesday  Jan5   |Jan6 |
+|HW3|Wednesday Jan6  |Jan6 |
+|HW4|Thursday Jan7   |Jan8 |
+|Case|NA             |Jan15|
 
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
