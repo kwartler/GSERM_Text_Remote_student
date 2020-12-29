@@ -4,11 +4,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: May 23-2020
+#' Date: Dec 28 2020
 #'
 
 ## Set the working directory
-setwd("~/Documents/GSERM_Text_Remote_admin/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
 
 # Libs
 library(maps)

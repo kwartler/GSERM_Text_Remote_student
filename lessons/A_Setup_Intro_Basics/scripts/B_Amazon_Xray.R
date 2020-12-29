@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: May 23-2020
+#' Date: Dec 28 2020
 #'
 
 ### 1. Set working directory to your specific movie
-setwd("~/Documents/GSERM_Text_Remote_admin/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/A_Setup_Intro_Basics/data")
 
 # Turn off scientific notation
 options(scipen = 999)

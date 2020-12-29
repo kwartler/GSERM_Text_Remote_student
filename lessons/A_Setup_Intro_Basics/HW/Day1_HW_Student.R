@@ -1,7 +1,7 @@
 #' Title: GSERM REMOTE DAY 1 HW
 #' Purpose: 20pts...where you paying attention?
 #' NAME: 
-#' Date: May 23-2020
+#' Date: Dec 29 2020
 
 #### 1PT
 # set your working directory
@@ -11,6 +11,7 @@ setwd("______")
 library(______)
 library(______)
 library(______)
+library(stringi)
 
 # load the homework data in an object called `text`
 text <- read.csv("_____________")
@@ -32,26 +33,26 @@ ___(___)
 # Answer:
 
 #### 1PT
-# Find out what rows have "Kobe" in the $text column in an object called idx
+# Find out what rows have "virus" in the $text column in an object called idx
 ___ <- grep('____', ____$____, ignore.case = T)
 
 # What is the length of idx?
 ______(___)
 # Answer: 
 
-# What is the tenth text mentioning "Kobe"
+# What is the tenth text mentioning "virus"
 # hint: someObject$someColumnName[idx[someNumber]]
 ____$____[___[__]]
 
 #### 1PT
-# Use grepl to make idx again for 'Kobe'
+# Use grepl to make idx again for 'virus'
 ___ <- ____('____', ______, ignore.case = T)
 
 # Now what is the length of idx?
 
 # Answer: 
 
-# As a percent, how many tweets mention "Kobe" among all tweets?
+# As a percent, how many tweets mention "virus" among all tweets?
 ___(___)/nrow(____)
 # Answer: 
 
@@ -71,58 +72,55 @@ basicSubs <- function(x){
 # apply the function to JUST THE TEXT COLUMN to  a new object txt
 ___ <- basicSubs(_________)
 
-
 #### 3 PTs
-# Use table() to count the number of teams in the original data set in teamFreq HINT: Refer to the "team" column in the "text" object
-_______ <- ____(______$_______)
+# Use sum with stri_count on the newt txt object
+# with "Trump", "Biden" and in the last one check for virus OR vaccine
+trump  <- ___(stri_count(___, fixed ='_____'))
+biden  <- sum(__________(___, fixed ='_____'))
+vterms <- ___(__________(___, regex = '_____|_______'))
 
-# Convert it to a dataframe by ovrewriting the object
-teamFreq <- as.data.frame(______)
+# Organize term objects into a data frame
+termFreq <- data.frame(terms = c('trump','biden','vterms'),
+                       freq  = c(_____,_____, ______))
 
 # Examine
-teamFreq
-
-# Order the DF by frequency
-teamFreq <- teamFreq[order(________$Freq),]
-
-# Examine & note the new order
-teamFreq
+termFreq
 
 # Plot it with ggplot2 by filling in the correct data, adding a layers "theme_gdocs() + theme(legend.position = "none")"
-ggplot(________, aes(x = reorder(Var1, Freq), y = Freq,fill=Freq)) + 
+ggplot(________, aes(x = reorder(terms, freq), y = freq,fill=freq)) + 
   geom_bar(stat = "identity") + coord_flip() + 
-  __________() + _____(_________ = "none")
+  ___________() + _____(_______________ = "____")
 
 #### 8 PTs
 # Create some stopwords using the 'SMART' lexicon and add 'rofl'
-stops <- c(stopwords('_____'), '_____')
+stops <- c(stopwords('_____'), '____')
 
 # Create a Clean Corpus Function
 # add into the function removePunctuation
-# add into the function stripWhitespace
 # add into the function removeNumbers
+# add into the function stripWhitespace
 cleanCorpus<-function(corpus, customStopwords){
   corpus <- tm_map(corpus, content_transformer(qdapRegex::rm_url)) 
-  corpus <- tm_map(corpus, _______________)
-  corpus <- tm_map(corpus, _______________)
-  corpus <- tm_map(corpus, _______________)
   corpus <- tm_map(corpus, content_transformer(tolower))
   corpus <- tm_map(corpus, removeWords, customStopwords)
+  corpus <- tm_map(corpus, _________________)
+  corpus <- tm_map(corpus, _____________)
+  corpus <- tm_map(corpus, _______________)
   return(corpus)
 }
 
-# Apply the VCorpus Function to a VectorSource
-# Hint: only pass in the vector NOT the entire dataframe
-cleanTxt <- VCorpus(VectorSource(____$____))
+# Apply the VCorpus Function to a VectorSource of the original text object
+# Hint: only pass in the vector NOT the entire dataframe using a $
+cleanTxt <- _______(____________(_________))
 
 # Clean the Corpus with your function, this will take a few seconds
-cleanTxt <- cleanCorpus(______, ____)
+cleanTxt <- ___________(cleanTxt, stops)
 
 # Construct a DTM
-cleanDTM  <- _________________(cleanTxt)
+cleanDTM  <- __________________(cleanTxt)
 
 # Switch this to a simple matrix 
-cleanMat <- as.matrix(______)
+cleanMat <- _________(cleanDTM)
 
 # What are the dimensions of this matrix
 ___(cleanMat)

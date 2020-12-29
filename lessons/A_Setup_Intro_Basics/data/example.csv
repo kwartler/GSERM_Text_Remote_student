@@ -1,0 +1,4 @@
+"numberVec","trueFalseVec","stringsVec","NewCol"
+1,TRUE,"She is a friend.",10
+2,TRUE,"she is a coworker",9
+3,FALSE,"people",8

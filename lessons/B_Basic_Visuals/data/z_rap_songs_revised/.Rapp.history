@@ -1,0 +1,603 @@
+# libs#
+library(ggplot2)#
+library(tm)#
+library(dplyr)#
+#
+# Set wd#
+setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")#
+#
+# Options & Functions#
+options(stringsAsFactors = FALSE)#
+Sys.setlocale('LC_ALL','C')#
+#
+tryTolower <- function(x){#
+  y = NA#
+  try_error = tryCatch(tolower(x), error = function(e) e)#
+  if (!inherits(try_error, 'error'))#
+    y = tolower(x)#
+  return(y)#
+}#
+#
+cleanCorpus<-function(corpus, customStopwords){#
+  corpus <- tm_map(corpus, content_transformer(qdapRegex::rm_url))#
+  #corpus <- tm_map(corpus, content_transformer(replace_contraction)) #
+  corpus <- tm_map(corpus, removeNumbers)#
+  corpus <- tm_map(corpus, removePunctuation)#
+  corpus <- tm_map(corpus, stripWhitespace)#
+  corpus <- tm_map(corpus, content_transformer(tryTolower))#
+  corpus <- tm_map(corpus, removeWords, customStopwords)#
+  return(corpus)#
+}#
+#
+# Create custom stop words#
+stops <- c(stopwords('english'), 'carrefour', 'tesco')#
+#
+# Bring in the two corpora; works with no meta data#
+retailers <- Corpus(DirSource("polarizedCloud/"))#
+#
+# Get word counts#
+# mind the order is the same as is list.files('~/Documents/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/polarizedCloud')#
+carreCount <- length(unlist(strsplit(content(retailers[[1]]), " ")))#
+tescoCount <- length(unlist(strsplit(content(retailers[[2]]), " ")))#
+#
+# Clean & TDM#
+cleanRetail <- cleanCorpus(retailers, stops)#
+#
+cleanRetail <-TermDocumentMatrix(cleanRetail)#
+#
+# Create data frame from TDM#
+retailDF <- as.data.frame(as.matrix(cleanRetail))#
+head(retailDF)#
+#
+# subset and calc diff#
+retailDF      <- subset(retailDF, retailDF[,1]>0 & retailDF[,2]>0)#
+retailDF$diff <- retailDF[,1]-retailDF[,2]#
+#
+# Subset the data into three categories#
+# Words used mode by Carrefour#
+carrefourDF <- subset(retailDF, diff > 0) # Said more  by carre#
+tescoDF     <- subset(retailDF, diff < 0) # Said more by tesco#
+equalDF     <- subset(retailDF, diff==0)  # Said equally#
+#
+# This function takes some number as spaces and returns a vertor#
+# of continuous values for even spacing centered around zero#
+optimalSpacing <- function(spaces) {#
+  if(spaces>1) {#
+    spacing<-1/spaces#
+    if(spaces%%2 > 0) {#
+      lim<-spacing*floor(spaces/2)#
+      return(seq(-lim,lim,spacing))#
+    }#
+    else {#
+      lim<-spacing*(spaces-1)#
+      return(seq(-lim,lim,spacing*2))#
+    }#
+  }#
+  else {#
+    return(0)#
+  }#
+}#
+#
+# Example#
+optimalSpacing(10)#
+#
+# This gets applied to the table of differences#
+table(carrefourDF$diff)#
+#
+# Get spacing for each frequency type#
+carrSpacing <- sapply(table(carrefourDF$diff), #
+                      function(x) optimalSpacing(x))#
+#
+# Examine so its clear#
+table(carrefourDF$diff)#
+carrSpacing[[1]]  # Diff of 1 appears 49 times, we need 49 values centered at 0#
+#
+# Now apply to other DFs#
+tessSpacing  <-sapply(table(tescoDF$diff), #
+                      function(x) optimalSpacing(x))#
+equalSpacing <-sapply(table(equalDF$diff), #
+                      function(x) optimalSpacing(x))#
+#
+# Add spacing to data frames#
+#
+obama.optim<-rep(0,nrow(carrefourDF))#
+for(n in names(carrSpacing)) {#
+  obama.optim[which(carrefourDF$diff==as.numeric(n))]<-carrSpacing[[n]]#
+}#
+obama.df<-transform(carrefourDF, Spacing=obama.optim)#
+#
+palin.optim<-rep(0,nrow(tescoDF))#
+for(n in names(tessSpacing)) {#
+  palin.optim[which(tescoDF$diff==as.numeric(n))]<-tessSpacing[[n]]#
+}#
+palin.df<-transform(tescoDF, Spacing=palin.optim)#
+#
+equalDF$Spacing<-as.vector(equalSpacing)#
+#
+### Step 3: Create visualization#
+topNum <- 20#
+obama.df <- head(obama.df[order(obama.df$diff, decreasing = T),],topNum)#
+palin.df <- head(palin.df[order(palin.df$diff, decreasing = T),],topNum)#
+equalDF <- head(equalDF[order(equalDF$diff, decreasing = T),],topNum)#
+tucson.cloud <- ggplot(obama.df, aes(x=diff, y=Spacing))+#
+  geom_text(aes(size=obama.df[,1], #
+                label=row.names(obama.df), colour=diff),#
+            hjust = "inward", vjust = "inward")+#
+  geom_text(data=palin.df, #
+            aes(x=diff, y=Spacing, label=row.names(palin.df), #
+                size=palin.df[,1], color=diff),#
+            hjust = "inward", vjust = "inward")+#
+  geom_text(data=equalDF, aes(x=diff, y=Spacing, label=row.names(equalDF), size=equalDF[,1], color=diff))+#
+  scale_size(range=c(3,11), name="Word Frequency")+scale_colour_gradient(low="darkred", high="darkblue", guide="none")+#
+  scale_x_continuous(breaks=c(min(palin.df$diff),0,max(obama.df$diff)),labels=c("Said More by Palin","Said Equally","Said More by Obama"))+#
+  scale_y_continuous(breaks=c(0),labels=c(""))+xlab("")+ylab("")+theme_bw()#+#
+  #theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank(), title=element_text("Word Cloud 2.0, Tucson Shooting Speeches (Obama vs. Palin)"))#
+#ggsave(plot=tucson.cloud,filename="tucson_cloud.png",width=13,height=7)#
+#
+# End
+tucson.cloud
+# Set the working directory#
+setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")#
+#
+# Libs#
+library(tm)#
+library(fst)#
+library(echarts4r)#
+library(ggwordcloud)#
+#
+# Options & Functions#
+options(stringsAsFactors = FALSE)#
+Sys.setlocale('LC_ALL','C')#
+#
+tryTolower <- function(x){#
+  y = NA#
+  try_error = tryCatch(tolower(x), error = function(e) e)#
+  if (!inherits(try_error, 'error'))#
+    y = tolower(x)#
+  return(y)#
+}#
+#
+cleanCorpus<-function(corpus, customStopwords){#
+  corpus <- tm_map(corpus, content_transformer(tryTolower))#
+  corpus <- tm_map(corpus, content_transformer(qdapRegex::rm_url))#
+  corpus <- tm_map(corpus, removeWords, customStopwords)#
+  corpus <- tm_map(corpus, removeNumbers)#
+  corpus <- tm_map(corpus, removePunctuation)#
+  corpus <- tm_map(corpus, stripWhitespace)#
+  return(corpus)#
+}#
+#
+# Create custom stop words#
+stops <- c(stopwords('SMART'), 'dell', 'laptop', 'issue')#
+#
+# Data; limited to 1000 posts for speed#
+text <- read_fst('2020-12-18_dellForum_k1_k5540.fst', from = 1, to = 1000)$post#
+#
+# Quick remove html#
+text <- gsub("\u00A0", "", text)#
+#
+# Make a volatile corpus#
+txtCorpus <- VCorpus(VectorSource(text))#
+#
+# Preprocess the corpus#
+txtCorpus <- cleanCorpus(txtCorpus, stops)#
+saveRDS(txtCorpus, 'txtCorpus.rds')#
+#
+# Make TDM & convert it to matrix#
+txtTDM  <- TermDocumentMatrix(txtCorpus)#
+txtTDM <- as.matrix(txtTDM)#
+#
+# See a token#
+txtTDM[(2015):(2018),117:118]#
+#
+# Get Row Sums & organize#
+txtTDMv   <- sort(rowSums(txtTDM), decreasing = TRUE)#
+txtDF     <- data.frame(word = names(txtTDMv), freq = txtTDMv)#
+txtDF    <- txtDF[1:100,]#
+#
+# Echarts4R D3 Viz#
+txtDF %>% #
+  e_color_range(freq, color, colors = c("#59c4e6", "#edafda")) %>% #
+  e_charts() %>% #
+  e_cloud(word = word, #
+          freq = freq, #
+          color = color,#
+          rotationRange = c(0, 0),#
+          sizeRange = c(8, 100)) %>% #
+  e_title("Dell Laptop Forum") %>%#
+  e_tooltip()#
+#
+txtDF %>% #
+  e_color_range(freq, color, colors = c("#59c4e6", "#edafda")) %>% #
+  e_charts() %>% #
+  e_cloud(word = word, #
+          freq = freq, #
+          color = color,#
+          rotationRange = c(0, 0),#
+          sizeRange = c(8, 100)) %>% #
+  e_title("Dell Laptop Forum") %>%#
+  e_tooltip() %>% e_theme("dark")#
+#
+# ggplot interface; proportionality is diminshed to fit#
+ggplot(txtDF, aes(label = word, size = freq)) +#
+  geom_text_wordcloud() +#
+  theme_minimal()#
+#
+# ggplot interface; proportionality kept but words that dont fit are piled into the center#
+ggplot(txtDF, aes(label = word, size = freq)) +#
+  geom_text_wordcloud() +#
+  scale_size_area(max_size = 20) +#
+  theme_minimal()#
+#
+# keep proportionality but drop the non fitting words; with a warning#
+ggplot(txtDF, aes(label = word, size = freq)) +#
+  geom_text_wordcloud_area(rm_outside = TRUE)  +#
+  scale_size_area(max_size = 20) +#
+  theme_minimal()#
+#
+# Add some color; More options and code: https://cran.r-project.org/web/packages/ggwordcloud/vignettes/ggwordcloud.html#
+ggplot(txtDF, aes(label = word, #
+                  size = freq,#
+                  color = factor(sample.int(10, nrow(txtDF), replace = TRUE)))) +#
+  geom_text_wordcloud_area(rm_outside = TRUE) +#
+  scale_size_area(max_size = 24) +#
+  theme_minimal()
+# Set wd#
+setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs")#
+# Options#
+options(stringsAsFactors = F, scipen = 999)#
+#
+# libs#
+library(stringr)#
+library(ggplot2)#
+library(ggthemes)#
+library(pbapply)#
+#
+# Multiple files as a list#
+tmp <- list.files(pattern = '*.csv')#
+allSongs <- pblapply(tmp, read.csv)#
+names(allSongs) <- gsub('csv','', tmp)#
+#
+# Basic Exploration#
+allSongs$BEST.ON.EARTH..Bonus...Explicit..by.Russ.feat..BIA.#
+#
+## Length of each song#
+songLength <- sapply(allSongs, function(x){ max(x[,1])}) #
+songLength <- round((songLength /1000)/60, 2)#
+#
+## Avg words in song#
+singleWords <- list()#
+for(i in 1:length(allSongs)){#
+  print(names(allSongs)[i])#
+  x <- strsplit(as.character(allSongs[[i]][,3])," ")#
+  singleWords[[i]] <- data.frame(song = names(allSongs)[i],#
+                                 totalWords  = length(unlist(x)))#
+}#
+singleWords <- do.call(rbind, singleWords)#
+head(singleWords)#
+#
+# Find the specific locations of terms#
+sapply(allSongs, function(x) grep('trippin', x[,3], ignore.case = T))#
+sapply(allSongs, function(x) grep('money', x[,3], ignore.case = T))#
+allSongs$Lucky.You..feat..Joyner.Lucas...Explicit..by.Eminem.feat..Joyner.Lucas.[44,3]#
+#
+# Find the presence of terms#
+sapply(allSongs, function(x) grepl('money', x[,3], ignore.case = T))#
+#
+# Or find them at the song level#
+searchTerm <- 'money'#
+termExist <- list()#
+for(i in 1:length(allSongs)){#
+  x <- paste(allSongs[[i]][,3], collapse = ' ')#
+  x <- grepl(searchTerm, x, ignore.case = T)#
+  termDF <- data.frame(song  = names(allSongs[i]),#
+                       exist = x)#
+  names(termDF)[2] <- paste0(searchTerm, '_exists')#
+  termExist[[i]] <- termDF#
+}#
+termExist <- do.call(rbind, termExist)#
+#
+## stricount words#
+countWords <- function(docDF, termVector){#
+  response <- list()#
+  for(i in 1:length(termVector)){#
+    x <- tolower(docDF[,3])#
+    x <- sum(str_count(x, termVector[i]))#
+    response[[i]] <- x #
+  }#
+  response <- do.call(cbind, response)#
+  colnames(response) <- termVector#
+  return(response)#
+}#
+#
+# Apply to one song as example#
+countWords(allSongs[[1]],c('trippin', 'money'))#
+#
+# Apply to list#
+wordCheck <- lapply(allSongs, countWords, c('trippin', 'money'))#
+wordCheck <- data.frame(song = names(wordCheck),#
+                        do.call(rbind, wordCheck))#
+wordCheck#
+#
+# Calculate the cumulative sum#
+wordCountList <- list()#
+for(i in 1:length(allSongs)){#
+  x <- allSongs[[i]]#
+  wordCount <- str_count(x$text, "\\S+") #count the space character#
+  y <- data.frame(x$endTime, #
+                  cumulativeWords = cumsum(wordCount),#
+                  song = names(allSongs[i]),#
+                  lyric = x$text)#
+  names(y)[1] <- 'endTime'#
+  wordCountList[[i]] <- y#
+}#
+#
+# Get the timeline of a song#
+songTimeline  <- do.call(rbind, wordCountList)#
+head(songTimeline)#
+#
+# Get the last values for each song (total words but now with time)#
+totalWords <- lapply(wordCountList, tail,1)#
+totalWords <- do.call(rbind, totalWords)#
+#
+# Make a plot of the speech cadence#
+ggplot(songTimeline,  aes(x     = endTime,#
+                          y     = cumulativeWords, #
+                          group = song, #
+                          color = song)) +#
+  geom_line(alpha = 0.25) +#
+  geom_point(data =totalWords, aes(x     = endTime,#
+                                   y     = cumulativeWords, #
+                                   group = song, #
+                                   color = song), size = 2) +#
+  geom_text(data  = totalWords, aes(label=song),#
+            hjust = "inward", vjust = "inward", size = 3) + #
+  theme_tufte() + theme(legend.position = "none")#
+#
+# Two clusters, let's see Em vs all#
+songTimeline$eminem <- grepl('eminem', #
+                             songTimeline$song, #
+                             ignore.case = T)#
+totalWords$eminem <- grepl('eminem', #
+                           totalWords$song, #
+                           ignore.case = T)#
+ggplot(songTimeline,  aes(x     = endTime,#
+                          y     = cumulativeWords, #
+                          group = song, #
+                          color = eminem)) +#
+  geom_line(alpha = 0.25) +#
+  geom_point(data =totalWords, aes(x     = endTime,#
+                                   y     = cumulativeWords, #
+                                   group = song, #
+                                   color = eminem), size = 2) +#
+  geom_text(data  = totalWords, aes(label=song),#
+            hjust = "inward", vjust = "inward", size = 3) + #
+  theme_few() + theme(legend.position = "none")#
+# Fit a linear model to each song and extract the x-coefficient#
+# Poached: https://stackoverflow.com/questions/40284801/how-to-calculate-the-slopes-of-different-linear-regression-lines-on-multiple-plo#
+library(tidyr)#
+library(purrr)#
+library(dplyr)#
+doModel  <- function(dat) {lm(cumulativeWords ~ endTime + 0, dat)}#
+getSlope <- function(mod) {coef(mod)[2]}#
+models <- songTimeline %>% #
+  group_by(song) %>%#
+  nest %>% #tidyr::Nest Repeated Values In A List-Variable.#
+  mutate(model = map(data, doModel)) %>% #
+  mutate(slope = map(model, coefficients)) #
+#
+# Avg words per second by song#
+wordsSecs <- data.frame(song = names(allSongs),#
+                        wordsPerSecond= (unlist(models$slope) * 1000)) #adj for milliseconds#
+wordsSecs[order(wordsSecs$wordsPerSecond, decreasing = T),]#
+#
+# End
+# Set wd#
+setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs")#
+# Options#
+options(stringsAsFactors = F, scipen = 999)#
+#
+# libs#
+library(stringr)#
+library(ggplot2)#
+library(ggthemes)#
+library(pbapply)#
+#
+# Multiple files as a list#
+tmp <- list.files(pattern = '*.csv')#
+allSongs <- pblapply(tmp, read.csv)#
+names(allSongs) <- gsub('csv','', tmp)
+# Basic Exploration#
+allSongs$BEST.ON.EARTH..Bonus...Explicit..by.Russ.feat..BIA.#
+#
+## Length of each song#
+songLength <- sapply(allSongs, function(x){ max(x[,1])}) #
+songLength <- round((songLength /1000)/60, 2)#
+#
+## Avg words in song#
+singleWords <- list()#
+for(i in 1:length(allSongs)){#
+  print(names(allSongs)[i])#
+  x <- strsplit(as.character(allSongs[[i]][,3])," ")#
+  singleWords[[i]] <- data.frame(song = names(allSongs)[i],#
+                                 totalWords  = length(unlist(x)))#
+}#
+singleWords <- do.call(rbind, singleWords)#
+head(singleWords)
+# Find the specific locations of terms#
+sapply(allSongs, function(x) grep('trippin', x[,3], ignore.case = T))#
+sapply(allSongs, function(x) grep('money', x[,3], ignore.case = T))#
+allSongs$Lucky.You..feat..Joyner.Lucas...Explicit..by.Eminem.feat..Joyner.Lucas.[44,3]#
+#
+# Find the presence of terms#
+sapply(allSongs, function(x) grepl('money', x[,3], ignore.case = T))#
+#
+# Or find them at the song level#
+searchTerm <- 'money'#
+termExist <- list()#
+for(i in 1:length(allSongs)){#
+  x <- paste(allSongs[[i]][,3], collapse = ' ')#
+  x <- grepl(searchTerm, x, ignore.case = T)#
+  termDF <- data.frame(song  = names(allSongs[i]),#
+                       exist = x)#
+  names(termDF)[2] <- paste0(searchTerm, '_exists')#
+  termExist[[i]] <- termDF#
+}#
+termExist <- do.call(rbind, termExist)
+## stricount words#
+countWords <- function(docDF, termVector){#
+  response <- list()#
+  for(i in 1:length(termVector)){#
+    x <- tolower(docDF[,3])#
+    x <- sum(str_count(x, termVector[i]))#
+    response[[i]] <- x #
+  }#
+  response <- do.call(cbind, response)#
+  colnames(response) <- termVector#
+  return(response)#
+}#
+#
+# Apply to one song as example#
+countWords(allSongs[[1]],c('trippin', 'money'))#
+#
+# Apply to list#
+wordCheck <- lapply(allSongs, countWords, c('trippin', 'money'))#
+wordCheck <- data.frame(song = names(wordCheck),#
+                        do.call(rbind, wordCheck))#
+wordCheck
+# Calculate the cumulative sum#
+wordCountList <- list()#
+for(i in 1:length(allSongs)){#
+  x <- allSongs[[i]]#
+  wordCount <- str_count(x$text, "\\S+") #count the space character#
+  y <- data.frame(x$endTime, #
+                  cumulativeWords = cumsum(wordCount),#
+                  song = names(allSongs[i]),#
+                  lyric = x$text)#
+  names(y)[1] <- 'endTime'#
+  wordCountList[[i]] <- y#
+}
+# Get the timeline of a song#
+songTimeline  <- do.call(rbind, wordCountList)#
+head(songTimeline)
+# Get the last values for each song (total words but now with time)#
+totalWords <- lapply(wordCountList, tail,1)#
+totalWords <- do.call(rbind, totalWords)
+# Make a plot of the speech cadence#
+ggplot(songTimeline,  aes(x     = endTime,#
+                          y     = cumulativeWords, #
+                          group = song, #
+                          color = song)) +#
+  geom_line(alpha = 0.25) +#
+  geom_point(data =totalWords, aes(x     = endTime,#
+                                   y     = cumulativeWords, #
+                                   group = song, #
+                                   color = song), size = 2) +#
+  geom_text(data  = totalWords, aes(label=song),#
+            hjust = "inward", vjust = "inward", size = 3) + #
+  theme_tufte() + theme(legend.position = "none")
+# Two clusters, let's see Em vs all#
+songTimeline$eminem <- grepl('eminem', #
+                             songTimeline$song, #
+                             ignore.case = T)#
+totalWords$eminem <- grepl('eminem', #
+                           totalWords$song, #
+                           ignore.case = T)#
+ggplot(songTimeline,  aes(x     = endTime,#
+                          y     = cumulativeWords, #
+                          group = song, #
+                          color = eminem)) +#
+  geom_line(alpha = 0.25) +#
+  geom_point(data =totalWords, aes(x     = endTime,#
+                                   y     = cumulativeWords, #
+                                   group = song, #
+                                   color = eminem), size = 2) +#
+  geom_text(data  = totalWords, aes(label=song),#
+            hjust = "inward", vjust = "inward", size = 3) + #
+  theme_few() + theme(legend.position = "none")
+# Fit a linear model to each song and extract the x-coefficient#
+# Poached: https://stackoverflow.com/questions/40284801/how-to-calculate-the-slopes-of-different-linear-regression-lines-on-multiple-plo#
+library(tidyr)#
+library(purrr)#
+library(dplyr)#
+doModel  <- function(dat) {lm(cumulativeWords ~ endTime + 0, dat)}#
+getSlope <- function(mod) {coef(mod)[2]}#
+models <- songTimeline %>% #
+  group_by(song) %>%#
+  nest %>% #tidyr::Nest Repeated Values In A List-Variable.#
+  mutate(model = map(data, doModel)) %>% #
+  mutate(slope = map(model, coefficients)) #
+#
+# Avg words per second by song#
+wordsSecs <- data.frame(song = names(allSongs),#
+                        wordsPerSecond= (unlist(models$slope) * 1000)) #adj for milliseconds#
+wordsSecs[order(wordsSecs$wordsPerSecond, decreasing = T),]#
+#
+# End
+setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs_revised")
+# Options - this is to turn off scientific notation#
+options(stringsAsFactors = F, scipen = 999)#
+#
+# libs - let's load out libraries!#
+library(stringr)#
+library(ggplot2)#
+library(ggthemes)#
+library(pbapply)
+# Multiple files as a list - instead of a single file, we create a list, think of this like a workbook in Excel with multiple worksheets.  In R these are "data frames"#
+tmp             <- list.files(pattern = '*.csv', full.names = T)#
+allSongs        <- pblapply(tmp, read.csv)#
+names(allSongs) <- gsub('csv','', tmp)
+# Basic Exploration - The revised version removes all lyrics but instead has a simple word count for each song and the cumulative sum of words spoken by millisecond. #
+head(allSongs[[1]])
+# Get the last values for each song (total words but now with time) - within the list, the "tail" function grabs the last row of each song.  Think of this as grabbing the last single row of each worksheet and capturing that informaiton in a separate worksheet.#
+totalWords <- lapply(allSongs, tail,1)#
+totalWords <- do.call(rbind, totalWords)#
+rownames(totalWords) <- NULL#
+head(totalWords)
+songTimeline  <- do.call(rbind, allSongs)
+ggplot(songTimeline,  aes(x     = endTime,#
+                          y     = cumulativeWords, #
+                          group = song, #
+                          color = song)) +#
+  geom_line(alpha = 0.25) +#
+  geom_point(data =totalWords, aes(x     = endTime,#
+                                   y     = cumulativeWords, #
+                                   group = song, #
+                                   color = song), size = 2) +#
+  geom_text(data  = totalWords, aes(label=song),#
+            hjust = "inward", vjust = "inward", size = 3) + #
+  theme_hc() + theme(legend.position = "none")
+# Two clusters, let's see Em vs all#
+songTimeline$eminem <- grepl('eminem', #
+                             songTimeline$song, #
+                             ignore.case = T)#
+totalWords$eminem <- grepl('eminem', #
+                           totalWords$song, #
+                           ignore.case = T)#
+ggplot(songTimeline,  aes(x     = endTime,#
+                          y     = cumulativeWords, #
+                          group = song, #
+                          color = eminem)) +#
+  geom_line(alpha = 0.25) +#
+  geom_point(data =totalWords, aes(x     = endTime,#
+                                   y     = cumulativeWords, #
+                                   group = song, #
+                                   color = eminem), size = 2) +#
+  geom_text(data  = totalWords, aes(label=song),#
+            hjust = "inward", vjust = "inward", size = 3) + #
+  theme_few() + theme(legend.position = "none")
+library(tidyr)#
+library(purrr)#
+library(dplyr)#
+doModel  <- function(dat) {lm(cumulativeWords ~ endTime + 0, dat)}#
+getSlope <- function(mod) {coef(mod)[2]}#
+models <- songTimeline %>% #
+  group_by(song) %>%#
+  nest %>% #tidyr::Nest Repeated Values In A List-Variable.#
+  mutate(model = map(data, doModel)) %>% #
+  mutate(slope = map(model, coefficients)) #
+#
+# Avg words per second by song#
+wordsSecs <- data.frame(song = names(allSongs),#
+                        wordsPerSecond= (unlist(models$slope) * 1000)) #adj for milliseconds#
+wordsSecs[order(wordsSecs$wordsPerSecond, decreasing = T),]
