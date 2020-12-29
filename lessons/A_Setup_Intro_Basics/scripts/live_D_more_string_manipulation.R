@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 7, 2020
+#' Date: Dec 28 2020
 #' 
 
 # Wd

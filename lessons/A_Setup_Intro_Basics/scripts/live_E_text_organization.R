@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: May 23-2020
+#' Date: Dec 28 2020
 #'
 
 # Set the working directory
