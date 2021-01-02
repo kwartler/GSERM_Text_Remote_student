@@ -171,30 +171,6 @@ tmap <- treemap(allTree,
                 title   = "Guardan Articles mentioning Pakistan",
                 palette = c("red","white","green"))
 
-# echart4R limited color scaling
-tmap$tm %>% 
-  e_charts() %>% 
-  e_treemap(parent = topic,
-            child  = length,
-            value  = vSize) %>%
-  e_color(c("red", "blue",
-            "#d3d3d3", '#bada55', 'pink')) %>%
-  e_title("Guardan Articles mentioning Pakistan")
-
-tmap$tm %>% 
-  e_charts() %>% 
-  e_treemap(topic,
-            length,
-            vSize) %>%
-  e_color(tmap$tm$color) %>%
-  e_title("Guardan Articles mentioning Pakistan")
-
-tmap$tm %>% 
-  e_charts() %>% 
-  e_treemap(topic,
-            length,
-            vSize) %>%
-  e_color(c(tmap$tm$color)) %>%
-  e_title("Guardan Articles mentioning Pakistan")
+tmap
 
 # End
