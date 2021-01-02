@@ -15,7 +15,6 @@ setwd('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment
 # install.packages('echarts4r')
 
 # Libs
-library(echarts4r)
 library(tm)
 library(qdap)
 library(pbapply)
