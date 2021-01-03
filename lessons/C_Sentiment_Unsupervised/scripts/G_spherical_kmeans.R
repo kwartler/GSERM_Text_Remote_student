@@ -46,19 +46,23 @@ txtSKMeans <- skmeans(txtMat, # data
                       m = 1, #"fuzziness of cluster" 1 = hard partition, >1 increases "softness"
                       control = list(nruns = 5, verbose = T))
 barplot(table(txtSKMeans$cluster), main = 'spherical k-means')
+dev.off()
 
 # Plot cluster to see separation
 plotcluster(cmdscale(dist(txtMat)),txtSKMeans$cluster)
+dev.off()
 
 # Silhouette plot
 sk <- silhouette(txtSKMeans)
 plot(sk, col=1:3, border=NA)
+dev.off()
 
 # ID protypical terms
 protoTypical           <- t(cl_prototypes(txtSKMeans))
 colnames(protoTypical) <- paste0('cluster_',1:ncol(protoTypical))
 head(protoTypical)
-comparison.cloud(protoTypical)
+comparison.cloud(protoTypical, scale = c(.5,3))
+dev.off()
 
 
 clusterWC <- list()
@@ -66,7 +70,7 @@ for (i in 1:ncol(protoTypical)){
   jsWC <- data.frame(term = rownames(protoTypical),
                      freq = protoTypical[,i])
   jsWC <- jsWC[order(jsWC$freq, decreasing = T),]
-  clusterWC[[i]] <- wordcloud2::wordcloud2(head(jsWC[1:200,]))
+  clusterWC[[i]] <- wordcloud2::wordcloud2(head(jsWC[1:500,]))
   print(paste('plotting',i))
 }
 
@@ -76,7 +80,7 @@ clusterWC[[3]]
 
 
 # Examine a portion of the most prototypical terms per cluster; usually presidents, geography & sometimes authors/playwrites
-nTerms <- 5
+nTerms <- 10
 (clustA <- sort(protoTypical[,1], decreasing = T)[1:nTerms])
 (clustB <- sort(protoTypical[,2], decreasing = T)[1:nTerms]) 
 (clustC <- sort(protoTypical[,3], decreasing = T)[1:nTerms]) 

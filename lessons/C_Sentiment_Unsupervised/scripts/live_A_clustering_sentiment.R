@@ -142,15 +142,16 @@ chartJSRadar(scores = oneEmo,
              
 # Intersect the Clusters and Sentiment; subset to one source
 oneSource <- subset(combinedData, combinedData$source== sourceID[2,1])
-oneSource <- aggregate(count~sentiment+clusterAssignment, x, sum)
+oneSource <- aggregate(count~sentiment+clusterAssignment, oneSource, sum)
 oneSource
 
 # Intersect the Clusters and Sentiment; plot the results, you could recode the topics 1-4 to the most frequent words like "trump" etc
+levelKey                    <- rownames(protoTypical)[apply(protoTypical,2,which.max)]
+names(levelKey)             <- c("1","2","3","4")
+oneSource$clusterAssignment <- recode(as.character(oneSource$clusterAssignment), !!!levelKey)
 ggplot(oneSource, aes(sentiment, as.factor(clusterAssignment), 
-              size = count, alpha = count)) +
+                      size = count, alpha = count)) +
   geom_point() +
   ggtitle("MSNBC", sub = "Emotion by Topic Cluster") + ylab("") +
   theme_tufte()
-
-
 # End
