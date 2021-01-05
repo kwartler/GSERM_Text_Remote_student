@@ -90,4 +90,5 @@ comparison.cloud(bothTDM,
 
 
 table(df$purpose, df$y)
+prop.table(table(df$purpose, df$y), 1)
 # End
