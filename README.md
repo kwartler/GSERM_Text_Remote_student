@@ -68,3 +68,11 @@ install.packages(c("lda", "LDAvis", "treemap"))
 
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
+
+### Recorded Live sessions *will be deleted Jan 29*
+
+* [Jan 4](https://harvard.zoom.us/rec/share/xNNEoerGOLphZXTsI7BbVhyv3e_SUMa1HOm2TLTsNx0R0-sOjMzk8b8MRrceMaW2.7YKo9NIEJG9mvft4)
+* [Jan 5](https://harvard.zoom.us/rec/share/RPYPnHtU89mnvLpYvoL3RHTKxC9LuXyixnB36OUY9rMbWxVVbq1DAnOPW-BUAh7H.fQWtQV1tytytDNNv)
+* [Jan 6]()
+* [Jan 7]()
+* [Jan 8]() 
