@@ -16,6 +16,9 @@ movieURL <- 'https://www.imdb.com/title/tt0058331'
 movie <- read_html(movieURL)
 movie
 
+# See all children nodes
+movie %>% html_nodes("*") %>% html_attr("class") %>% unique()
+
 # Numeric info
 rating <- movie %>% 
   html_nodes("strong span") %>%
