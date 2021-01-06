@@ -10,6 +10,8 @@ setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment
 
 # options
 options(scipen = 999, stringsAsFactors = F)
+Sys.setlocale("LC_CTYPE", "en_US.UTF-8") # this is unicode text
+
 
 # Libs
 library(skmeans)
@@ -57,7 +59,7 @@ dim(allInfoDTM)
 set.seed(1234)
 txtSKMeans <- skmeans(allInfoDTM, 
                       4, 
-                      m = 1, 
+                      m = 1, #1=hard partition
                       control = list(nruns = 5, verbose = T))
 
 # Examine Separation
@@ -71,7 +73,7 @@ colnames(protoTypical) <- paste0('cluster_',1:ncol(protoTypical))
 head(protoTypical)
 
 
-pdf(file = "/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data/news_cluster_topics.pdf", 
+pdf(file = "~/Desktop/GSERM_Text_Remote_student/lessons/C_Sentiment_Unsupervised/data/news_cluster_topics.pdf", 
     width  = 6, 
     height = 6) 
 comparison.cloud(protoTypical, title.size=1.1, scale=c(1,.5))
@@ -141,17 +143,17 @@ chartJSRadar(scores = oneEmo,
              labelSize = 10, showLegend = F)
              
 # Intersect the Clusters and Sentiment; subset to one source
-oneSource <- subset(combinedData, combinedData$source== sourceID[2,1])
+oneSource <- subset(combinedData, combinedData$source== sourceID[1,1])
 oneSource <- aggregate(count~sentiment+clusterAssignment, oneSource, sum)
 oneSource
 
-# Intersect the Clusters and Sentiment; plot the results, you could recode the topics 1-4 to the most frequent words like "trump" etc
+# Intersect the Clusters and Sentiment; plot the results, recoding the topics 1-4 to the most frequent words like "trump" etc
 levelKey                    <- rownames(protoTypical)[apply(protoTypical,2,which.max)]
 names(levelKey)             <- c("1","2","3","4")
 oneSource$clusterAssignment <- recode(as.character(oneSource$clusterAssignment), !!!levelKey)
 ggplot(oneSource, aes(sentiment, as.factor(clusterAssignment), 
                       size = count, alpha = count)) +
   geom_point() +
-  ggtitle("MSNBC", sub = "Emotion by Topic Cluster") + ylab("") +
+  ggtitle("WashingtonPost", sub = "Emotion by Topic Cluster") + ylab("") +
   theme_tufte()
 # End
