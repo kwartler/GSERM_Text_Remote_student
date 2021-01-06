@@ -3,11 +3,14 @@
 
 # Lib
 library(rvest)
+library(fst)
+library(stringr)
 
 # Query
 searchQ <- URLencode('machine learning')
 savePth <- '~/Desktop/' # remember the trailing slash!
 testing <- T
+fileFormat <- 'csv' #or fst
 
 # Initialize
 pg <- read_html(paste0('https://www.prnewswire.com/search/news/?keyword=',searchQ,'&page=1&pagesize=100'))
@@ -44,8 +47,8 @@ for(i in 1:totalPgs){
   cat('.sleeping 1 sec\n')
   Sys.sleep(1)
   parsedPR[[i]] <- data.frame(prURL       = prURL,
-                              prHeadline  = prHeadline,
-                              headlineTxt = txt, 
+                              prHeadline  = str_squish(prHeadline),
+                              headlineTxt = str_squish(txt), 
                               namedEntity = ner)
 }
 parsedPR <- do.call(rbind, parsedPR)
@@ -56,6 +59,8 @@ for(i in 1:nrow(parsedPR)){
   cat(paste('getting:',i, 'of', nrow(parsedPR)))
   pg <- read_html(parsedPR$prURL[i])
   completeTxt  <- pg %>% html_node('.release-body') %>% html_text()
+  completeTxt  <- gsub('\n','',completeTxt)
+  completeTxt  <- str_squish(completeTxt)
   timestamp    <- pg %>% html_node('.mb-no') %>% html_text()
   newsProvider <- paste0('https://www.prnewswire.com',
                          pg %>% 
@@ -73,7 +78,19 @@ for(i in 1:nrow(parsedPR)){
   Sys.sleep(1)
 }
 allInfo <- do.call(rbind, allInfo)
-nam <- paste0('allPRs for term',searchQ, ' captured ',Sys.time(),'.csv')
-write.csv(allInfo, paste0(savePth, nam), row.names = F) # could also use fst for large data
+#names(allInfo) <- make.names(names(allInfo))
+#nam <- paste0('allPRs for term ', searchQ, ' captured ',Sys.time(),'.fst')
+#write_fst(allInfo, paste0(savePth, nam)) # could also use fst for large data
+#write.csv(allInfo, 'test.csv', row.names = F)
+
+if(fileFormat=='csv'){
+  print('saving as csv')
+  nam <- paste0('allPRs for term ', searchQ, ' captured ',Sys.time(),'.csv')
+  write.csv(allInfo, paste0(savePth, nam), row.names = F) 
+} else {
+  print('saving as fst')
+  nam <- paste0('allPRs for term ', searchQ, ' captured ',Sys.time(),'.fst')
+  write_fst(allInfo, paste0(savePth, nam)) 
+}
 
 # End
