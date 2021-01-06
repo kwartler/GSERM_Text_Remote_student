@@ -13,7 +13,7 @@ library(plyr)
 # Data from automated closed caption; follow the example in E Lesson Folder
 # Original Video https://www.youtube.com/watch?v=oJ_ew833y4Q&ab_channel=ocgreatparkcorp'; keep in mind these expire in 12hrs so you will have to redo and update the link.
 
-youtubeCC <- 'https://www.youtube.com/api/timedtext?v=oJ_ew833y4Q&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&exp=xftt&xorp=true&xoaf=5&hl=en&ip=0.0.0.0&ipbits=0&expire=1609840287&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps%2Cexp%2Cxorp%2Cxoaf&signature=9ADBE56D7F45DB03FC6197E772DBE49E8AE062F3.926A677CA6ABD3DEF6E9D002E6F01E28166F5E6A&key=yt8&kind=asr&lang=en&fmt=json3&xorb=2&xobt=3&xovt=3'
+youtubeCC <- 'https://www.youtube.com/api/timedtext?v=oJ_ew833y4Q&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&exp=xftt&xorp=true&xoaf=5&hl=en&ip=0.0.0.0&ipbits=0&expire=1609883768&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps%2Cexp%2Cxorp%2Cxoaf&signature=3F64B06399516BD8A1F526A99406C306871A5A6B.62FD8739BD24054019E4CA28DEED8F107130EDB6&key=yt8&kind=asr&lang=en&fmt=json3&xorb=2&xobt=3&xovt=3'
 
 # get the data from the api
 #' @param youtubeURL string for timedtext youtube API
@@ -55,7 +55,7 @@ getYouTubeCC <- function(youtubeURL, response = 'raw'){
 # Example
 getYouTubeCC(youtubeURL = youtubeCC, response = 'raw')
 getYouTubeCC(youtubeURL = youtubeCC, response = 'meta')
-getYouTubeCC(youtubeURL = youtubeCC, response = 'both')
+x <- getYouTubeCC(youtubeURL = youtubeCC, response = 'both')
 
 ## FROM FILE
 interview <- readLines('exampleTranscription.txt')
