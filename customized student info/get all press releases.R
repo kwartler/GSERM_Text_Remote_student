@@ -15,11 +15,11 @@ totalResults <- pg %>% html_nodes('.alert-muted') %>% html_text()
 totalResults <- lapply(strsplit(totalResults, '\nof '), tail, 1)
 totalResults <- as.numeric(gsub('\\D+','', totalResults))
 
-# Total Pages; they stop providing info at 99 despite having tens of thousands :(
+# Total Pages; they stop providing info at 99pgs*100 results  despite having tens of thousands :(
 if(testing==T){
   totalPgs <- 15
 } else {
-  totalPgs <- ifelse(totalResults >990,990,totalResults)
+  totalPgs <- ifelse(totalResults >9900,9900,totalResults)
 }
 
 
@@ -53,7 +53,7 @@ parsedPR <- do.call(rbind, parsedPR)
 # Append the entire txt
 allInfo <- list()
 for(i in 1:nrow(parsedPR)){
-  cat(paste('getting:',i))
+  cat(paste('getting:',i, 'of', nrow(parsedPR)))
   pg <- read_html(parsedPR$prURL[i])
   completeTxt  <- pg %>% html_node('.release-body') %>% html_text()
   timestamp    <- pg %>% html_node('.mb-no') %>% html_text()
