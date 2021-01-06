@@ -12,7 +12,6 @@ setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment
 options(scipen = 999, stringsAsFactors = F)
 Sys.setlocale("LC_CTYPE", "en_US.UTF-8") # this is unicode text
 
-
 # Libs
 library(skmeans)
 library(tidytext)

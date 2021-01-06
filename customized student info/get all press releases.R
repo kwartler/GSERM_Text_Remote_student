@@ -5,12 +5,12 @@
 library(rvest)
 
 # Query
-searchQ <- 'acquisition'
+searchQ <- URLencode('machine learning')
 savePth <- '~/Desktop/' # remember the trailing slash!
 testing <- T
 
 # Initialize
-pg <- read_html('https://www.prnewswire.com/search/news/?keyword=acquisition&page=1&pagesize=100')
+pg <- read_html(paste0('https://www.prnewswire.com/search/news/?keyword=',searchQ,'&page=1&pagesize=100'))
 totalResults <- pg %>% html_nodes('.alert-muted') %>% html_text()
 totalResults <- lapply(strsplit(totalResults, '\nof '), tail, 1)
 totalResults <- as.numeric(gsub('\\D+','', totalResults))
