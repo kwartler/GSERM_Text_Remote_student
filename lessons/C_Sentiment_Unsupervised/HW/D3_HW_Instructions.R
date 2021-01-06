@@ -19,7 +19,7 @@
 # 2. Perform 1 clustering method with the news.csv data. 
 # Considerations:  
 # - The title, description and content columns are all ok to use as well as the combined title_description_content column.  
-# - There is a column called newsSite with sources cnn, fox-news, msnbc, the-american-conservative.  You may analyze each news sources individually for your analysis (full credit) or into two groups i.e. right or left leaning (-1pt), or treat them as a single group therby ignoring the column and just treating it as a single document set (-2 pts because its easiest)
+# - There is a column called newsSite with sources cnn, fox-news, msnbc, the-american-conservative.  You may analyze each news sources individually for your analysis (full credit) or into two groups i.e. right or left leaning (-1pt), or treat them as a single group thereby ignoring the column and just treating it as a single document set (-2 pts because its easiest)
 
 
 
