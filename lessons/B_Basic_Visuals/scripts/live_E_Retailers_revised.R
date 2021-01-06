@@ -71,20 +71,20 @@ carrefourDF$density <- carrefourDF$carrefour.csv/carreCount
 tescoDF$density     <- tescoDF$carrefour.csv/tescoCount
 
 ### Step 3: Create visualization
-topNum <- 20
-obama.df <- head(carrefourDF[order(carrefourDF$diff, decreasing = T),],topNum)
-palin.df <- head(tescoDF[order(abs(tescoDF$diff), decreasing = T),],topNum)
+topNum <- 100
+carrefour.df <- head(carrefourDF[order(carrefourDF$diff, decreasing = T),],topNum)
+tesco.df <- head(tescoDF[order(abs(tescoDF$diff), decreasing = T),],topNum)
 
-ggplot(obama.df, aes(x=diff, y=density))+
-  geom_text(aes(#size=obama.df[,1], 
-                label=row.names(obama.df), colour=diff),
+ggplot(carrefour.df, aes(x=diff, y=density))+
+  geom_text(aes( 
+                label=row.names(carrefour.df), colour=diff),
             hjust = "inward", vjust = "inward")+
-  geom_text(data=palin.df, 
-            aes(x=diff, y=density, label=row.names(palin.df), 
-                #size=palin.df[,1],
+  geom_text(data=tesco.df, 
+            aes(x=diff, y=density, label=row.names(tesco.df), 
+                
                 color=diff),
             hjust = "inward", vjust = "inward")+
   scale_size(range=c(3,11), name="Word Frequency")+scale_colour_gradient(low="darkred", high="darkblue", guide="none")+
-  scale_x_continuous(breaks=c(min(palin.df$diff),0,max(obama.df$diff)),labels=c("Said More about Tesco","Said Equally","Said More about Carrefour"))+
+  scale_x_continuous(breaks=c(min(tesco.df$diff),0,max(carrefour.df$diff)),labels=c("Said More about Tesco","Said Equally","Said More about Carrefour"))+
   scale_y_continuous(breaks=c(0),labels=c(""))+xlab("")+ylab("")+theme_bw()
 # End

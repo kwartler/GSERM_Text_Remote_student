@@ -76,8 +76,7 @@ bothOutcomes <- c(goodLoans, badLoans)
 bothOutcomes <- VCorpus(VectorSource(bothOutcomes))
 
 # Make TDM
-bothTDM <- TermDocumentMatrix(bothOutcomes)#, 
-#control = list(tokenize  = bigramTokens))
+bothTDM <- TermDocumentMatrix(bothOutcomes, control = list(tokenize  = bigramTokens))
 bothTDM <- as.matrix(bothTDM)
 
 colnames(bothTDM) <- c('good', 'bad')
