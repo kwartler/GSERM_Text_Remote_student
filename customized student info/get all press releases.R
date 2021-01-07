@@ -9,7 +9,7 @@ library(stringr)
 # Query
 searchQ <- URLencode('machine learning')
 savePth <- '~/Desktop/' # remember the trailing slash!
-testing <- T
+testing <- F
 fileFormat <- 'csv' #or fst
 
 # Initialize
