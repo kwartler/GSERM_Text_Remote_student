@@ -5,7 +5,6 @@
 #' License: GPL>=3
 #' Date: Dec 28 2020
 #' Other Options worth exploring
-#' https://cran.r-project.org/web/packages/textmineR/vignettes/c_topic_modeling.html
 #' https://cran.r-project.org/web/packages/RTextTools/index.html
 
 # Set the working directory; note we are using the directory from previous day!
