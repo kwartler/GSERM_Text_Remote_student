@@ -73,6 +73,6 @@ install.packages(c("lda", "LDAvis", "treemap"))
 
 * [Jan 4](https://harvard.zoom.us/rec/share/xNNEoerGOLphZXTsI7BbVhyv3e_SUMa1HOm2TLTsNx0R0-sOjMzk8b8MRrceMaW2.7YKo9NIEJG9mvft4)
 * [Jan 5](https://harvard.zoom.us/rec/share/RPYPnHtU89mnvLpYvoL3RHTKxC9LuXyixnB36OUY9rMbWxVVbq1DAnOPW-BUAh7H.fQWtQV1tytytDNNv)
-* [Jan 6]()
-* [Jan 7]()
+* [Jan 6](https://harvard.zoom.us/rec/share/SKBBLSF2lMKat3Qduke_u7H4xt27YA1Z5FpYFNZMQ1deWvUjqhV3nX0VM5-OK01V.TzSNXYtKu7OrnsN7)
+* [Jan 7](https://harvard.zoom.us/rec/share/ySrnF98ZDncuaDlIVa3dkW4VDwotlkkP6g8tCqsZyOoIN8sgVshRj86Qt0cM4p--.0oQHC2R1EXOZ5w2U)
 * [Jan 8]() 
