@@ -82,7 +82,7 @@ cleanTest <- data.frame(text = unlist(sapply(cleanTest, `[`, "content")),
 allDTM <- rbind(cleanTrain, cleanTest)
 allDTMm <- create_matrix(allDTM, language="english")
 containerTest <- create_container(matrix    = allDTMm,
-                                  labels    = diabetes$readmitted, 
+                                  labels    = c(diabetes$readmitted[idx], diabetes$readmitted[-idx]),
                                   trainSize = 1:length(idx),
                                   testSize  = (length(idx)+1):8500,
                                   virgin=T)
