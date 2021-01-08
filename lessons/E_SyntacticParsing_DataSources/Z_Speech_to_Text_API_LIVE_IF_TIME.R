@@ -4,7 +4,7 @@
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
 #' Date: Jan 2, 2021
-#' googleLanguageR is a package to perform the same function but there are other APIs
+#' googleLanguageR is a package to perform the speech to text  but there are other APIs
 #' Refs: https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html
 #' http://code.markedmondson.me/googleLanguageR/index.html
 #' IT COSTS MONEY, SO BE CAREFUL
@@ -63,6 +63,6 @@ speechToTxt$timings
 
 # Back to audio; not exactly sure why you want to; requires the text-to-speech api enabled
 #gl_talk_player(gl_talk(paste(speechToTxt$transcript$transcript, collapse = '')))
-# open player.html
+# open "player.html" to play "output.wav" or if you have an audio play just click .wav file
 
 # End
