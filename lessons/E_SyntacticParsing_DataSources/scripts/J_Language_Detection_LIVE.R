@@ -16,7 +16,6 @@ library(cld2) #Google, compact language detector
 # Options & Functions
 testing <- T
 options(stringsAsFactors = FALSE)
-Sys.setlocale('LC_ALL','C')
 
 # Data
 if(testing == T){
@@ -47,7 +46,7 @@ unknownLanguageOne$text[9]
 # Most frequent
 table(txtLanguage)
 
-# Using google compact language detector
+# Using google compact language detector; 80 languages
 text <- c("To be or not to be?", "Ce n'est pas grave.", "Nou breekt mijn klomp!")
 detect_language(text)
 
