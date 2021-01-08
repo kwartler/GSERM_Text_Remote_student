@@ -19,7 +19,7 @@ setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/E_Syntactic
 
 # Youtube URL
 #https://www.youtube.com/watch?v=Q-wRhzWaCac
-youtubeCaption <- 'https://www.youtube.com/api/timedtext?v=Q-wRhzWaCac&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&exp=xftt&xorp=true&xoaf=5&hl=en&ip=0.0.0.0&ipbits=0&expire=1609223294&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps%2Cexp%2Cxorp%2Cxoaf&signature=4BCE79E6346306D11935234E4B2003EF43319110.0C454EAC2B01EF0670916174CFE372346031EDCB&key=yt8&kind=asr&lang=en&fmt=json3&xorb=2&xobt=3&xovt=3'
+youtubeCaption <- 'https://www.youtube.com/api/timedtext?v=NYL-wPVzL64&asr_langs=de%2Cen%2Ces%2Cfr%2Cit%2Cja%2Cko%2Cnl%2Cpt%2Cru&caps=asr&exp=xftt&xorp=true&xoaf=5&hl=en&ip=0.0.0.0&ipbits=0&expire=1610139297&sparams=ip%2Cipbits%2Cexpire%2Cv%2Casr_langs%2Ccaps%2Cexp%2Cxorp%2Cxoaf&signature=3950585328D224676487089C4ED1991031C8F70C.9C3420CF67CB7BB92AD7F11413DF02999980AF40&key=yt8&lang=en&name=en&fmt=json3&xorb=2&xobt=3&xovt=3'
 
 # Go get the data
 dat <- fromJSON(youtubeCaption)

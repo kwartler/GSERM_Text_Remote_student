@@ -64,7 +64,7 @@ install.packages(c("lda", "LDAvis", "treemap"))
 |HW2|Tuesday  Jan5   |Jan6 |
 |HW3|Wednesday Jan6  |Jan6 |
 |HW4|Thursday Jan7   |Jan8 |
-|Case|NA             |Jan15|
+|Case|NA             |Jan22|
 
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
