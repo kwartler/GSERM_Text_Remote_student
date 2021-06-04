@@ -23,16 +23,16 @@
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
  
-* slides - A copy of the presentation covered in the recording.  Provided because some students print the slides and begin to take notes.
+* slides - A copy of the presentation covered in the recording.  Provided because some students print the slides and take notes.
 * `data` sub folder - contains the data we will work through together
-* `scripts` - scaffolded scripts to start our lab session
+* `scripts` - commented scripts to demonstrate the lesson's concepts
 * `HW` - the daily homework will be in this folder.
 
 ## Environment Setup
 
-* You *must* install R, R-Studio & Git locally on your laptop or if you have knowledge you can work from a server instance.  (www.rstudio.cloud)[www.rstudio.cloud] is another option but the free tier has significant time limitations. 
+* You *must* install R, R-Studio & Git locally on your laptop or if you have require you can work from a server instance with all software.  (www.rstudio.cloud)[www.rstudio.cloud] is another option but the free tier has significant time limitations. Part of day 1 will be devoted to ensuring people's instances work correctly.
 
-- If you encounter any errors during set up don't worry!  Please request technical help from Prof K.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.  **the `qdap` library does not work on mac, due to a java path issue which is not always possible to fix.  Therefore, mac users are encouraged to use rstudio.cloud or simply comment out code lines requiring these function.  This will be noted in class if needed, so no worries.**
+- If you encounter any errors during set up don't worry!  Please request technical help from Prof K.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.
 
 ## R Packages
 
@@ -56,23 +56,38 @@ install.packages(c("lda", "LDAvis", "treemap"))
 
 ```
 
+## Installing rJava (needed for Qdap) on MAC!
+For most students these three links have helped them install java, and then make sure R/Rstudio can find it when loading `qdap`.  **Keep in mind, you don't have to install qdap, to earn a good grade** This is more for use of some functions and the `polarity()` function primarily.
+
+* [link1](https://zhiyzuo.github.io/installation-rJava/)
+* [link2](https://stackoverflow.com/questions/63830621/installing-rjava-on-macos-catalina-10-15-6)
+* [link3](https://fahadusman.com/setup-rjava-on-mac-and-start-using-opennlp/)
+
+Once java is installed this command *from terminal* often resolves the issue:
+```
+sudo R CMD javareconf
+```
+
+If this causes hardship, don't worry!  You can use a server instance instead.
+
+
 ## Homework & Case Due dates
 
-|HW |Covered in Class|Due  |
-|---|----------------|-----|
-|HW1|Monday Jan4     |Jan5 |
-|HW2|Tuesday  Jan5   |Jan6 |
-|HW3|Wednesday Jan6  |Jan6 |
-|HW4|Thursday Jan7   |Jan8 |
-|Case|NA             |Jan22|
+|HW |Covered in Class. |Due    |
+|---|------------------|-------|
+|HW1|Monday June14     |June15 |
+|HW2|Tuesday  June15   |June16 |
+|HW3|Wednesday June16  |June17 |
+|HW4|Thursday Jan7     |June18 |
+|Case|NA               |June27 |
 
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
 
-### Recorded Live sessions *will be deleted Jan 29*
+### Recorded Live sessions will be placed here but *will be deleted July 4th*
 
-* [Jan 4](https://harvard.zoom.us/rec/share/xNNEoerGOLphZXTsI7BbVhyv3e_SUMa1HOm2TLTsNx0R0-sOjMzk8b8MRrceMaW2.7YKo9NIEJG9mvft4)
-* [Jan 5](https://harvard.zoom.us/rec/share/RPYPnHtU89mnvLpYvoL3RHTKxC9LuXyixnB36OUY9rMbWxVVbq1DAnOPW-BUAh7H.fQWtQV1tytytDNNv)
-* [Jan 6](https://harvard.zoom.us/rec/share/SKBBLSF2lMKat3Qduke_u7H4xt27YA1Z5FpYFNZMQ1deWvUjqhV3nX0VM5-OK01V.TzSNXYtKu7OrnsN7)
-* [Jan 7](https://harvard.zoom.us/rec/share/ySrnF98ZDncuaDlIVa3dkW4VDwotlkkP6g8tCqsZyOoIN8sgVshRj86Qt0cM4p--.0oQHC2R1EXOZ5w2U)
-* [Jan 8](https://harvard.zoom.us/rec/share/MA8DVwg65RPiVoTB1y1kpVA7Js4EkTMq6EazOjmB5zZw2pLWGBMmu8hv7uNSaUe4.KSVxwRgBLbUbWhz8) 
+* [June 14]()
+* [June 15]()
+* [June 16]()
+* [June 17]()
+* [June 18]() 
