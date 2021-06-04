@@ -4,7 +4,7 @@
 
 ## Welcome Video
 
-* This class session, we will **not** have virtual machines set up so please forgive my mistake in the video.  You will have to install R, R-studio and git locally on your laptop.
+* This class session, we will **not** have virtual machines set up so please forgive my mistake in the video.  You will have to install R, R-studio and git locally on your laptop or on day 1 I will have some cloud provisions for the class.
 [Welcome to the class video.](https://www.amazon.com/clouddrive/share/wphzBWpcDj3s4N5PzQmZUyq4xCumZtsdKi5FYjBbO0X)
 
 ## Recorded Lesson URLS
@@ -75,4 +75,4 @@ install.packages(c("lda", "LDAvis", "treemap"))
 * [Jan 5](https://harvard.zoom.us/rec/share/RPYPnHtU89mnvLpYvoL3RHTKxC9LuXyixnB36OUY9rMbWxVVbq1DAnOPW-BUAh7H.fQWtQV1tytytDNNv)
 * [Jan 6](https://harvard.zoom.us/rec/share/SKBBLSF2lMKat3Qduke_u7H4xt27YA1Z5FpYFNZMQ1deWvUjqhV3nX0VM5-OK01V.TzSNXYtKu7OrnsN7)
 * [Jan 7](https://harvard.zoom.us/rec/share/ySrnF98ZDncuaDlIVa3dkW4VDwotlkkP6g8tCqsZyOoIN8sgVshRj86Qt0cM4p--.0oQHC2R1EXOZ5w2U)
-* [Jan 8]() 
+* [Jan 8](https://harvard.zoom.us/rec/share/MA8DVwg65RPiVoTB1y1kpVA7Js4EkTMq6EazOjmB5zZw2pLWGBMmu8hv7uNSaUe4.KSVxwRgBLbUbWhz8) 
