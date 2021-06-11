@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 10, 2021
 #'
 
 # Libs
-#library(qdap) #pg 45 in book has another option but crashes cloud instance
+#library(qdap) #pg 45 in book has another option but may crash cloud instance
 library(spelling)
 library(hunspell)
 library(mgsub)
@@ -29,7 +29,6 @@ ignoreWords = c('luve')
 #spell_check_files(path, ignore = ignoreWords, lang = "en_US") #check files on disk
 spell_check_text(allTxt, lang = "en_US")
 spell_check_text(allTxt, ignore = ignoreWords, lang = "en_US")
-
 
 # No good correction functions, book pg 46
 (mispelled <- spell_check_text(allTxt, lang = "en_US"))

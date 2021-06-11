@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 10, 2021
 #'
 
 # Set the working directory
-setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/A_Setup_Intro_Basics/data")
 
 # Libs
 library(stringi)
@@ -55,12 +55,13 @@ theCoffeeGrep <- stri_count(text$text, regex ="\\bthe\\b") #anchored, nearly equ
 identical(theCoffee, theCoffeeGrep)
 theCoffee[654]
 theCoffeeGrep[654]
+text$text[654]
 sum(theCoffee) / nrow(text)
 
 # Suppose you want to make regular expression substitutions
 originalCup <- text[grep("mug", text$text),]
 originalCup[1:3,2]
-gsub('mug', 'cup', originalCup[1:3,2])
+gsub('mug', 'cup', originalCup[1:3,2]) # remember you may need to use anchors for the search pattern!!
 
 # BE VERY CAREFUL! Sometimes Anchors matter!! Let's remove the RT (retweets)
 exampleTxt <- 'RT I love the Statue of Liberty'
@@ -68,6 +69,5 @@ gsub('rt','', exampleTxt)
 gsub('rt','', exampleTxt, ignore.case = T)
 gsub('^RT','' ,exampleTxt) #another type of anchor
 gsub('\\bRT\\b','' ,exampleTxt) # escaped "\b" is actually a "backspace" thus its only looking for that
-
 
 # End

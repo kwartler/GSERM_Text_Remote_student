@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 10, 2021
 #' 
 
 # Wd
-setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/A_Setup_Intro_Basics/data")
 
 # Let's read in two data sets
 dfOne <- read.csv("amznWarehouses.csv")
@@ -20,7 +20,7 @@ warehouseFacilities <- list(amzn     = dfOne,
 # What is the structure of this new object?  `str` can be used on any object so its useful!
 str(warehouseFacilities)
 
-# Looks like freeClinics is a data frame (not a surprise).  We should look at a portion of it
+# Review each list element individually
 head(warehouseFacilities$amzn)
 head(warehouseFacilities[[1]]) #double brackets to refer to a specific list element
 
@@ -29,7 +29,6 @@ tail(warehouseFacilities$amzn$State) # tail function, list, list element, df col
 tail(warehouseFacilities[[1]][,2])
 tail(warehouseFacilities$amzn[,2])
 tail(warehouseFacilities[[1]]$State)
-
 
 # Looks like these columns are in common
 head(dfOne$state)

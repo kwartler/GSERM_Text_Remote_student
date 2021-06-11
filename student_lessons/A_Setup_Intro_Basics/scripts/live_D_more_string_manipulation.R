@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 10, 2021
 #' 
 
 # Wd
-setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/A_Setup_Intro_Basics/data")
 
 # library
 library(stringi)
@@ -36,7 +36,6 @@ grep('not', allText, ignore.case = T) # index position
 grepl('NOT', allText) # Case matters!
 grepl('NOT', allText, ignore.case = T)
 
-
 # There are literally hundreds of functions in stringi and stringr here are just a few
 ## stringi examples
 # Exact character position of the term "NOT" for each document
@@ -49,6 +48,7 @@ whereIsNot # this is a list!
 
 # Grep gives you presence of at least one, either index of T/F, this is a count
 stri_count(allText, fixed="is")
+stri_count(allText, regex="\\bis\\b")
 
 # There may be times we need to break up word individually or by a character
 str_split(allText, " ") # result is a list!
@@ -65,8 +65,8 @@ str_extract(allText, 'not')
 str_extract(allText, 'this')
 
 # Locate terms if they are present
-str_locate_all(allText, 'not')
-str_locate_all(allText, 'not|NOT')
+str_locate_all(allText, fixed('not'))
+str_locate_all(allText, regex = 'not|NOT')
 
 # Change the capitalization
 str_to_upper(allText, locale = "en")
