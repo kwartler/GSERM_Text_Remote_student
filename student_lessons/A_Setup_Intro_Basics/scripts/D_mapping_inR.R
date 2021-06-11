@@ -8,7 +8,7 @@
 #'
 
 ## Set the working directory
-setwd("~/Desktop/GSERM_Text_Remote_student/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/A_Setup_Intro_Basics/data")
 
 # Libs
 library(maps)
@@ -32,14 +32,20 @@ tail(amzn$STATE,25)
 # Subset to New England
 NEwarehouses <- amzn[ amzn$STATE  %in% c("MA","ME", "VT", "NH"), ]
 
-# A basic map library
+# A basic map library; dev.off() resets the graphics device
 map()
+dev.off()
 map('usa')	# national boundaries
+dev.off()
 map("state", interior = FALSE)
+dev.off()
 map("state", interior = T)
+dev.off()
 map('county', 'new jersey') # reminder clear graphics device
+dev.off()
 map('state', region = c('mass', 'maine', 'vermont', 'new hampshire'))
 points(NEwarehouses$lon,NEwarehouses$lat, col='red')
+dev.off()
 
 # More familiar ggplot interface
 us <- fortify(map_data('state'), region = 'region')

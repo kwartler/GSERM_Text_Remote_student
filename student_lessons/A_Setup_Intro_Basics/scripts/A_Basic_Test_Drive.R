@@ -166,6 +166,7 @@ list(numberVec = vectorA,
      trueFalseVec = vectorB[-1],
      stringsVec = vectorC)
 
+# Data frames can't be ragged
 data.frame(numberVec = vectorA,
            trueFalseVec = vectorB[-1],
            stringsVec = vectorC)

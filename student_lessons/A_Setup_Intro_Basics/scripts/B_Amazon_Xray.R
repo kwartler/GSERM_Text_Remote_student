@@ -7,7 +7,7 @@
 #'
 
 ### 1. Set working directory to your specific movie
-setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/A_Setup_Intro_Basics/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/A_Setup_Intro_Basics/data")
 
 # Turn off scientific notation
 options(scipen = 999)
