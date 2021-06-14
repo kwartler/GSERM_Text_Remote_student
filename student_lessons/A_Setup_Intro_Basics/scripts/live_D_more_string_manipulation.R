@@ -66,7 +66,7 @@ str_extract(allText, 'this')
 
 # Locate terms if they are present
 str_locate_all(allText, fixed('not'))
-str_locate_all(allText, regex = 'not|NOT')
+str_locate_all(allText, 'not|NOT') #regex
 
 # Change the capitalization
 str_to_upper(allText, locale = "en")

@@ -23,7 +23,7 @@ exampleTxtC <- 'I luve coffee'
 allTxt      <- c(exampleTxtA, exampleTxtB, exampleTxtC)
 
 # Declare any words you want to ignore, ie twitters "RT" or "SMH"
-ignoreWords = c('luve')
+ignoreWords <- c('luve')
 
 # Identify mispelled words
 #spell_check_files(path, ignore = ignoreWords, lang = "en_US") #check files on disk

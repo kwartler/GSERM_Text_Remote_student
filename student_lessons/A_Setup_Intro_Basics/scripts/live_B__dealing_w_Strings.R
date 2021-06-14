@@ -57,6 +57,7 @@ theCoffee[654]
 theCoffeeGrep[654]
 text$text[654]
 sum(theCoffee) / nrow(text)
+sum(theCoffeeGrep) / nrow(text) #anchoring makes a difference!
 
 # Suppose you want to make regular expression substitutions
 originalCup <- text[grep("mug", text$text),]
