@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #' 
 
 # Wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -30,7 +30,7 @@ head(wineReviews)
 table(wineReviews$variety)
 
 # Or plot the country
-barplot(table(wineReviews$country))
+barplot(table(wineReviews$country), las = 2)
 
 # What about some summary stats for points and price?
 summary(wineReviews$points)
@@ -42,7 +42,7 @@ plot(wineReviews$points,wineReviews$price)
 # Lets get the most frequent terms in the description field
 wineDescriptions <- wineReviews$description
 
-# Custom Fucntions
+# Custom Functions
 tryTolower <- function(x){
   y = NA
   try_error = tryCatch(tolower(x), error = function(e) e)
@@ -86,6 +86,15 @@ wineDF   <- data.frame(word = names(wineTDMv), freq = wineTDMv)
 wordcloud(wineDF$word,
           wineDF$freq,
           max.words    = 100,
+          random.order = F,
+          colors       = c('grey', 'goldenrod', 'tomato'),
+          scale        = c(2,1))
+
+# QDAP Quick and dirty; less customization i.e. bigrams and preprocessing
+wineWFM <- wfm(wineDescriptions, stopwords =stops)
+wordcloud(rownames(wineWFM),
+          wineWFM[,1],
+          max.words = 100,
           random.order = F,
           colors       = c('grey', 'goldenrod', 'tomato'),
           scale        = c(2,1))

@@ -3,12 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #'
 
 # Set wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs")
-
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data/z_rap_songs")
 
 # Options
 options(stringsAsFactors = F, scipen = 999)
@@ -20,18 +19,20 @@ library(ggthemes)
 library(pbapply)
 
 # Multiple files as a list
-tmp <- list.files(pattern = '*.csv')
-allSongs <- pblapply(tmp, read.csv)
+tmp             <- list.files(pattern = '*.csv')
+allSongs        <- pblapply(tmp, read.csv)
 names(allSongs) <- gsub('csv','', tmp)
 
 # Basic Exploration
 allSongs$BEST.ON.EARTH..Bonus...Explicit..by.Russ.feat..BIA.
 
 ## Length of each song
+allSongs[[1]][,1:2]
 songLength <- sapply(allSongs, function(x){ max(x[,1])}) 
-songLength <- round((songLength /1000)/60, 2)
+#songLength <- round((songLength /1000)/60, 2)
+(songLength[1]/1000) / 60 #3min long
 
-## Avg words in song
+## Total words in song
 singleWords <- list()
 for(i in 1:length(allSongs)){
   print(names(allSongs)[i])
@@ -42,59 +43,38 @@ for(i in 1:length(allSongs)){
 singleWords <- do.call(rbind, singleWords)
 head(singleWords)
 
-# Find the specific locations of terms
-sapply(allSongs, function(x) grep('trippin', x[,3], ignore.case = T))
-sapply(allSongs, function(x) grep('money', x[,3], ignore.case = T))
-allSongs$Lucky.You..feat..Joyner.Lucas...Explicit..by.Eminem.feat..Joyner.Lucas.[44,3]
+# Find the specific locations of terms with a custom function applied to list
+inDocFinder <- function(DF, colIDX = 3, keyword = 'money', ignoreCase = T) {
+  x <- grep(keyword, DF[,colIDX], ignore.case = ignoreCase)
+  return(x)
+}
+sapply(allSongs, inDocFinder)
+sapply(allSongs, inDocFinder, keyword = 'the')
 
-# Find the presence of terms
-sapply(allSongs, function(x) grepl('money', x[,3], ignore.case = T))
+# How many times for the pattern
+mentions <- sapply(allSongs, inDocFinder)
+sapply(mentions, length)
+
+mentions <- sapply(allSongs, inDocFinder, keyword = 'the')
+sapply(mentions, length)
 
 # Or find them at the song level
-searchTerm <- 'money'
-termExist <- list()
-for(i in 1:length(allSongs)){
-  x <- paste(allSongs[[i]][,3], collapse = ' ')
-  x <- grepl(searchTerm, x, ignore.case = T)
-  termDF <- data.frame(song  = names(allSongs[i]),
-                       exist = x)
-  names(termDF)[2] <- paste0(searchTerm, '_exists')
-  termExist[[i]] <- termDF
+inSongFinder <- function(DF, colIDX = 3, keyword = 'money', ignoreCase = T){
+  x <- paste(DF[,colIDX], collapse = ' ')
+  x <- grepl(keyword, x, ignore.case = ignoreCase)
+  return(x)
 }
-termExist <- do.call(rbind, termExist)
+sapply(allSongs, inSongFinder)
 
-## stricount words
-countWords <- function(docDF, termVector){
-  response <- list()
-  for(i in 1:length(termVector)){
-    x <- tolower(docDF[,3])
-    x <- sum(str_count(x, termVector[i]))
-    response[[i]] <- x 
-  }
-  
-  response <- do.call(cbind, response)
-  colnames(response) <- termVector
-  return(response)
-}
-
-# Apply to one song as example
-countWords(allSongs[[1]],c('trippin', 'money'))
-
-# Apply to list
-wordCheck <- lapply(allSongs, countWords, c('trippin', 'money'))
-wordCheck <- data.frame(song = names(wordCheck),
-                        do.call(rbind, wordCheck))
-wordCheck
-
-# Calculate the cumulative sum
+# Because the transcript has temporal nature, we want to know cadence
+# Calculate the cumulative sum over time
 wordCountList <- list()
 for(i in 1:length(allSongs)){
   x <- allSongs[[i]]
   wordCount <- str_count(x$text, "\\S+") #count the space character
   y <- data.frame(x$endTime, 
                   cumulativeWords = cumsum(wordCount),
-                  song = names(allSongs[i]),
-                  lyric = x$text)
+                  song            = names(allSongs[i]))
   names(y)[1] <- 'endTime'
   wordCountList[[i]] <- y
 }
@@ -104,8 +84,10 @@ songTimeline  <- do.call(rbind, wordCountList)
 head(songTimeline)
 
 # Get the last values for each song (total words but now with time)
-totalWords <- lapply(wordCountList, tail,1)
-totalWords <- do.call(rbind, totalWords)
+totalWords <- data.frame(song = singleWords$song,
+                         endTime = songLength, 
+                         cumulativeWords = singleWords$totalWords)
+head(totalWords)
 
 # Make a plot of the speech cadence
 ggplot(songTimeline,  aes(x     = endTime,

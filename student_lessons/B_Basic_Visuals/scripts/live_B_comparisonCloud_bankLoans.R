@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #'
 
 # Set the working directory
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -59,12 +59,15 @@ txtCorpus <- VCorpus(DataframeSource(txtOutcome))
 # Preprocess the corpus
 txtCorpus <- cleanCorpus(txtCorpus, stops)
 
-# After cleaning split
+# Intra-document comparison based on some document attribute
+# After cleaning split by a document feature; here by the loan outcome
+# Your meta could be temporal (month etc), author or some other grouping
 head(meta(txtCorpus))
 goodLoans <- subset(txtCorpus, meta(txtCorpus)==1)
 badLoans  <- subset(txtCorpus, meta(txtCorpus)==0)
 
-# Extract the clean txt & collapse 
+# Extract the clean txt & 
+# collapse into 1 body of text representing all information by doc type 
 goodLoans <- unlist(lapply(goodLoans, content))
 goodLoans <- paste(goodLoans, collapse = ' ')
 
@@ -72,19 +75,23 @@ badLoans <- unlist(lapply(badLoans, content))
 badLoans <- paste(badLoans, collapse = ' ')
 
 # Combine & create corpus
+# Now you have a 2 "document" 
+# corpus representing all information for each doc attribute
 bothOutcomes <- c(goodLoans, badLoans)
 bothOutcomes <- VCorpus(VectorSource(bothOutcomes))
 
 # Make TDM
-bothTDM <- TermDocumentMatrix(bothOutcomes, control = list(tokenize  = bigramTokens))
+bothTDM <- TermDocumentMatrix(bothOutcomes, 
+                              control = list(tokenize  = bigramTokens))
 bothTDM <- as.matrix(bothTDM)
 
+# MAKE SURE YOU LABEL IN THE ORDER COMBINED! `c(goodLoans, badLoans)`
 colnames(bothTDM) <- c('good', 'bad')
 
 comparison.cloud(bothTDM, 
                  max.words    = 15, 
-                 random.order = FALSE,
-                 title.size   = 1.75,
+                 random.order = F,
+                 title.size   = 0.75,
                  colors       = c('#bada55', 'blue'))#,scale=c(3,1))
 
 

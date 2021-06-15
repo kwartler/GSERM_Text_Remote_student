@@ -3,16 +3,16 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #'
 
 # wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/z_rap_songs_revised")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data/z_rap_songs_revised")
 
 # Options - this is to turn off scientific notation
 options(stringsAsFactors = F, scipen = 999)
 
-# libs - let's load out libraries!
+# libs - let's load our libraries!
 library(stringr)
 library(ggplot2)
 library(ggthemes)

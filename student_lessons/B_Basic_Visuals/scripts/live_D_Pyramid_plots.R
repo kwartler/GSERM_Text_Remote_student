@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #'
 
 # Set the working directory
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -18,7 +18,7 @@ library(ggthemes)
 library(ggalt)
 
 # Bring in our supporting functions
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
 options(stringsAsFactors = FALSE)
@@ -37,6 +37,7 @@ textA <- cleanMatrix(pth             = 'BritishAirways.csv',
                      customStopwords = stops,
                      type = 'TDM', # TDM or DTM
                      wgt = 'weightTf') # weightTfIdf or weightTf
+head(textA, 100)
 
 textB <- cleanMatrix(pth        = 'RyanAir.csv',
                      columnName = 'text',
@@ -48,7 +49,7 @@ textB <- cleanMatrix(pth        = 'RyanAir.csv',
 df        <- merge(textA, textB, by ='row.names')
 names(df) <- c('terms', 'britishAir', 'ryanAir')
 
-# Examine
+# Examine the words in common
 df[6:10,]
 
 # Calculate the absolute differences among in common terms

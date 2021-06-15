@@ -3,17 +3,16 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #'
 
+# Set wd
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # libs
 library(ggplot2)
 library(tm)
 library(dplyr)
-
-# Set wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
 
 # Options & Functions
 options(stringsAsFactors = FALSE, scipen = 999)
@@ -45,7 +44,7 @@ stops <- c(stopwords('english'), 'carrefour', 'tesco')
 retailers <- Corpus(DirSource("polarizedCloud/"))
 
 # Get word counts
-# mind the order is the same as is list.files('~/Documents/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data/polarizedCloud')
+# mind the order is the same as is list.files()
 carreCount <- length(unlist(strsplit(content(retailers[[1]]), " ")))
 tescoCount <- length(unlist(strsplit(content(retailers[[2]]), " ")))
 

@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 14, 2021
 #'
 
 # Set the working directory
-setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -43,7 +43,7 @@ stops <- c(stopwords('SMART'), 'dell', 'laptop', 'issue')
 # Data; limited to 1000 posts for speed
 text <- read_fst('2020-12-18_dellForum_k1_k5540.fst', from = 1, to = 1000)$post
 
-# Quick remove html
+# Quick remove unicode "no-break space character; - is used when representing the character directly as encoded bytes" - ugly webscrape!
 text <- gsub("\u00A0", "", text)
 
 # Make a volatile corpus
@@ -54,15 +54,15 @@ txtCorpus <- cleanCorpus(txtCorpus, stops)
 saveRDS(txtCorpus, 'txtCorpus.rds')
 
 # Make TDM & convert it to matrix
-txtTDM  <- TermDocumentMatrix(txtCorpus)
+txtTDM <- TermDocumentMatrix(txtCorpus)
 txtTDM <- as.matrix(txtTDM)
 
 # See a token
 txtTDM[(2015):(2018),117:118]
 
 # Get Row Sums & organize
-txtTDMv   <- sort(rowSums(txtTDM), decreasing = TRUE)
-txtDF     <- data.frame(word = names(txtTDMv), freq = txtTDMv)
+txtTDMv  <- sort(rowSums(txtTDM), decreasing = TRUE)
+txtDF    <- data.frame(word = names(txtTDMv), freq = txtTDMv)
 txtDF    <- txtDF[1:100,]
 
 # Echarts4R D3 Viz
@@ -88,12 +88,12 @@ txtDF %>%
   e_title("Dell Laptop Forum") %>%
   e_tooltip() %>% e_theme("dark")
 
-# ggplot interface; proportionality is diminshed to fit
+# ggplot interface; proportionality is diminished to fit
 ggplot(txtDF, aes(label = word, size = freq)) +
   geom_text_wordcloud() +
   theme_minimal()
 
-# ggplot interface; proportionality kept but words that dont fit are piled into the center
+# ggplot interface; proportionality kept but words that don't fit are piled into the center
 ggplot(txtDF, aes(label = word, size = freq)) +
   geom_text_wordcloud() +
   scale_size_area(max_size = 20) +
