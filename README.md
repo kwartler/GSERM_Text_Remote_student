@@ -20,6 +20,17 @@
 *video1 has been replaced with a presentation for r, r-studio & git setup.  
 **due to an editing error, you will have to download these instead of streaming
 
+## Live Session Vids
+|Day        | Url| 
+|-----------|---|
+| Monday    | * [1st day](https://harvard.zoom.us/rec/share/sXQWEBALbF628_1qeo60oUttB0pY6Ik02z6nDL9S3KJgkGsxy18nLjfJKXzFlkWB.dS-VFU4xG1agdMW7)|
+| Tuesday   | * . |
+| Wednesday | * . |
+| Thursday  | * . |
+| Friday    | * . |
+
+
+
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
  
