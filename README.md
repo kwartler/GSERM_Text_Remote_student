@@ -23,13 +23,11 @@
 ## Live Session Vids
 |Day        | Url| 
 |-----------|---|
-| Monday    | * [1st day](https://harvard.zoom.us/rec/share/sXQWEBALbF628_1qeo60oUttB0pY6Ik02z6nDL9S3KJgkGsxy18nLjfJKXzFlkWB.dS-VFU4xG1agdMW7)|
-| Tuesday   | * . |
+| Monday    | * [1st day](https://harvard.zoom.us/rec/share/sXQWEBALbF628_1qeo60oUttB0pY6Ik02z6nDL9S3KJgkGsxy18nLjfJKXzFlkWB.dS-VFU4xG1agdMW7) |
+| Tuesday   | * [2nd day](https://harvard.zoom.us/rec/share/N0ybDCKHVTZnfooAVetz3S4ictZHuL0pB0GvAFTONyyrAbXRVlfQ-WLbfmMpcI4t.zuF83pp_jTbjcQ3e) |
 | Wednesday | * . |
 | Thursday  | * . |
 | Friday    | * . |
-
-
 
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
