@@ -3,10 +3,10 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 15, 2021
 
 # Wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/C_Sentiment_Unsupervised/data")
 
 # Libs
 library(tm)
@@ -20,8 +20,8 @@ library(wordcloud)
 #library(fpc)
 
 # Bring in our supporting functions
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_plotCluster.R')
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_plotCluster.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
 options(stringsAsFactors = FALSE)

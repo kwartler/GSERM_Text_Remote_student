@@ -7,7 +7,7 @@
 #' https://cran.r-project.org/web/packages/kmed/vignettes/kmedoid.html
 
 # Wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/C_Sentiment_Unsupervised/data")
 
 # Libs
 library(kmed)
@@ -17,8 +17,8 @@ library(cluster)
 library(wordcloud)
 
 # Bring in our supporting functions
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_plotCluster.R')
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_plotCluster.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
 options(stringsAsFactors = FALSE)

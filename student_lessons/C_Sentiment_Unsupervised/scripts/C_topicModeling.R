@@ -3,16 +3,12 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 15, 2021
 #'
 #'FOR REALLY DECENT EXPLANATION w/more math http://i.amcat.nl/lda/understanding_alpha.html
 
 # Wd
-setwd('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data')
-
-# Install Issue on cloud...sometimes
-# install.packages("httpuv", dependencies = TRUE, INSTALL_opts = '--no-lock')
-# install.packages('echarts4r')
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/C_Sentiment_Unsupervised/data")
 
 # Libs
 library(tm)
@@ -24,7 +20,7 @@ library(dplyr)
 library(treemap)
 
 # Bring in our supporting functions
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # In some cases, blank documents and words are created bc of preprocessing.  This will remove them.
 blankRemoval<-function(x){
@@ -39,7 +35,7 @@ docAssignment<-function(x){
   x <- as.matrix(x)
   x <- t(x)
   idx <-max.col(x)
-  x <- x[1,idx]
+  x <- as.numeric(names(x[1,idx]))
   return(x)
 }
 
@@ -57,7 +53,7 @@ text$body[1]
 # String clean up 
 text$body <- iconv(text$body, "latin1", "ASCII", sub="")
 text$body <- gsub('http\\S+\\s*', '', text$body ) #rm URLs; qdap has rm_url same outcome. 
-text$body <- bracketX(text$body , bracket="all") #rm strings in between parenteses, and other brackets
+text$body <- bracketX(text$body , bracket="all") #rm strings in between parentheses, and other brackets
 text$body <- replace_abbreviation(text$body ) # replaces a.m. to AM etc
 text$body[1]
 
@@ -75,9 +71,9 @@ txt <- pblapply(txt, blankRemoval)
 txtLex <- lexicalize(txt)
 
 # Examine the vocab or key and value pairing between key ()
-head(txtLex$vocab) # rememnber #6
+head(txtLex$vocab, 15) # rememnber #6
 length(txtLex$vocab) #8k+ unique words among all articles, each 
-head(txtLex$documents[[1]]) #look at [,22]
+head(txtLex$documents[[1]][,1:15]) #look at [,6] & [,10]
 head(txtLex$documents[[20]])
 
 # Corpus stats
@@ -112,7 +108,7 @@ fit$document_sums #topics by articles
 head(t(fit$topics)) #words by topics
 
 # LDAvis params
-# normalize the article probabilites to each topic
+# normalize the article probabilities to each topic
 theta <- t(pbapply(fit$document_sums + alpha, 2, function(x) x/sum(x))) # topic probabilities within a doc will sum to 1
 
 # normalize each topic word's impact to the topic
@@ -139,8 +135,8 @@ fit$assignments[[2]][1:10]
 # Tally the topic assignment for the second doc, which topic should we assign it to?
 table(fit$assignments[[2]])
 
-# What topic is article 1 assigned to?
-singleArticle <- docAssignment(fit$assignments[[1]])
+# What topic is article 2 assigned to?
+singleArticle <- docAssignment(fit$assignments[[2]])
 
 # Get numeric assignments for all docs
 topicAssignments <- unlist(pblapply(fit$assignments,
@@ -149,8 +145,12 @@ topicAssignments
 
 # Recode to the top words for the topics; instead of topic "1", "2" use the top words identified earlier
 length(topicAssignments)
-assignments <- recode(topicAssignments, topFive[1], topFive[2], 
-                      topFive[3],topFive[4],topFive[5])
+assignments <- recode(topicAssignments,
+                      `0` = topFive[1], 
+                      `1` = topFive[2], 
+                      `2` = topFive[3], 
+                      `3` = topFive[4], 
+                      `4` = topFive[5])
 
 # Polarity calc to add to visual
 txtPolarity <- polarity(txt)[[1]][3]
