@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 16 2021
 #'
 
 # Wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/D_Supervised/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data")
 
 # Libs
 library(text2vec)

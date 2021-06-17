@@ -3,12 +3,10 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
-#' Other Options worth exploring
-#' https://cran.r-project.org/web/packages/RTextTools/index.html
+#' Date: June 16 2021
 
-# Set the working directory; note we are using the directory from previous day!
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/D_Supervised/data")
+# Set the working directory
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/AutoAndElectronics")
 
 # Libs
 library(tm)
@@ -17,7 +15,7 @@ library(yardstick)
 library(ggplot2)
 
 # Bring in our supporting functions
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
 options(stringsAsFactors = FALSE, scipen = 999)
@@ -27,8 +25,8 @@ Sys.setlocale('LC_ALL','C')
 stops <- c(stopwords('SMART'), 'car', 'electronic')
 
 # Bring in some data
-carCorp <- VCorpus(DirSource("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data/AutoAndElectronics/rec.autos"))
-electronicCorp <- VCorpus(DirSource("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/C_Sentiment_Unsupervised/data/AutoAndElectronics/sci.electronics"))
+carCorp <- VCorpus(DirSource("rec.autos"))
+electronicCorp <- VCorpus(DirSource("sci.electronics"))
 
 # Clean each one
 carCorp        <- cleanCorpus(carCorp, stops)
@@ -51,8 +49,8 @@ allTDM
 # Get 20 latent topics
 ##### Takes awhile, may crash small computers, so saved a copy
 #lsaTDM <- lsa(allTDM, 20)
-#saveRDS(lsaTDM, '~/Documents/GSERM_Text_Remote_student/lessons/D_Supervised/data/lsaTDM_tfidf.rds') #be sure to declare the right wd!
-lsaTDM <- readRDS('lsaTDM_tfidf.rds')
+#saveRDS(lsaTDM, '~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf.rds') #be sure to declare the right wd!
+lsaTDM <- readRDS('~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf.rds')
 
 # Extract the document LSA values
 docVectors <- as.data.frame(lsaTDM$dk)

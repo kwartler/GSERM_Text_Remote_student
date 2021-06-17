@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 29 2020
+#' Date: June 16 2021
 #' 
 
 # Set the working directory; note we are using the directory from previous day!
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/D_Supervised/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data")
 
 # Libs
 library(tm)
@@ -15,7 +15,7 @@ library(RTextTools)
 library(yardstick)
 
 # Bring in our supporting functions
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
 options(stringsAsFactors = FALSE, scipen = 999)
@@ -26,7 +26,9 @@ stops <- c(stopwords('SMART'), 'diabetes', 'patient')
 
 # Get data
 diabetes <- read.csv('diabetes_subset_8500.csv')
-txt <- paste(diabetes$diag_1_desc,diabetes$diag_2_desc,diabetes$diag_3_desc)
+txt <- paste(diabetes$diag_1_desc,
+             diabetes$diag_2_desc,
+             diabetes$diag_3_desc)
 
 # Subset to avoid overfitting
 set.seed(1234)
@@ -36,8 +38,9 @@ test  <- txt[-idx]
 
 # Clean, extract text and get into correct object
 cleanTrain <- cleanCorpus(VCorpus(VectorSource(train)), stops)
-cleanTrain <- data.frame(text = unlist(sapply(cleanTrain, `[`, "content")),
-                       stringsAsFactors=F)
+cleanTrain
+cleanTrain <- unlist(lapply(cleanTrain, content))
+cleanTrain[1]
 trainDTMm <- create_matrix(cleanTrain, language="english")
 
 # Create the container
@@ -75,11 +78,10 @@ accuracy(table(results$SVM_LABEL, results$actual))
 # Now let's apply the models to "new" documents
 # Clean, extract text and get into correct object
 cleanTest <- cleanCorpus(VCorpus(VectorSource(test)), stops)
-cleanTest <- data.frame(text = unlist(sapply(cleanTest, `[`, "content")),
-                       stringsAsFactors=F)
+cleanTest <- unlist(lapply(cleanTest, content))
 
 # You have to combine the matrices to the original to get the tokens joined
-allDTM <- rbind(cleanTrain, cleanTest)
+allDTM  <- c(cleanTrain, cleanTest)
 allDTMm <- create_matrix(allDTM, language="english")
 containerTest <- create_container(matrix    = allDTMm,
                                   labels    = c(diabetes$readmitted[idx], diabetes$readmitted[-idx]),
