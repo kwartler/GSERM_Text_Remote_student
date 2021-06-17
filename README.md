@@ -20,14 +20,18 @@
 *video1 has been replaced with a presentation for r, r-studio & git setup.  
 **due to an editing error, you will have to download these instead of streaming
 
-## Live Session Vids
+## Live Session Vids; will be deleted July 31, 2021
 |Day        | Url| 
 |-----------|---|
 | Monday    | * [1st day](https://harvard.zoom.us/rec/share/sXQWEBALbF628_1qeo60oUttB0pY6Ik02z6nDL9S3KJgkGsxy18nLjfJKXzFlkWB.dS-VFU4xG1agdMW7) |
 | Tuesday   | * [2nd day](https://harvard.zoom.us/rec/share/N0ybDCKHVTZnfooAVetz3S4ictZHuL0pB0GvAFTONyyrAbXRVlfQ-WLbfmMpcI4t.zuF83pp_jTbjcQ3e) |
-| Wednesday | * . |
+| Wednesday | * [3rd day](https://harvard.zoom.us/rec/share/6jGg3BkpC4L9eVx2qXLVN1HKIczT3JQmsgAqwNBh_4vnRydmpbgXtyVSZ9ThGa-4.ejPsGgOCkmvF1BDs) |
 | Thursday  | * . |
 | Friday    | * . |
+
+
+
+
 
 ## Lesson Structure
 Each day's lesson is contained in the **lesson** folder.  Each individual lesson folder will contain the following files and folders.
@@ -93,10 +97,3 @@ If this causes hardship, don't worry!  You can use a server instance instead.
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
 
-### Recorded Live sessions will be placed here but *will be deleted July 4th*
-
-* [June 14]()
-* [June 15]()
-* [June 16]()
-* [June 17]()
-* [June 18]() 
