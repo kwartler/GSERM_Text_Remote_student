@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 17, 2021
 #'
 
 # Set the working directory
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/E_SyntacticParsing_DataSources/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # Libs
 library(textcat)
@@ -28,9 +28,6 @@ if(testing == T){
 
 # Example languages supported
 t(t(names(TC_byte_profiles)))
-     
-# Options for the profiles
-attr(TC_char_profiles, "options")[c("n", "size", "reduce", "useBytes")]
 
 # Categorize the language
 txtLanguage <- textcat(unknownLanguageOne$text)

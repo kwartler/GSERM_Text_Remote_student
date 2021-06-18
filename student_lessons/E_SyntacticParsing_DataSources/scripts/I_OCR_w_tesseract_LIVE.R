@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: ehk116@gmail.com
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 17, 2021
 #' Notes: this is largely poached from here:
 #' https://cran.r-project.org/web/packages/tesseract/vignettes/intro.html#read_from_pdf_files
 #' 
@@ -11,7 +11,7 @@
 
 
 # Wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/E_SyntacticParsing_DataSources/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # libs
 library(tesseract)

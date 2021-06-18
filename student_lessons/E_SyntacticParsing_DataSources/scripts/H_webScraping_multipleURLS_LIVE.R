@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 17, 2021
 #' 
 
 # Library
@@ -11,7 +11,7 @@ library(rvest)
 library(stringi)
 
 # wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/E_SyntacticParsing_DataSources/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # Instructor Page
 webpage <- 'http://www.gserm.ch/stgallen/instructors/'

@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 17, 2021
 #'
 
 # Libraries
@@ -13,39 +13,41 @@ library(zoo)
 library(dygraphs)
 library(lubridate)
 
-# Original page
+# Original pages
 # https://projects.fivethirtyeight.com/trump-approval-ratings/
+# https://projects.fivethirtyeight.com/biden-approval-rating/adults/
 
 # Developer Tab has two API endpoints
-historicalURL <- 'https://projects.fivethirtyeight.com/trump-approval-ratings/historical-approval.json'
+historicalURL <- 'https://projects.fivethirtyeight.com/biden-approval-rating/historical-approval.json'
 
-trumpURL      <- 'https://projects.fivethirtyeight.com/trump-approval-ratings/approval.json'
-
+presURL <- 'https://projects.fivethirtyeight.com/biden-approval-rating/approval.json'
+# Table Info
+#tableURL <-  'https://projects.fivethirtyeight.com/biden-approval-rating/polls.json'
 
 # Get Historical
 approvalRatings <- fromJSON(historicalURL)
 head(approvalRatings)
 
 # Get Trump
-trumpApproval   <- fromJSON(trumpURL)
-head(trumpApproval)
-tail(trumpApproval)
+presApproval   <- fromJSON(presURL)
+head(presApproval)
+tail(presApproval)
 
 # Subset to "All polls", and not future predictions & just estimates
-trumpApproval <- subset(trumpApproval, 
-                        trumpApproval$subgroup == 'All polls' & 
-                          trumpApproval$future == F)
-disapprove <- ts(trumpApproval$disapprove_estimate, 
-                 start = c(2017, 23), 
+subSurvey <- subset(presApproval, 
+                    presApproval$subgroup == 'All polls' & 
+                      presApproval$future == F)
+disapprove <- ts(subSurvey$disapprove_estimate, 
+                 start = c(2021, 23), 
                  frequency = 365)
-approve    <- ts(trumpApproval$approve_estimate, start = c(2017, 23), 
+approve    <- ts(subSurvey$approve_estimate, start = c(2021, 23), 
                  frequency = 365)
 
 ratings <- cbind(disapprove, approve)
 ratings <- as.zoo(ratings)
 ratings <- as.xts(ratings, date_decimal(index(ratings)))
 
-dygraph(ratings, "Trump Approval") %>%
+dygraph(ratings, "Biden Approval") %>%
   dySeries("approve", label = "approve", color = 'green') %>%
   dySeries("disapprove", label = "disapprove", color = 'red') %>%
   dyRangeSelector()

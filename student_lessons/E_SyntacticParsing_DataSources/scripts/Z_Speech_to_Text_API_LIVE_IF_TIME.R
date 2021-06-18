@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Jan 2, 2021
+#' Date: June 17, 2021
 #' googleLanguageR is a package to perform the speech to text  but there are other APIs
 #' Refs: https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html
 #' http://code.markedmondson.me/googleLanguageR/index.html
@@ -13,7 +13,7 @@
 library(googleLanguageR)
 
 #wd
-setwd("~/Desktop/hult_NLP_student/lessons/class7/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # Authenticate
 #gl_auth('~/Documents/googleCreds/speech2txt-25cb48408ae7.json')
@@ -24,7 +24,8 @@ setwd("~/Desktop/hult_NLP_student/lessons/class7/data")
 # Google NLP - Part of Speech Tagging (R has this for free w/library UDpipe)
 # Google NLP - Sentiment (R has this for free w/multiple libs and approaches)
 # Google NLP - Document Tagging (R *could* do this as a multi-class problem)
-texts     <- paste(readLines('C05791318.txt'), collapse = ' ')
+texts     <- paste(readLines(paste0(getwd(),'/clinton/C05791318.txt')), 
+                   collapse = ' ')
 #nlpResult <- gl_nlp(texts)
 #saveRDS(nlpResult,'nlpResult.rds')
 nlpResult <-readRDS('nlpResult.rds')
