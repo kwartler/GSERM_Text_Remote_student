@@ -74,7 +74,7 @@ ___ <- basicSubs(_________)
 
 #### 3 PTs
 # Use sum with stri_count on the newt txt object
-# with "Trump", "Biden" and in the last one check for virus OR vaccine
+# with "trump", "biden" and in the last one check for virus OR vaccine
 trump  <- ___(stri_count(___, fixed ='_____'))
 biden  <- sum(__________(___, fixed ='_____'))
 vterms <- ___(__________(___, regex = '_____|_______'))
