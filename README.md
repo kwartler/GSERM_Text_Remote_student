@@ -20,7 +20,7 @@
 *video1 has been replaced with a presentation for r, r-studio & git setup.  
 **due to an editing error, you will have to download these instead of streaming
 
-## Live Session Vids; will be deleted July 31, 2021
+## Live Session Vids; will be deleted Feburary 28, 2022
 |Day        | Url| 
 |-----------|---|
 | Monday    | * [1st day](TBD) |
@@ -73,6 +73,7 @@ For most students these two links have helped them install java, and then make s
 * [link2](https://stackoverflow.com/questions/63830621/installing-rjava-on-macos-catalina-10-15-6)
 
 Once java is installed this command *from terminal* often resolves the issue:
+
 ```
 sudo R CMD javareconf
 ```
