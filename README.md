@@ -23,14 +23,11 @@
 ## Live Session Vids; will be deleted July 31, 2021
 |Day        | Url| 
 |-----------|---|
-| Monday    | * [1st day](https://harvard.zoom.us/rec/share/sXQWEBALbF628_1qeo60oUttB0pY6Ik02z6nDL9S3KJgkGsxy18nLjfJKXzFlkWB.dS-VFU4xG1agdMW7) |
-| Tuesday   | * [2nd day](https://harvard.zoom.us/rec/share/N0ybDCKHVTZnfooAVetz3S4ictZHuL0pB0GvAFTONyyrAbXRVlfQ-WLbfmMpcI4t.zuF83pp_jTbjcQ3e) |
-| Wednesday | * [3rd day](https://harvard.zoom.us/rec/share/6jGg3BkpC4L9eVx2qXLVN1HKIczT3JQmsgAqwNBh_4vnRydmpbgXtyVSZ9ThGa-4.ejPsGgOCkmvF1BDs) |
-| Thursday  | * [4th day](https://harvard.zoom.us/rec/share/WrEvt15kA4TUpTMvlTH3TuELOtGAvowRtk5tDewT3qE_ZB1DiIDQ0kIbG-03uKlu.qVuse6oM6We3O-73) |
-| Friday    | * [5th day](https://harvard.zoom.us/rec/share/qnheppZUE6LPdJ_qHpuIhC_4nCyY_ofxKKqNN80MkwjKMW7FEkiVjIIwauGv_w89.k67z1XmWBRVWPd3e) |
-
-
-
+| Monday    | * [1st day](TBD) |
+| Tuesday   | * [2nd day](TBD) |
+| Wednesday | * [3rd day](TBD) |
+| Thursday  | * [4th day](TBD) |
+| Friday    | * [5th day](TBD) |
 
 
 ## Lesson Structure
@@ -70,29 +67,28 @@ install.packages(c("lda", "LDAvis", "treemap"))
 ```
 
 ## Installing rJava (needed for Qdap) on MAC!
-For most students these three links have helped them install java, and then make sure R/Rstudio can find it when loading `qdap`.  **Keep in mind, you don't have to install qdap, to earn a good grade** This is more for use of some functions and the `polarity()` function primarily.
+For most students these two links have helped them install java, and then make sure R/Rstudio can find it when loading `qdap`.  **Keep in mind, you don't have to install qdap, to earn a good grade** This is primarily for the use of some functions including `polarity()`.
 
 * [link1](https://zhiyzuo.github.io/installation-rJava/)
 * [link2](https://stackoverflow.com/questions/63830621/installing-rjava-on-macos-catalina-10-15-6)
-* [link3](https://fahadusman.com/setup-rjava-on-mac-and-start-using-opennlp/)
 
 Once java is installed this command *from terminal* often resolves the issue:
 ```
 sudo R CMD javareconf
 ```
 
-If this causes hardship, don't worry!  You can use a server instance instead.
+If this causes hardship, don't worry! Its only a small bit of our overall learning.
 
 
 ## Homework & Case Due dates
 
-|HW |Covered in Class. |Due    |
-|---|------------------|-------|
-|HW1|Monday June14     |June15 |
-|HW2|Tuesday  June15   |June16 |
-|HW3|Wednesday June16  |June17 |
-|HW4|Thursday Jan7     |June18 |
-|Case|NA               |June27 |
+|HW |Covered in Class. |Due       |
+|---|------------------|----------|
+|HW1|Monday            |Tuesday   |
+|HW2|Tuesday           |Wednesday |
+|HW3|Wednesday         |Thursday  |
+|HW4|Thursday          |Friday    |
+|Case|NA               |Januray 21|
 
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
