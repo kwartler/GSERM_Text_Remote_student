@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 10, 2021
+#' Date: Jan 9, 2022
 #'
 
 # Set the working directory
@@ -48,7 +48,7 @@ sum(coffee) / nrow(text)
 sum(starbucks) / nrow(text)
 sum(mugGlassCup) / nrow(text)
 
-# Count occurences of words per tweet
+# Count occurrences of words per tweet
 text$text[654]
 theCoffee     <- stri_count(text$text, fixed ="the")
 theCoffeeGrep <- stri_count(text$text, regex ="\\bthe\\b") #anchored, nearly equivalent

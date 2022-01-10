@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 10, 2021
+#' Date: Jan 9, 2022
 #'
 
 # Set the working directory
@@ -69,10 +69,14 @@ df <- data.frame(text = unlist(sapply(txtCorpus, `[`, "content")),
 cleanText <- lapply(txtCorpus, content)
 cleanText <- do.call(rbind, cleanText)
 
+# Or use sapply
+cleanVector <- lapply(txtCorpus, content)
+
 # Compare a single tweet
 text$text[4]
 df[4,]
 cleanText[4]
+cleanVector[4]
 
 # Make a Document Term Matrix or Term Document Matrix depending on analysis
 txtDtm  <- DocumentTermMatrix(txtCorpus)
@@ -92,8 +96,8 @@ topTermsA <- colSums(txtDtmM)
 topTermsB <- rowSums(txtTdmM)
 
 # Add the terms
-topTermsA <- data.frame(terms = colnames(txtDtmM), freq = topTermsA)
-topTermsB <- data.frame(terms = rownames(txtTdmM), freq = topTermsB)
+topTermsA <- data.frame(terms = colnames(txtDtmM), freq = topTermsA, row.names = NULL)
+topTermsB <- data.frame(terms = rownames(txtTdmM), freq = topTermsB, row.names = NULL)
 
 # Review
 head(topTermsA)

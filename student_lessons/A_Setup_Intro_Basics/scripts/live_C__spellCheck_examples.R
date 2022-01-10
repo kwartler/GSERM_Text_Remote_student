@@ -31,8 +31,8 @@ spell_check_text(allTxt, lang = "en_US")
 spell_check_text(allTxt, ignore = ignoreWords, lang = "en_US")
 
 # No good correction functions, book pg 46
-(mispelled <- spell_check_text(allTxt, lang = "en_US"))
-(corrected <- hunspell_suggest(mispelled$word))
+mispelled <- spell_check_text(allTxt, lang = "en_US")
+corrected <- hunspell_suggest(mispelled$word)
 
 # Review
 mispelled

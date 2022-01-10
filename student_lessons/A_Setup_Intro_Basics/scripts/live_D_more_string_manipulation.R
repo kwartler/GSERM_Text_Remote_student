@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 10, 2021
+#' Date: Jan 9, 2022
 #' 
 
 # Wd
@@ -43,7 +43,7 @@ whereIsNot <- stri_locate_all(allText, fixed = 'not')
 whereIsNot # this is a list!
 
 # Instead of fixed we can use RegEx
-whereIsNot <- stri_locate_all(allText, fixed = 'not', case_insensitive=TRUE)
+whereIsNot <- stri_locate_all(allText, regex = 'not', case_insensitive=TRUE)
 whereIsNot # this is a list!
 
 # Grep gives you presence of at least one, either index of T/F, this is a count
@@ -65,7 +65,7 @@ str_extract(allText, 'not')
 str_extract(allText, 'this')
 
 # Locate terms if they are present
-str_locate_all(allText, fixed('not'))
+str_locate_all(allText, fixed('not')) # notice the fixed() is now a stringr control function not parameter
 str_locate_all(allText, 'not|NOT') #regex
 
 # Change the capitalization
@@ -75,6 +75,7 @@ str_to_title(allText, locale = "en")
 str_to_sentence(allText, locale = "en")
 
 # What about trimming?
-str_trim(allText, side = c("both", "left", "right"))
+str_trim(allText, side = c("both", "left", "right")) #stringr
+trimws(allText) #base
 
 # End
