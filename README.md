@@ -23,7 +23,7 @@
 ## Live Session Vids; will be deleted Feburary 28, 2022
 |Day        | Url| 
 |-----------|---|
-| Monday    | * [1st day](TBD) |
+| Monday    | * [1st day](https://harvard.zoom.us/rec/share/Rcp-H-6mkKlCaHRDHIFXIWFo8qdV0Je5ux8V0P-0aXfsP29w64uuB2U_qSqN0XM4.DGL3ur_d96DCl_8K) |
 | Tuesday   | * [2nd day](TBD) |
 | Wednesday | * [3rd day](TBD) |
 | Thursday  | * [4th day](TBD) |
