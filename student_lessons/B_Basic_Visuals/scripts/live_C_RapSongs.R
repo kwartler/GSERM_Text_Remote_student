@@ -44,15 +44,17 @@ singleWords <- do.call(rbind, singleWords)
 head(singleWords)
 
 # Find the specific locations of terms with a custom function applied to list
-inDocFinder <- function(DF, colIDX = 3, keyword = 'money', ignoreCase = T) {
+inDocFinder <- function(DF, 
+                        colIDX = 3, 
+                        keyword, 
+                        ignoreCase = T) {
   x <- grep(keyword, DF[,colIDX], ignore.case = ignoreCase)
   return(x)
 }
-sapply(allSongs, inDocFinder)
 sapply(allSongs, inDocFinder, keyword = 'the')
 
 # How many times for the pattern
-mentions <- sapply(allSongs, inDocFinder)
+mentions <- sapply(allSongs, inDocFinder, keyword = 'money')
 sapply(mentions, length)
 
 mentions <- sapply(allSongs, inDocFinder, keyword = 'the')

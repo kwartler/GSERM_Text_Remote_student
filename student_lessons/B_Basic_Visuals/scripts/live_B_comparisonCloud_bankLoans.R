@@ -68,10 +68,10 @@ badLoans  <- subset(txtCorpus, meta(txtCorpus)==0)
 
 # Extract the clean txt & 
 # collapse into 1 body of text representing all information by doc type 
-goodLoans <- unlist(lapply(goodLoans, content))
+goodLoans <- sapply(goodLoans, content)
 goodLoans <- paste(goodLoans, collapse = ' ')
 
-badLoans <- unlist(lapply(badLoans, content))
+badLoans <- sapply(badLoans, content)
 badLoans <- paste(badLoans, collapse = ' ')
 
 # Combine & create corpus
@@ -89,7 +89,7 @@ bothTDM <- as.matrix(bothTDM)
 colnames(bothTDM) <- c('good', 'bad')
 
 comparison.cloud(bothTDM, 
-                 max.words    = 15, 
+                 max.words    = 100, 
                  random.order = F,
                  title.size   = 0.75,
                  colors       = c('#bada55', 'blue'))#,scale=c(3,1))

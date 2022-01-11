@@ -38,7 +38,7 @@ cleanCorpus<-function(corpus, customStopwords){
 }
 
 # Create custom stop words
-stops <- c(stopwords('english'), 'lol', 'smh')
+stops <- c(stopwords('english'), 'lol', 'smh', 'GSERM')
 
 # Data
 text <- read.csv('coffee.csv', header=TRUE)
@@ -70,7 +70,7 @@ cleanText <- lapply(txtCorpus, content)
 cleanText <- do.call(rbind, cleanText)
 
 # Or use sapply
-cleanVector <- lapply(txtCorpus, content)
+cleanVector <- sapply(txtCorpus, content)
 
 # Compare a single tweet
 text$text[4]

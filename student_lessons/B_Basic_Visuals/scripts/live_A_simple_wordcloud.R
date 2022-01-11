@@ -21,6 +21,8 @@ n <- 1000
 # bring in the data
 wineReviews <- read.csv(unz("wineReviewData.zip", 
                             "winemag-data-130k-v2.csv"), nrows=n)
+#wineReviews <- read.csv(unz("wineReviewData.zip", 
+#                            "winemag-data-130k-v2.csv"))
 
 # Explore it so we know what is it
 names(wineReviews)
@@ -80,7 +82,7 @@ dim(wineTDMm)
 
 # Get Row Sums & organize
 wineTDMv <- sort(rowSums(wineTDMm), decreasing = TRUE)
-wineDF   <- data.frame(word = names(wineTDMv), freq = wineTDMv)
+wineDF   <- data.frame(word = names(wineTDMv), freq = wineTDMv, row.names = NULL)
 
 # Let's make our wordcloud
 wordcloud(wineDF$word,
@@ -91,7 +93,7 @@ wordcloud(wineDF$word,
           scale        = c(2,1))
 
 # QDAP Quick and dirty; less customization i.e. bigrams and preprocessing
-wineWFM <- wfm(wineDescriptions, stopwords =stops)
+wineWFM <- wfm(wineDescriptions, stopwords = stops)
 wordcloud(rownames(wineWFM),
           wineWFM[,1],
           max.words = 100,
