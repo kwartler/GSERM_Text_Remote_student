@@ -24,8 +24,8 @@
 |Day        | Url| 
 |-----------|---|
 | Monday    | * [1st day - fast forward a bit to get to the lecture](https://harvard.zoom.us/rec/share/Rcp-H-6mkKlCaHRDHIFXIWFo8qdV0Je5ux8V0P-0aXfsP29w64uuB2U_qSqN0XM4.DGL3ur_d96DCl_8K) |
-| Tuesday   | * [2nd day](TBD) |
-| Wednesday | * [3rd day](TBD) |
+| Tuesday   | * [2nd day](https://harvard.zoom.us/rec/share/ZYYWXSAE1xMuR9a1bAQhrOhPa48ZKQefbIOlSPTloPsfr7-zoDuPajbzSFrAMHBL.uMkYbKMvtBNFaKYw) |
+| Wednesday | * [3rd day](https://harvard.zoom.us/rec/share/tzoG5S64OeYzgcFTCiiEAYYSev1a9G5B5gqUgwfUi6PYGorw08QmA8GSjA3hsrN7.dKHkLO9BJUgDG9r-) |
 | Thursday  | * [4th day](TBD) |
 | Friday    | * [5th day](TBD) |
 
