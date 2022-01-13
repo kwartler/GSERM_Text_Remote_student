@@ -31,7 +31,7 @@ blankRemoval<-function(x){
 
 # Each term is assigned to a topic, so this will tally for a document & assign the most frequent as membership
 docAssignment<-function(x){
-  x <- table(x)
+  x <- table(x) 
   x <- as.matrix(x)
   x <- t(x)
   idx <-max.col(x)

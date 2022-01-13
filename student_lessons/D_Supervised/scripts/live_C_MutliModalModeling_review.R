@@ -94,6 +94,7 @@ head(bestTerms)
 nrow(bestTerms)
 ncol(diabetesDTM)
 row.names(bestTerms)[which.max(bestTerms)]
+row.names(bestTerms)[which.min(bestTerms)]
 
 # Fit without text
 noText    <- as.matrix(trainDiabetesTxt[,1:132])

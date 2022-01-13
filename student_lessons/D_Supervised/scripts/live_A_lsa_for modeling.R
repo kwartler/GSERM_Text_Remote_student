@@ -47,7 +47,7 @@ allTDM <- TermDocumentMatrix(allPosts,
 allTDM
 
 # Get 20 latent topics
-##### Takes awhile, may crash small computers, so saved a copy
+##### Takes awhile, may crash small RAM computers, so saved a copy
 #lsaTDM <- lsa(allTDM, 20)
 #saveRDS(lsaTDM, '~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf.rds') #be sure to declare the right wd!
 lsaTDM <- readRDS('~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf.rds')

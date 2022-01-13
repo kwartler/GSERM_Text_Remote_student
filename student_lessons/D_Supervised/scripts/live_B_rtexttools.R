@@ -44,7 +44,7 @@ cleanTrain[1]
 trainDTMm <- create_matrix(cleanTrain, language="english")
 
 # Create the container
-# trainSize; if you want to split within the single matrix but best practice is to bring it in separate to mimic really new data processing 
+# trainSize; if you want you can split within the single matrix but best practice is to bring it in separate to mimic really new data processing 
 container <- create_container(matrix    = trainDTMm,
                               labels    = diabetes$readmitted[idx], 
                               trainSize = 1:length(idx), 
@@ -58,7 +58,7 @@ models <- readRDS('rtexttools_models.rds')
 
 # Score the original training data
 results <- classify_models(container, models)
-head(results)
+results[59:69,]
 
 # Append Actuals
 results$actual <- diabetes$readmitted[idx]
@@ -84,7 +84,8 @@ cleanTest <- unlist(lapply(cleanTest, content))
 allDTM  <- c(cleanTrain, cleanTest)
 allDTMm <- create_matrix(allDTM, language="english")
 containerTest <- create_container(matrix    = allDTMm,
-                                  labels    = c(diabetes$readmitted[idx], diabetes$readmitted[-idx]),
+                                  labels    = c(diabetes$readmitted[idx],
+                                                diabetes$readmitted[-idx]),
                                   trainSize = 1:length(idx),
                                   testSize  = (length(idx)+1):8500,
                                   virgin=T)

@@ -132,8 +132,8 @@ combinedData <- left_join(nrcSent,
 oneTopic <- subset(combinedData, combinedData$clusterAssignment == 1)
 
 # Adjust for quick analysis
-table(oneTopic $sentiment, oneTopic$source)
-oneEmo <- as.data.frame.matrix(table(oneTopic $sentiment, oneTopic $source))
+table(oneTopic$sentiment, oneTopic$source)
+oneEmo <- as.data.frame.matrix(table(oneTopic$sentiment, oneTopic$source))
 oneEmo
 
 # Make a radarChart
