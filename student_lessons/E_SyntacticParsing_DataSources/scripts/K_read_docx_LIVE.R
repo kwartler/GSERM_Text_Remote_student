@@ -11,7 +11,7 @@ library(docxtractr)
 library(xml2)
 
 # wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/E_SyntacticParsing_DataSources/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # file
 filePath <- 'exampleWord.docx'

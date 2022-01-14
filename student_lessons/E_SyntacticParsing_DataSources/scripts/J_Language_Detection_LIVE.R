@@ -55,7 +55,5 @@ detect_language(
 # returns top 3 identified
 detect_language_mixed(
   url('http://www.un.org/fr/universal-declaration-human-rights/'), plain_text = FALSE)
-detect_language_mixed(
-  url('http://www.un.org/zh/universal-declaration-human-rights/'), plain_text = FALSE)
 
 # End

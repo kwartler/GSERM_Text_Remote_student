@@ -14,7 +14,7 @@ library(pbapply)
 options(stringsAsFactors = F)
 
 # www.newsapi.org Key
-#apiKey <- readLines('~/Desktop/GSERM_Text_Remote_admin/newsAPI.txt')
+#apiKey <- readLines('~/Desktop/newsAPI.txt')
 #apiKey <- 'XXXXXXXXXXXXXXXXXXXXXXX'
 
 # Top headlines in the US endpoint:
