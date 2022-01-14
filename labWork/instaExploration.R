@@ -125,6 +125,7 @@ insta$afinnResult[is.na(insta$afinnResult)] <- 0
 ## Look for alignment on sentiment analysis with the two lexicons
 ## Look for alignment on the model and the heat lexicon method
 ## For records that are negative in two ways and thought to be heat related using two methods then analyze these in particular
+## You can intersect with other data like day of week etc.
 
 
 
