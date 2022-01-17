@@ -9,7 +9,7 @@
 # Libs
 library(data.table)
 library(lubridate)
-library(mgsub)
+#library(mgsub)
 library(rtweet)
 library(qdap) 
 library(stringr)
@@ -116,7 +116,7 @@ insta$afinnResult[is.na(insta$afinnResult)] <- 0
 ## Identify the heatwave related ones - another join to the heat lexicon
 
 ## Identify the heatwave related ones - model using manual labels
-
+cv.glmnet()
 ## Review the coefficients for a larger lexicon and review
 
 ## Score all the data
