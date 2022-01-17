@@ -27,7 +27,7 @@
 | Tuesday   | * [2nd day](https://harvard.zoom.us/rec/share/ZYYWXSAE1xMuR9a1bAQhrOhPa48ZKQefbIOlSPTloPsfr7-zoDuPajbzSFrAMHBL.uMkYbKMvtBNFaKYw) |
 | Wednesday | * [3rd day](https://harvard.zoom.us/rec/share/tzoG5S64OeYzgcFTCiiEAYYSev1a9G5B5gqUgwfUi6PYGorw08QmA8GSjA3hsrN7.dKHkLO9BJUgDG9r-) |
 | Thursday  | * [4th day](https://harvard.zoom.us/rec/share/NVWRxBrs3BHKsMEqNCBsJ_FqOgv2XN5VSCdoHE6hd7gYfHjwY2GSGxfLOxlle1k7.0DYMw3OemmHv5TqO) |
-| Friday    | * [5th day](TBD) |
+| Friday    | * [5th day](https://harvard.zoom.us/rec/share/s6oxUFNKC1seeUgBYV11kG1d9oNpACfM8zuNeCB8ygmFs4fSnSN5rLKIK4tx3esb.eYAdroL6bjIxRrm4) |
 
 
 ## Lesson Structure
