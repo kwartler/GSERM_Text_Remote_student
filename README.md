@@ -20,14 +20,14 @@
 *video1 has been replaced with a presentation for r, r-studio & git setup.  
 **due to an editing error, you will have to download these instead of streaming
 
-## Live Session Vids; will be deleted Feburary 28, 2022
+## Live Session Vids; will be deleted July 31, 2022
 |Day        | Url| 
 |-----------|---|
-| Monday    | * [1st day - fast forward a bit to get to the lecture](https://harvard.zoom.us/rec/share/Rcp-H-6mkKlCaHRDHIFXIWFo8qdV0Je5ux8V0P-0aXfsP29w64uuB2U_qSqN0XM4.DGL3ur_d96DCl_8K) |
-| Tuesday   | * [2nd day](https://harvard.zoom.us/rec/share/ZYYWXSAE1xMuR9a1bAQhrOhPa48ZKQefbIOlSPTloPsfr7-zoDuPajbzSFrAMHBL.uMkYbKMvtBNFaKYw) |
-| Wednesday | * [3rd day](https://harvard.zoom.us/rec/share/tzoG5S64OeYzgcFTCiiEAYYSev1a9G5B5gqUgwfUi6PYGorw08QmA8GSjA3hsrN7.dKHkLO9BJUgDG9r-) |
-| Thursday  | * [4th day](https://harvard.zoom.us/rec/share/NVWRxBrs3BHKsMEqNCBsJ_FqOgv2XN5VSCdoHE6hd7gYfHjwY2GSGxfLOxlle1k7.0DYMw3OemmHv5TqO) |
-| Friday    | * [5th day](https://harvard.zoom.us/rec/share/s6oxUFNKC1seeUgBYV11kG1d9oNpACfM8zuNeCB8ygmFs4fSnSN5rLKIK4tx3esb.eYAdroL6bjIxRrm4) |
+| Monday    | * [1st day](TBD) |
+| Tuesday   | * [2nd day](TBD) |
+| Wednesday | * [3rd day](TBD) |
+| Thursday  | * [4th day](TBD) |
+| Friday    | * [5th day](TBD) |
 
 
 ## Lesson Structure
@@ -40,7 +40,7 @@ Each day's lesson is contained in the **lesson** folder.  Each individual lesson
 
 ## Environment Setup
 
-* You *must* install R, R-Studio & Git locally on your laptop or if you have require you can work from a server instance with all software.  (www.rstudio.cloud)[www.rstudio.cloud] is another option but the free tier has significant time limitations. Part of day 1 will be devoted to ensuring people's instances work correctly.
+* You *must* install R, R-Studio & Git locally on your laptop or if you have the knowledge to set it up, you can work from a server instance with all software.  (www.rstudio.cloud)[www.rstudio.cloud] is another option but the free tier has significant time limitations. Part of day 1 will be devoted to ensuring people's instances work correctly.
 
 - If you encounter any errors during set up don't worry!  Please request technical help from Prof K.  The `qdap` library is usually the trickiest because it requires Java and `rJava`.  So if you get any errors, try removing that from the code below and rerunning.  This will take **a long time**, so if possible please run prior to class, and at a time you don't need your computer ie *at night*.  We will work to resolve any issues prior to class or during Monday's live session.
 
@@ -78,7 +78,7 @@ Once java is installed this command *from terminal* often resolves the issue:
 sudo R CMD javareconf
 ```
 
-If this causes hardship, don't worry! Its only a small bit of our overall learning.
+If this causes hardship, don't worry! Its only a small bit of our overall learning and I will cover an alternative in the live session.
 
 
 ## Homework & Case Due dates
@@ -89,7 +89,7 @@ If this causes hardship, don't worry! Its only a small bit of our overall learni
 |HW2|Tuesday           |Wednesday |
 |HW3|Wednesday         |Thursday  |
 |HW4|Thursday          |Friday    |
-|Case|NA               |Januray 21|
+|Case|NA               |July 1    |
 
 ## Prerequisite Work
 *  Read chapter 1 of the book [Text Mining in Practice with R](https://www.amazon.com/Text-Mining-Practice-Ted-Kwartler/dp/1119282012) book.
