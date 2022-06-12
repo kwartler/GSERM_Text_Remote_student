@@ -92,7 +92,7 @@ ggMA +
 
 # Leaflet layers using %>% pipe
 mplot<- leaflet(data=onlyMA) %>%
-  addTiles() %>%
+  addTiles() %>% 
   addMarkers( popup = paste("Loc:", onlyMA$Location, "<br>",
                             "SqFt:", onlyMA$Sq..Feet,"<br>",
                             "Type:", onlyMA$Type)) 
