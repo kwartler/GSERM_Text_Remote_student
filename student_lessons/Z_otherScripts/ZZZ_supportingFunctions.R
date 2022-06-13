@@ -74,3 +74,4 @@ cleanMatrix <- function(pth, columnName, collapse = F, customStopwords,
   print('complete!')
   return(response)
 }
+
