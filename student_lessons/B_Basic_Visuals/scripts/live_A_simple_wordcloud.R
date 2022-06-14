@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 14, 2021
+#' Date: June 13, 2022
 #' 
 
 # Wd
@@ -40,6 +40,7 @@ summary(wineReviews$price)
 
 # Is there an interaction between the two?
 plot(wineReviews$points,wineReviews$price)
+cor(wineReviews$points,wineReviews$price, use = 'complete.obs')
 
 # Lets get the most frequent terms in the description field
 wineDescriptions <- wineReviews$description
@@ -74,7 +75,7 @@ txtCorpus <- VCorpus(VectorSource(wineDescriptions))
 txtCorpus <- cleanCorpus(txtCorpus, stops)
 
 # Make bi-gram TDM according to the tokenize control & convert it to matrix
-wineTDM  <- TermDocumentMatrix(txtCorpus)
+wineTDM  <- TermDocumentMatrix(txtCorpus) # if complete data: 44186 terms 129900 wines
 wineTDMm <- as.matrix(wineTDM)
 
 # How many unique words?

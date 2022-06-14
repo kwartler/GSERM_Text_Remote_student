@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
-setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -60,7 +60,7 @@ reducedTDM <- as.data.frame(as.matrix(reducedTDM))
 hc <- hclust(dist(reducedTDM))
 plot(hc,yaxt='n')
 
-#ggdendrogram(hc, rotate=FALSE); unable to load bc package is not updated
+#ggdendro::ggdendrogram(hc, rotate=FALSE) # unable to load bc package is not updated
 
 ############ Back to PPT
 

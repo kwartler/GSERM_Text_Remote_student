@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
-setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -51,13 +51,9 @@ tweetTDMm <- as.matrix(tweetTDM)
 
 # Frequency Data Frame
 tweetSums <- rowSums(tweetTDMm)
-tweetFreq <- data.frame(word=names(tweetSums),frequency=tweetSums)
+tweetFreq <- data.frame(word=names(tweetSums),frequency=tweetSums, row.names = NULL)
 
 # Review a section
-tweetFreq[50:55,]
-
-# Remove the row attributes meta family
-rownames(tweetFreq) <- NULL
 tweetFreq[50:55,]
 
 # Simple barplot; values greater than 15
@@ -84,9 +80,9 @@ associations
 
 # Organize the word associations
 assocDF <- data.frame(terms=names(associations[[1]]),
-                       value=unlist(associations))
+                       value=unlist(associations), 
+                      row.names = NULL)
 assocDF$terms <- factor(assocDF$terms, levels=assocDF$terms)
-rownames(assocDF) <- NULL
 assocDF
 
 # Make a dot plot

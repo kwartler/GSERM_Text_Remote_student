@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 14, 2021
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
@@ -30,7 +30,7 @@ stops <- c(stopwords('SMART'), 'amp', 'britishairways',
            'ryanair', 'airline', 'flying')
 
 # Read in Data, clean & organize.  Wrapped in another function for you!
-# No qdap? Go to the directly to ZZZ Supporting" & remove  contraction in clean corpus
+# No qdap? Go to the directly to ZZZ Supporting function & remove contraction in clean corpus
 textA <- cleanMatrix(pth             = 'BritishAirways.csv',
                      columnName      = 'text',
                      collapse        = T, 

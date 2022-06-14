@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 14, 2021
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
@@ -51,7 +51,7 @@ txtCorpus <- VCorpus(VectorSource(text))
 
 # Preprocess the corpus
 txtCorpus <- cleanCorpus(txtCorpus, stops)
-saveRDS(txtCorpus, 'txtCorpus.rds')
+#saveRDS(txtCorpus, 'txtCorpus.rds')
 
 # Make TDM & convert it to matrix
 txtTDM <- TermDocumentMatrix(txtCorpus)
@@ -62,7 +62,7 @@ txtTDM[(2015):(2018),117:118]
 
 # Get Row Sums & organize
 txtTDMv  <- sort(rowSums(txtTDM), decreasing = TRUE)
-txtDF    <- data.frame(word = names(txtTDMv), freq = txtTDMv)
+txtDF    <- data.frame(word = names(txtTDMv), freq = txtTDMv, row.names = NULL)
 txtDF    <- txtDF[1:100,]
 
 # Echarts4R D3 Viz

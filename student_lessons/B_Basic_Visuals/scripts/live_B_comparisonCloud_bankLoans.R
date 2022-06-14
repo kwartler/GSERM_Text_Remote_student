@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 14, 2021
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
@@ -91,7 +91,7 @@ colnames(bothTDM) <- c('good', 'bad')
 comparison.cloud(bothTDM, 
                  max.words    = 100, 
                  random.order = F,
-                 title.size   = 0.75,
+                 title.size   = 1.5,
                  colors       = c('#bada55', 'blue'))#,scale=c(3,1))
 
 

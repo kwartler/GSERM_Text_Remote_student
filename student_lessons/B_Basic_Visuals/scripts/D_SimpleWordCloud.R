@@ -3,11 +3,11 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
-setwd("~/Desktop/GSERM_Text_Remote_admin/lessons/B_Basic_Visuals/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/B_Basic_Visuals/data")
 
 # Libs
 library(tm)
@@ -70,7 +70,7 @@ wineTDMm[(exampleTweet-2):(exampleTweet),870:871]
 
 # Get Row Sums & organize
 wineTDMv <- sort(rowSums(wineTDMm), decreasing = TRUE)
-wineDF   <- data.frame(word = names(wineTDMv), freq = wineTDMv)
+wineDF   <- data.frame(word = names(wineTDMv), freq = wineTDMv, row.names = NULL)
 
 # Review all Palettes
 display.brewer.all()

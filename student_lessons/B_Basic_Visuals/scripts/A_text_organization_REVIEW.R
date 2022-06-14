@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 13, 2022
 #'
 
 # Set the working directory
@@ -70,20 +70,16 @@ txtDtmM <- as.matrix(txtDtm)
 txtTdmM <- as.matrix(txtTdm)
 
 # Examine
-txtDtmM[610:611,491:493]
-txtTdmM[491:493,610:611]
+txtDtmM[1:4,grep('cute|mug|^coffee$', colnames(txtDtmM))]
+txtTdmM[grep('cute|mug|^coffee$', colnames(txtDtmM)),1:4]
 
 # Get the most frequent terms
 topTermsA <- colSums(txtDtmM)
 topTermsB <- rowSums(txtTdmM)
 
 # Add the terms
-topTermsA <- data.frame(terms = colnames(txtDtmM), freq = topTermsA)
-topTermsB <- data.frame(terms = rownames(txtTdmM), freq = topTermsB)
-
-# Remove row attributes
-rownames(topTermsA) <- NULL
-rownames(topTermsB) <- NULL
+topTermsA <- data.frame(terms = colnames(txtDtmM), freq = topTermsA, row.names = NULL)
+topTermsB <- data.frame(terms = rownames(txtTdmM), freq = topTermsB, row.names = NULL)
 
 # Review
 head(topTermsA)

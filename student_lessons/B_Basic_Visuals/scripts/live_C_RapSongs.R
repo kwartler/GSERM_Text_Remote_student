@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 14, 2021
+#' Date: June 13, 2022
 #'
 
 # Set wd
@@ -51,7 +51,7 @@ inDocFinder <- function(DF,
   x <- grep(keyword, DF[,colIDX], ignore.case = ignoreCase)
   return(x)
 }
-sapply(allSongs, inDocFinder, keyword = 'the')
+sapply(allSongs, inDocFinder, keyword = '\\bthe\\b')
 
 # How many times for the pattern
 mentions <- sapply(allSongs, inDocFinder, keyword = 'money')
@@ -61,12 +61,12 @@ mentions <- sapply(allSongs, inDocFinder, keyword = 'the')
 sapply(mentions, length)
 
 # Or find them at the song level
-inSongFinder <- function(DF, colIDX = 3, keyword = 'money', ignoreCase = T){
+inSongFinder <- function(DF, colIDX = 3, keyword, ignoreCase = T){
   x <- paste(DF[,colIDX], collapse = ' ')
   x <- grepl(keyword, x, ignore.case = ignoreCase)
   return(x)
 }
-sapply(allSongs, inSongFinder)
+sapply(allSongs, inSongFinder,keyword = 'money')
 
 # Because the transcript has temporal nature, we want to know cadence
 # Calculate the cumulative sum over time
@@ -74,6 +74,7 @@ wordCountList <- list()
 for(i in 1:length(allSongs)){
   x <- allSongs[[i]]
   wordCount <- str_count(x$text, "\\S+") #count the space character
+  #you can also use strplit with a space and then count the length
   y <- data.frame(x$endTime, 
                   cumulativeWords = cumsum(wordCount),
                   song            = names(allSongs[i]))
@@ -88,7 +89,8 @@ head(songTimeline)
 # Get the last values for each song (total words but now with time)
 totalWords <- data.frame(song = singleWords$song,
                          endTime = songLength, 
-                         cumulativeWords = singleWords$totalWords)
+                         cumulativeWords = singleWords$totalWords,
+                         row.names = NULL)
 head(totalWords)
 
 # Make a plot of the speech cadence

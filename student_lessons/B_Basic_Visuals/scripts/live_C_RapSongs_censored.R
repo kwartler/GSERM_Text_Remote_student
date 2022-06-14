@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 14, 2021
+#' Date: June 13, 2022
 #'
 
 # wd
@@ -36,7 +36,7 @@ head(totalWords)
 # Get the timeline of a song - This function combines ("row-bind") all the data frames in the list to one object.  Notice how "allsongs" in your environment has 30 elements (dataframes) while now "songTimeline" has 2476 rows and 3 variables.  Think of this like a copy/paste of each workbook underneath to form one long running single work sheet. 
 songTimeline  <- do.call(rbind, allSongs)
 
-# Make a plot of the speech cadence - Now we build a plot, ggplot is complext but essentially we are building the visualization layer by layer and have complete control over each layer.  First a blank plot layer, then the lines are added, then the end point is added, then the text and finally some aethetics like a theme and removing the legend.  Dont worry about this section as we will cover more visuals in detail and entire courses are spent on visualization.
+# Make a plot of the speech cadence - Now we build a plot, ggplot is complex but essentially we are building the visualization layer by layer and have complete control over each layer.  First a blank plot layer, then the lines are added, then the end point is added, then the text and finally some aesthetics like a theme and removing the legend.  
 ggplot(songTimeline,  aes(x     = endTime,
                           y     = cumulativeWords, 
                           group = song, 
