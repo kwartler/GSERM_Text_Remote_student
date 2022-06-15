@@ -27,7 +27,6 @@ library(ggplot2)
 library(ggthemes)
 
 # Custom Functions
-source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_plotCluster.R')
 source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Examine Raw Text
@@ -143,7 +142,8 @@ chartJSRadar(scores = oneEmo,
              
 # Intersect the Clusters and Sentiment; subset to one source
 head(combinedData)
-oneSource <- subset(combinedData, combinedData$source== sourceID[1,1])
+singleSourceID <- sourceID[1,1]#"1,1the-washington-post" 3,1 Fox
+oneSource <- subset(combinedData, combinedData$source== singleSourceID) 
 oneSource <- aggregate(count~sentiment+clusterAssignment, oneSource, sum)
 oneSource
 
@@ -159,7 +159,7 @@ ggplot(oneSource,
        aes(sentiment, as.factor(clusterAssignment), 
                       size = count, alpha = count)) +
   geom_point() +
-  ggtitle("WashingtonPost", 
+  ggtitle(singleSourceID, 
           sub = "Emotion by Topic Cluster") + 
   ylab("") +
   theme_tufte()

@@ -14,12 +14,7 @@ library(clue)
 library(cluster)
 library(wordcloud)
 
-# This is an orphaned lib which gives us plotcluster:
-#https://www.rdocumentation.org/packages/fpc/versions/2.1-11.2
-#library(fpc)
-
 # Bring in our supporting functions
-source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_plotCluster.R')
 source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
@@ -46,10 +41,6 @@ txtSKMeans <- skmeans(txtMat, # data
                       m = 1, #"fuzziness of cluster" 1 = hard partition, >1 increases "softness"
                       control = list(nruns = 5, verbose = T))
 barplot(table(txtSKMeans$cluster), main = 'spherical k-means')
-dev.off()
-
-# Plot cluster to see separation
-plotcluster(cmdscale(dist(txtMat)),txtSKMeans$cluster)
 dev.off()
 
 # Silhouette plot

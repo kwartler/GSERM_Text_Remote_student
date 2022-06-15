@@ -15,12 +15,7 @@ library(cluster)
 library(fst)
 library(wordcloud)
 
-# This is an orphaned lib which gives us plotcluster:
-#https://www.rdocumentation.org/packages/fpc/versions/2.1-11.2
-#library(fpc)
-
 # Bring in our supporting functions
-source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_plotCluster.R')
 source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
@@ -42,8 +37,6 @@ txtMat    <- scale(txtMat) #subtract mean  & divide by stDev
 txtKMeans <- kmeans(txtMat, 3)
 txtKMeans$size
 barplot(txtKMeans$size, main = 'k-means')
-
-plotcluster(cmdscale(dist(txtMat)),txtKMeans$cluster)
 
 dissimilarityMat <- dist(txtMat)
 silPlot          <- silhouette(txtKMeans$cluster, dissimilarityMat)

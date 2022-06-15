@@ -17,7 +17,6 @@ library(cluster)
 library(wordcloud)
 
 # Bring in our supporting functions
-source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_plotCluster.R')
 source('~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
 
 # Options & Functions
@@ -47,9 +46,6 @@ txtKMeds <- fastkmed(manhattanDist, ncluster = 5, iterate = 5)
 # Number of docs per cluster
 table(txtKMeds$cluster)
 barplot(table(txtKMeds$cluster), main = 'k-mediod')
-
-# Visualize separation
-plotcluster(manhattanDist, txtKMeds$cluster, pch = txtKMeds$cluster)
 
 # Silhouette
 silPlot          <- silhouette(txtKMeds$cluster, manhattanDist)

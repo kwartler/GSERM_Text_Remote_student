@@ -123,7 +123,7 @@ ldaJSON <- createJSON(phi = phi,
 serVis(ldaJSON)
 
 # Topic Extraction
-top.topic.words(fit$topics, 10, by.score=TRUE)
+top.topic.words(fit$topics, 5, by.score=TRUE)
 
 # Name Topics
 topFive <- top.topic.words(fit$topics, 5, by.score=TRUE)
