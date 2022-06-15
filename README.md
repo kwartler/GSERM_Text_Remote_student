@@ -23,8 +23,8 @@
 ## Live Session Vids; will be deleted July 31, 2022
 |Day        | Url| 
 |-----------|---|
-| Monday    | * [1st day = TBD](TBD) |
-| Tuesday   | * [2nd day = TBD](TBD) |
+| Monday    | * [1st day](https://harvard.zoom.us/rec/share/IY77KE4i7Jao3JuAYG8BIkOKgRx5nLUqQRdvXG7VVTYBJEAczmvzSN59693iLvgX.cnmv6HDS5La7rS5J) |
+| Tuesday   | * [2nd day only second half :(](https://harvard.zoom.us/rec/share/ZOQ0jfIrqhuXC1TNRtyBOzo3ghhxbbeBLndxSTgTWsNqbjTDrYyZfTsyg2UNTVX1.KwizGo5GoWib6XQL) |
 | Wednesday | * [3rd day = TBD](TBD) |
 | Thursday  | * [4th day = TBD](TBD) |
 | Friday    | * [5th day = TBD](TBD) |
