@@ -26,7 +26,7 @@
 | Monday    | * [1st day](https://harvard.zoom.us/rec/share/IY77KE4i7Jao3JuAYG8BIkOKgRx5nLUqQRdvXG7VVTYBJEAczmvzSN59693iLvgX.cnmv6HDS5La7rS5J) |
 | Tuesday   | * [2nd day only second half :(](https://harvard.zoom.us/rec/share/ZOQ0jfIrqhuXC1TNRtyBOzo3ghhxbbeBLndxSTgTWsNqbjTDrYyZfTsyg2UNTVX1.KwizGo5GoWib6XQL) |
 | Wednesday | * [3rd day = TBD](https://harvard.zoom.us/rec/share/JUlKOjjmzlGcOH2bnQkXKu8_0d_7eKf_FRDmt5NABP-hwV7h9SQ3QXse8R1nk1NM.5UfTfipgO7ksF__V) |
-| Thursday  | * [4th day = TBD](TBD) |
+| Thursday  | * [4th day = TBD](https://harvard.zoom.us/rec/share/eik4PPOVNQ9ufBDMnVSepKJb-xUBtmD8K08SdTbGT9L5ZZ6i4NzaKzUios2bvKQK.caxd-rLYwFI0u32z) |
 | Friday    | * [5th day = TBD](TBD) |
 
 
