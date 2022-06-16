@@ -52,8 +52,8 @@ container <- create_container(matrix    = trainDTMm,
 
 # Build Models, can take ages for complex algos
 #models <- train_models(container, algorithms=c("GLMNET","SVM")) #"SVM","SLDA","BOOSTING","BAGGING", "RF","GLMNET","TREE","NNET"
-#saveRDS(models, 'rtexttools_models.rds')
-models <- readRDS('rtexttools_models.rds')
+#saveRDS(models, 'rtexttools_models_june152022.rds')
+models <- readRDS('rtexttools_models_june152022.rds')
 
 
 # Score the original training data
@@ -91,8 +91,8 @@ containerTest <- create_container(matrix    = allDTMm,
                                   virgin=T)
 
 #testFit <- train_models(containerTest, algorithms=c("GLMNET", "SVM"))
-#saveRDS(testFit, 'rtexttools_testFit.rds')
-testFit <-readRDS('rtexttools_testFit.rds')
+#saveRDS(testFit, 'rtexttools_testFit_June152022.rds')
+testFit <-readRDS('rtexttools_testFit_June152022.rds')
 resultsTest <- classify_models(containerTest, testFit)
 
 # Append Actuals

@@ -41,7 +41,7 @@ gc()
 # Construct the Target
 yTarget <- c(rep(1,1000), rep(0,1000)) #1= about cars, 0 = electronics
 
-# Make TDM; lsa docs save DTM w/"documents in colums, terms in rows and occurrence frequencies in the cells."!
+# Make TDM; lsa docs save DTM w/"documents in columns, terms in rows and occurrence frequencies in the cells."!
 allTDM <- TermDocumentMatrix(allPosts, 
                              control = list(weighting = weightTfIdf))
 allTDM
@@ -49,8 +49,8 @@ allTDM
 # Get 20 latent topics
 ##### Takes awhile, may crash small RAM computers, so saved a copy
 #lsaTDM <- lsa(allTDM, 20)
-#saveRDS(lsaTDM, '~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf.rds') #be sure to declare the right wd!
-lsaTDM <- readRDS('~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf.rds')
+#saveRDS(lsaTDM, '~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf_June152022.rds') #be sure to declare the right wd!
+lsaTDM <- readRDS('~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data/lsaTDM_tfidf_June152022.rds')
 
 # Extract the document LSA values
 docVectors <- as.data.frame(lsaTDM$dk)

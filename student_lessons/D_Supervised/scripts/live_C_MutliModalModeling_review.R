@@ -8,7 +8,7 @@
 
 # Wd
 setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/D_Supervised/data")
-
+options(scipen = 999)
 # Libs
 library(text2vec)
 library(caret)

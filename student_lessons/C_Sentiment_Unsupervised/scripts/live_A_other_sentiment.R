@@ -14,6 +14,7 @@ library(sentimentr)
 library(lexicon)
 library(dplyr)
 library(SentimentAnalysis)
+library(ggplot2)
 
 
 # Read in data
@@ -53,7 +54,7 @@ sentGrp <- sentiment_by(text.var = get_sentences(txt$description),
                         amplifier.weight = 0.8, n.before = 5, n.after = 2)
 head(sentGrp)
 
-# Let's make a cleveland dot plot of the top 10 neighborhoods
+# Let's make a cleveland dot plot of the top 15 neighborhoods
 ggplot(sentGrp[1:15,], aes(x = word_count, y = reorder(neighbourhood_cleansed, word_count))) +
   geom_segment(aes(yend = reorder(neighbourhood_cleansed, word_count)), 
                xend = 0, colour = "darkgrey") + 
