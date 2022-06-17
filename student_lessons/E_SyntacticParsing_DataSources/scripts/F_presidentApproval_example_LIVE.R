@@ -28,7 +28,7 @@ presURL <- 'https://projects.fivethirtyeight.com/biden-approval-rating/approval.
 approvalRatings <- fromJSON(historicalURL)
 head(approvalRatings)
 
-# Get Trump
+# Get Biden
 presApproval   <- fromJSON(presURL)
 head(presApproval)
 tail(presApproval)
