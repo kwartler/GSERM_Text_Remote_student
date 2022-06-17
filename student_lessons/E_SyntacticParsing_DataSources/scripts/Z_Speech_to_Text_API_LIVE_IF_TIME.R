@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: edwardkwartler@fas.harvard.edu
 #' License: GPL>=3
-#' Date: June 17, 2021
+#' Date: June 16, 2022
 #' googleLanguageR is a package to perform the speech to text  but there are other APIs
 #' Refs: https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html
 #' http://code.markedmondson.me/googleLanguageR/index.html
@@ -16,7 +16,7 @@ library(googleLanguageR)
 setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # Authenticate
-#gl_auth('~/Documents/googleCreds/speech2txt-25cb48408ae7.json')
+#gl_auth('~/Documents/course repos/speech2txt-25cb48408ae7.json')
 
 
 #### General NLP API
@@ -45,7 +45,7 @@ nlpResult$classifyText
 text <- "Text Mining in Practice with R. It's the math of talking, you're two favorite things! "
 
 ## translate British into Danish
-#translatedTxt <- gl_translate(text, target = "da")
+#translatedTxt <- gl_translate(text, target = "da") #Norwegian
 #saveRDS(translatedTxt, 'translatedTxt.rds')
 translatedTxt <- readRDS('translatedTxt.rds')
 translatedTxt

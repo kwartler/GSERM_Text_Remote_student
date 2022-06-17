@@ -10,6 +10,7 @@
 
 # libraries
 library(rvest)
+library(json)
 
 # Get the webpage
 movieURL <- 'https://www.imdb.com/title/tt0058331'
@@ -63,11 +64,16 @@ gsub('/title/tt0058331','',mediaURLS[1])
 postURL <- paste0(movieURL,gsub('/title/tt0058331','',mediaURLS[1]))
 postURL
 
-# Storyline
-storyline <- movie %>%
-  html_nodes(xpath = '/html/body/div[2]/main/div/section[1]/div/section/div/div[1]/section[6]/div[2]/div[1]/div[1]/div/text()') %>%
-  html_text() 
-storyline
+# Storyline; this was moved to a graphDB so loads slowly!  this code is now broken
+#storyline <- movie %>%
+#  html_nodes('/html/body/div[2]/main/div/section[1]/div/section/div/div[1]/section[6]/div[2]/div[1]/div[1]/div/text()') %>%
+#  html_text() 
+#storyline
+
+# But you can still get it using "inspect" and "copy response" then saving as json
+storyLine <- fromJSON('storyline.json')
+storyLine$data$title$summaries$edges$node$plotText$plaidHtml
+storyLine$data$title$synopses$edges$node$plotText$plaidHtml
 
 # More mess!
 movieGross <- movie %>%

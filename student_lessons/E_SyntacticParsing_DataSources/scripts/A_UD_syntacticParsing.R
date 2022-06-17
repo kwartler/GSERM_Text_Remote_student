@@ -3,7 +3,7 @@
 #' Author: Ted Kwartler
 #' email: ehk116@gmail.com
 #' License: GPL>=3
-#' Date: Dec 28 2020
+#' Date: June 16, 2022
 #'
 
 # Libs
@@ -14,7 +14,7 @@ library(qdap)
 library(reshape2)
 
 # Wd
-setwd("/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/E_SyntacticParsing_DataSources/data")
+setwd("~/Desktop/GSERM_Text_Remote_student/student_lessons/E_SyntacticParsing_DataSources/data")
 
 # Inputs
 datPth          <- 'tweets_jairbolsonaro.csv'
@@ -26,15 +26,15 @@ options(stringsAsFactors = FALSE)
 Sys.setlocale('LC_ALL','C')
 
 # Bring in the cleaning function
-source('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/Z_otherScripts/ZZZ_supportingFunctions.R')
+source("~/Desktop/GSERM_Text_Remote_student/student_lessons/Z_otherScripts/ZZZ_supportingFunctions.R")
 
 # Get a language model to the server
 ?udpipe_download_model
-udModel <- udpipe_download_model(language  = "portuguese-gsd", 
-                                 model_dir = '/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons')
+udModel <- udpipe_download_model(language  = "portuguese-br",  #"portuguese-gsd"
+                                 model_dir = '~/Desktop/GSERM_Text_Remote_student/student_lessons')
 
 # Load into the space
-udModel <- udpipe_load_model('/Users/edwardkwartler/Desktop/GSERM_Text_Remote_admin/lessons/portuguese-gsd-ud-2.5-191206.udpipe')
+udModel <- udpipe_load_model('~/Desktop/GSERM_Text_Remote_student/student_lessons/portuguese-gsd-ud-2.5-191206.udpipe')
 # Bring in data & organize
 textData <- read.csv(datPth)
 text     <- data.frame(doc_id = 1:nrow(textData),
