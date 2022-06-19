@@ -1,5 +1,5 @@
 #' Title: NLP HW 1
-#' Purpose: 20pts...where you paying attention?
+#' Purpose: 20pts...were you paying attention?
 #' NAME: 
 #' Date: Dec 29 2020
 
